@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="tutorial3 - " width="500" height="400">
+    <tags>shellMaximized</tags>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_pzIREBVhEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.perspectivestack.0"/>
+    <mainMenu xmi:id="_bJ-noBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_mhM-kBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.file" label="%com.company.tutorial3.application.menu.file">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_jE6BYBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.new" label="%com.company.tutorial3.application.handledmenuitem.new" iconURI="platform:/plugin/com.company.tutorial3.application/icons/new.png" command="_q-m-ABVnEey0Bq8_SOFODw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_M9l5YGcUEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.handledmenuitem.open" label="%com.company.tutorial3.application.handledmenuitem.open" iconURI="platform:/plugin/com.company.tutorial3.application/icons/open.png" command="_q9HwQBVnEey0Bq8_SOFODw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_kzAh8BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.save" label="%com.company.tutorial3.application.handledmenuitem.save" iconURI="platform:/plugin/com.company.tutorial3.application/icons/save.png" command="_q575YBVnEey0Bq8_SOFODw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_k20q8BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.saveAs" label="%com.company.tutorial3.application.handledmenuitem.saveAs" iconURI="platform:/plugin/com.company.tutorial3.application/icons/save as.png" command="_q7pwoBVnEey0Bq8_SOFODw"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_ljOd8BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menuseparator.0"/>
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_bHOGgGcUEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.handledmenuitem.recentFiles" label="%com.company.tutorial3.application.handledmenuitem.recentFiles">
+          <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_rMe54GcUEeyMy6zCUSbDKw" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.RecentFilesListMenuItemIsVisibleExpression"/>
+        </children>
+        <children xsi:type="menu:DynamicMenuContribution" xmi:id="_clgpcGcUEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.dynamicmenucontribution.0" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.CreateMenuItemLastScenarioHandler"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_lz268BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.exit" label="%com.company.tutorial3.application.handledmenuitem.exit" iconURI="platform:/plugin/com.company.tutorial3.application/icons/exit.png" command="_qh2JgBVnEey0Bq8_SOFODw"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_m2SdwBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.additionalFunction" label="%com.company.tutorial3.application.menu.additionalFunction">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_z54acBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.check" label="%com.company.tutorial3.application.handledmenuitem.check" iconURI="platform:/plugin/com.company.tutorial3.application/icons/check.png" command="_qvk84BX-Eey0Bq8_SOFODw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_z-hC0BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.resetPerspective" label="%com.company.tutorial3.application.handledmenuitem.resetPerspective" iconURI="platform:/plugin/com.company.tutorial3.application/icons/windows_back.png" command="_reqQcBX-Eey0Bq8_SOFODw"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_1PWYkBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menuseparator.2"/>
+        <children xsi:type="menu:Menu" xmi:id="_eUP6EBX9Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.language" label="%com.company.tutorial3.application.menu.language" iconURI="platform:/plugin/com.company.tutorial3.application/icons/language.png">
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_fM-44BX9Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.english" label="%com.company.tutorial3.application.handledmenuitem.english" iconURI="platform:/plugin/com.company.tutorial3.application/icons/english.png" command="_rYjocBX-Eey0Bq8_SOFODw">
+            <parameters xmi:id="_Ey8_MBX_Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.parameter.0" name="com.company.tutorial3.application.commandparameter.parameter1" value="en"/>
+          </children>
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_fjSgEBX9Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.russian" label="%com.company.tutorial3.application.handledmenuitem.russian" iconURI="platform:/plugin/com.company.tutorial3.application/icons/russian.png" command="_rYjocBX-Eey0Bq8_SOFODw">
+            <parameters xmi:id="_FdTjwBX_Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.parameter.1" name="com.company.tutorial3.application.commandparameter.parameter1" value="ru"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_nLU5oBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.mode" label="%com.company.tutorial3.application.menu.mode">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_0YpaEBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.editor" label="%com.company.tutorial3.application.handledmenuitem.editor" iconURI="platform:/plugin/com.company.tutorial3.application/icons/editing.png" selected="true" type="Radio" command="_IK7OUBYEEey0Bq8_SOFODw">
+          <parameters xmi:id="_eadLkBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.parameter.2" name="com.company.tutorial3.application.commandparameter.switchPerspective" value="EDITOR"/>
+        </children>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_0b2fEBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.simulation" label="%com.company.tutorial3.application.handledmenuitem.simulation" iconURI="platform:/plugin/com.company.tutorial3.application/icons/simulation.png" type="Radio" command="_IK7OUBYEEey0Bq8_SOFODw">
+          <parameters xmi:id="_fDxOUBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.parameter.3" name="com.company.tutorial3.application.commandparameter.switchPerspective" value="SIMULATION"/>
+        </children>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_nk6eUBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.menu.help" label="%com.company.tutorial3.application.menu.help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_0iaaEBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledmenuitem.about" label="%com.company.tutorial3.application.handledmenuitem.about" iconURI="platform:/plugin/com.company.tutorial3.application/icons/app_icon_16.png" command="_IoDPMBYEEey0Bq8_SOFODw"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_9lAb8BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.trimbar.0">
+      <children xsi:type="menu:ToolBar" xmi:id="_9-FqUBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-5h-4BVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledtoolitem.undo" label="%com.company.tutorial3.application.handledtoolitem.undo" iconURI="platform:/plugin/com.company.tutorial3.application/icons/undo.png" command="_P-yLMBYPEey0Bq8_SOFODw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="__NgDwBVoEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handledtoolitem.redo" label="%com.company.tutorial3.application.handledtoolitem.redo" iconURI="platform:/plugin/com.company.tutorial3.application/icons/redo.png" command="_QQQVsBYPEey0Bq8_SOFODw"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_-XGnQBVoEey0Bq8_SOFODw" elementId="com.amalgamasimulation.enginetoolbar">
+        <children xsi:type="menu:DirectToolItem" xmi:id="_PlKRoKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.run" label="%com.company.tutorial3.application.handledtoolitem.run" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Run.png" tooltip="%com.company.tutorial3.application.handledtoolitem.run" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.RunEngineHandler"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_P_aksKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.stop" label="%com.company.tutorial3.application.handledtoolitem.stop" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Stop.png" tooltip="%com.company.tutorial3.application.handledtoolitem.stop" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.StopHandler"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_QCJvoKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.slower" label="%com.company.tutorial3.application.handledtoolitem.slower" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Slower.png" tooltip="%com.company.tutorial3.application.handledtoolitem.slower" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.SimulateSlowerHandler"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_-DrTsBYSEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolcontrol.1" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.TimeScaleToolControl"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_QH81oKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.faster" label="%com.company.tutorial3.application.handledtoolitem.faster" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Faster.png" tooltip="%com.company.tutorial3.application.handledtoolitem.faster" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.SimulateFasterHandler"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_QJ9AwKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.fastest" label="%com.company.tutorial3.application.handledtoolitem.fastest" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Fastest.png" tooltip="%com.company.tutorial3.application.handledtoolitem.fastest" type="Check" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.ToggleFastestModeHandler"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_QL3sUKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.schedulestop" label="%com.company.tutorial3.application.handledtoolitem.schedulestop" iconURI="platform:/plugin/com.company.tutorial3.application/icons/ScheduleStop.png" tooltip="%com.company.tutorial3.application.handledtoolitem.schedulestop" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.ScheduleStopCommandHandler"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="__kTY8BYSEey0Bq8_SOFODw" elementId="com.amalgamasimulation.updatertoolbar">
+        <children xsi:type="menu:DirectToolItem" xmi:id="_Qb66gKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.updateview" label="%com.company.tutorial3.application.handledtoolitem.updateview" iconURI="platform:/plugin/com.company.tutorial3.application/icons/Update.png" tooltip="%com.company.tutorial3.application.handledtoolitem.updateview" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.UpdateViewHandler"/>
+        <children xsi:type="menu:DirectToolItem" xmi:id="_Qd1mEKOmEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.handledtoolitem.autoupdate" label="%com.company.tutorial3.application.handledtoolitem.autoupdate" iconURI="platform:/plugin/com.company.tutorial3.application/icons/AutoUpdate.png" tooltip="%com.company.tutorial3.application.handledtoolitem.autoupdate" selected="true" type="Check" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.ToggleAutoUpdateViewHandler"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_BNJmEBYTEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolcontrol.1" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.TimeToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_BPJKIBYTEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolcontrol.1" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.DateToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_BRHgEBYTEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolcontrol.1" contributionURI="bundleclass://com.amalgamasimulation.engine.controls/com.amalgamasimulation.engine.controls.handlers.FPSToolControl"/>
+      </children>
+    </trimBars>
+    <trimBars xmi:id="_wTWUMBYOEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.trimbar.1" side="Bottom">
+      <children xsi:type="menu:ToolControl" xmi:id="_fAeowBYPEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.toolcontrol.0" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.BottomToolControlHandler"/>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_pNciYBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.exit" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.ExitHandler" command="_qh2JgBVnEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_p6WrsBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.save" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.SaveHandler" command="_q575YBVnEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_p8xtkBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.saveAs" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.SaveAsHandler" command="_q7pwoBVnEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_p-Y3IBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.open" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.OpenHandler" command="_q9HwQBVnEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_p_xXMBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.new" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.NewHandler" command="_q-m-ABVnEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_sSrHUBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.check" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.ScenarioValidationHandler" command="_qvk84BX-Eey0Bq8_SOFODw"/>
+  <handlers xmi:id="_sllcQBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.language" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.SetLanguageHandler" command="_rYjocBX-Eey0Bq8_SOFODw"/>
+  <handlers xmi:id="_so2ysBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.resetPerspective" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.ResetPerspectiveHandler" command="_reqQcBX-Eey0Bq8_SOFODw"/>
+  <handlers xmi:id="_JBTcsBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.switchPerspective" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.SwitchPerspectiveHandler" command="_IK7OUBYEEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_JWQZABYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.about" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.AboutHandler" command="_IoDPMBYEEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_XTThsBYPEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.undo" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.UndoHandler" command="_P-yLMBYPEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_XkmGABYPEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.handler.redo" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.RedoHandler" command="_QQQVsBYPEey0Bq8_SOFODw"/>
+  <handlers xmi:id="_irbiAGcYEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.handler.1" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.EscKeyHandler" command="_jWhtcGcYEeyMy6zCUSbDKw"/>
+  <bindingTables xmi:id="_f__PcGcYEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.bindingtable.0" bindingContext="_c3AF2cjYEeSyMNYR5xypkQ">
+    <bindings xmi:id="_hVr3EGcYEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.keybinding.0" keySequence="ESC" command="_jWhtcGcYEeyMy6zCUSbDKw">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_0_HOoKN6EeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.keybinding.0" keySequence="CTRL+Z" command="_P-yLMBYPEey0Bq8_SOFODw">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_1Bw6AKN6EeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.keybinding.0" keySequence="CTRL+Y" command="_QQQVsBYPEey0Bq8_SOFODw">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_1EQ0YKN6EeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.keybinding.0" keySequence="CTRL+S" command="_q575YBVnEey0Bq8_SOFODw">
+      <tags>type:user</tags>
+    </bindings>
+  </bindingTables>
+  <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <snippets xsi:type="advanced:Perspective" xmi:id="_JMaxsBVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.perspective.editor" label="%com.company.tutorial3.application.perspective.editor">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_JMaxsRVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partsashcontainer.0" containerData="1000" horizontal="true">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_JMaxshVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partsashcontainer.1" containerData="350">
+        <children xsi:type="basic:PartStack" xmi:id="_JMaxsxVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partstack.0">
+          <children xsi:type="basic:Part" xmi:id="_JMaxtBVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.part.tree" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.editor.TreePart" label="%com.company.tutorial3.application.part.tree" iconURI="platform:/plugin/com.company.tutorial3.application/icons/producte_structure.png"/>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_DI6OgBYbEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partstack.4">
+          <children xsi:type="basic:Part" xmi:id="_DhV8oBYbEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.part.objects" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.editor.ObjectsPart" label="%com.company.tutorial3.application.part.objects" iconURI="platform:/plugin/com.company.tutorial3.application/icons/object.png"/>
+          <children xsi:type="basic:Part" xmi:id="_JMaxuhVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.part.errors" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.editor.ErrorsPart" label="%com.company.tutorial3.application.part.errors" iconURI="platform:/plugin/com.company.tutorial3.application/icons/errors.png"/>
+        </children>
+      </children>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_JMaxtRVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partsashcontainer.2" containerData="650">
+        <children xsi:type="basic:PartStack" xmi:id="_JMaxthVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partstack.1" containerData="550">
+          <children xsi:type="basic:Part" xmi:id="_JMaxtxVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.part.map" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.editor.MapPart" label="%com.company.tutorial3.application.part.map" iconURI="platform:/plugin/com.company.tutorial3.application/icons/animation.png"/>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_JMaxuBVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partstack.2" containerData="250">
+          <children xsi:type="basic:Part" xmi:id="_JMaxuRVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.part.properties" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.editor.PropertiesPart" label="%com.company.tutorial3.application.part.properties" iconURI="platform:/plugin/com.company.tutorial3.application/icons/properties.png"/>
+        </children>
+      </children>
+    </children>
+  </snippets>
+  <snippets xsi:type="advanced:Perspective" xmi:id="_JMd1ABVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.perspective.simulation" label="%com.company.tutorial3.application.perspective.simulation">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_JMd1ARVuEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.partsashcontainer.3" containerData="1000" horizontal="true">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_xKk-IB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partsashcontainer.4" containerData="150">
+        <children xsi:type="basic:PartStack" xmi:id="_x51Q0B0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partstack.5">
+          <children xsi:type="basic:Part" xmi:id="_tsOtgKOTEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.part.simulationstatus" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.SimulationStatusPart" label="%com.company.tutorial3.application.part.simulationstatus" iconURI="platform:/plugin/com.company.tutorial3.application/icons/simulationStatus.png"/>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_tQw5gKOTEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.partstack.7">
+          <children xsi:type="basic:Part" xmi:id="_uGdLYKOTEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.part.summarytable" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.SimulationStatisticsPart" label="%com.company.tutorial3.application.part.summarytable" iconURI="platform:/plugin/com.company.tutorial3.application/icons/summaryStats.png"/>
+        </children>
+      </children>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_xhLgQB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partsashcontainer.5" containerData="850">
+        <children xsi:type="basic:PartStack" xmi:id="_0HNHUB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partstack.6">
+          <children xsi:type="basic:Part" xmi:id="_0iYAYB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.part.2dSimulation" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.SimulationPart" label="%com.company.tutorial3.application.part.2dSimulation" iconURI="platform:/plugin/com.company.tutorial3.application/icons/animation.png"/>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_28pDYB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partstack.3">
+          <children xsi:type="basic:Part" xmi:id="_yspN0B0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.part.table" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.TablePart" label="%com.company.tutorial3.application.part.table"/>
+          <children xsi:type="basic:Part" xmi:id="_3ZW0kB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.part.ganttChart" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.GanttChartPart" label="%com.company.tutorial3.application.part.ganttChart" iconURI="platform:/plugin/com.company.tutorial3.application/icons/ganttChart.png"/>
+          <children xsi:type="basic:Part" xmi:id="_wAvlULsiEeyGKY9vcriO0Q" elementId="com.company.tutorial3.application.part.tasks" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.TasksPart" label="Tasks"/>
+        </children>
+      </children>
+    </children>
+  </snippets>
+  <commands xmi:id="_qh2JgBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.exit" commandName="%com.company.tutorial3.application.command.exit"/>
+  <commands xmi:id="_q575YBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.save" commandName="%com.company.tutorial3.application.command.save"/>
+  <commands xmi:id="_q7pwoBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.saveAs" commandName="%com.company.tutorial3.application.command.saveAs"/>
+  <commands xmi:id="_q9HwQBVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.open" commandName="%com.company.tutorial3.application.command.open"/>
+  <commands xmi:id="_q-m-ABVnEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.new" commandName="%com.company.tutorial3.application.command.new"/>
+  <commands xmi:id="_qvk84BX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.check" commandName="%com.company.tutorial3.application.command.check"/>
+  <commands xmi:id="_rYjocBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.language" commandName="%com.company.tutorial3.application.command.language">
+    <parameters xmi:id="__VQncBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.commandparameter.parameter1" name="language" optional="false"/>
+  </commands>
+  <commands xmi:id="_reqQcBX-Eey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.resetPerspective" commandName="%com.company.tutorial3.application.command.resetPerspective"/>
+  <commands xmi:id="_IK7OUBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.switchPetspective" commandName="%com.company.tutorial3.application.command.switchPetspective">
+    <parameters xmi:id="_RKg_gBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.commandparameter.switchPerspective" name="perspective" optional="false"/>
+  </commands>
+  <commands xmi:id="_IoDPMBYEEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.about" commandName="%com.company.tutorial3.application.command.about"/>
+  <commands xmi:id="_P-yLMBYPEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.undo" commandName="%com.company.tutorial3.application.command.undo"/>
+  <commands xmi:id="_QQQVsBYPEey0Bq8_SOFODw" elementId="com.company.tutorial3.application.command.redo" commandName="%com.company.tutorial3.application.command.redo"/>
+  <commands xmi:id="_jWhtcGcYEeyMy6zCUSbDKw" elementId="com.company.tutorial3.application.command.esc" commandName="Esc"/>
+  <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_c3AF1cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_c3AF1sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_c3AF18jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_c3AF2MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_F3pLoKNzEeyIRo9OOTLqFQ" elementId="com.company.tutorial3.application.addon.0" contributionURI="bundleclass://com.amalgamasimulation.localization/com.amalgamasimulation.localization.Util"/>
+</application:Application>

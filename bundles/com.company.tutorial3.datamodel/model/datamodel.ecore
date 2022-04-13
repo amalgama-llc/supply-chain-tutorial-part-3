@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datamodel" nsURI="http://www.example.org/datamodel" nsPrefix="datamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDate" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//LocalDateTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType ../../com.amalgamasimulation.ecoreutils/model/ecoreutils.ecore#//LocalDateTime"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//Node" containment="true" eOpposite="#//Node/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arcs" upperBound="-1" eType="#//Arc"
+        containment="true" eOpposite="#//Arc/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="warehouses" upperBound="-1"
+        eType="#//Warehouse" containment="true" eOpposite="#//Warehouse/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
+        eType="#//Store" containment="true" eOpposite="#//Store/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trucks" upperBound="-1"
+        eType="#//Truck" containment="true" eOpposite="#//Truck/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDeliveryTimeHrs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intervalBetweenRequests"
+        eType="ecore:EClass ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.ecore#//Distribution"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" lowerBound="1" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" upperBound="-1"
+        eType="#//Point" containment="true" eOpposite="#//Point/arc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/arcs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/nodes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Point">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arc" eType="#//Arc" eOpposite="#//Arc/points"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asset" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Warehouse" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/warehouses"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/stores"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Truck">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialPosition" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/trucks"/>
+  </eClassifiers>
+</ecore:EPackage>

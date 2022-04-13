@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/com.company.tutorial3.datamodel/src-gen" creationIcons="false"
+    editDirectory="/com.company.tutorial3.datamodel.edit/src-gen" editorDirectory="/com.company.tutorial3.datamodel.editor/src-gen"
+    modelPluginID="com.company.tutorial3.datamodel" modelName="Datamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="../../com.amalgamasimulation.ecoreutils/model/ecoreutils.genmodel#//ecoreutils ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.genmodel#//randomdatamodel"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>datamodel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Datamodel" basePackage="com.company.tutorial3" disposableProviderFactory="true"
+      ecorePackage="datamodel.ecore#/">
+    <genClasses ecoreClass="datamodel.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/beginDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/endDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/arcs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/warehouses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/stores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/trucks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/maxDeliveryTimeHrs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/intervalBetweenRequests"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Arc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Arc/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Arc/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Arc/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Arc/dest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Arc/points"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Arc/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Node/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Node/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Node/longitude"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Node/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Point">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Point/arc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Point/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Point/longitude"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="datamodel.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Asset/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Asset/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Asset/node"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Warehouse">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Warehouse/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Store">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Store/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="datamodel.ecore#//Truck">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/speed"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/initialPosition"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/scenario"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

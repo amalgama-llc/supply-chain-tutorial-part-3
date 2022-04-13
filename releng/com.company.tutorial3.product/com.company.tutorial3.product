@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="com.company.tutorial3.product" uid="com.company.tutorial3.product" id="com.company.tutorial3.application.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-clearPersistedState
+-nl en
+      </programArgs>
+      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi -Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=false
+      </vmArgs>
+      <vmArgsLin>-Defxclipse.java-modules.dir=plugins/name.abuchen.zulu.jre.linux.x86_64_11.0.4/jre/lib
+      </vmArgsLin>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Defxclipse.java-modules.dir=../Eclipse/plugins/name.abuchen.zulu.jre.macosx.x86_64_11.0.4/Contents/Home/lib
+      </vmArgsMac>
+      <vmArgsWin>-Defxclipse.java-modules.dir=&quot;${env_var:JAVAFX_HOME}/lib&quot;
+      </vmArgsWin>
+   </launcherArgs>
+
+   <launcher name="tutorial3">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.e4.rcp" installMode="root"/>
+      <feature id="org.eclipse.emf.ecore" installMode="root"/>
+      <feature id="org.eclipse.emf.common" installMode="root"/>
+      <feature id="org.eclipse.fx.runtime.min.feature" installMode="root"/>
+      <feature id="com.company.tutorial3.feature" version="1.0.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+</product>
+

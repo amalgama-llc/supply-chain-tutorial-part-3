@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="com.company.tutorial3.product">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/com.company.tutorial3.application/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="com.company.tutorial3.product">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.handlers.SplashHandler">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
+
+
+
