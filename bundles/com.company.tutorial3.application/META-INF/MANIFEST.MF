@@ -52,8 +52,8 @@ Require-Bundle:
  com.amalgamasimulation.desktop.binding;bundle-version="1.0.0",
  com.amalgamasimulation.charts.swt;bundle-version="1.0.1",
  com.amalgamasimulation.graph;bundle-version="1.0.0",
- org.eclipse.emf.edapt.history;bundle-version="1.4.1",
- com.amalgamasimulation.engine.controls;bundle-version="2.1.0"
+ com.amalgamasimulation.engine.controls;bundle-version="2.1.0",
+ com.amalgamasimulation.distributionname;bundle-version="1.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: javax.annotation;version="0.0.0"
 

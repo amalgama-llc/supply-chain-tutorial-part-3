@@ -3,11 +3,6 @@
 <target name="com.company.tutorial3.target">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/edapt/releases/14x"/>
-			<unit id="org.eclipse.emf.edapt.recorder.feature.feature.group" version="1.4.1.202002140949"/>
-			<unit id="org.eclipse.emf.edapt.runtime.feature.feature.group" version="1.4.1.202002140949"/>
-		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 			<repository location="https://download.eclipse.org/efxclipse/runtime-released/3.7.0/site/"/>
 			<unit id="org.eclipse.fx.runtime.min.feature.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.fx.target.rcp4.feature.feature.group" version="0.0.0"/>
@@ -59,6 +54,7 @@
 			<unit id="com.amalgamasimulation.desktop.properties" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.desktop.ui" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.desktop.utils" version="0.0.0"/>
+			<unit id="com.amalgamasimulation.distributionname" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.randomdatamodel" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.scheduling" version="0.0.0"/>
 			<unit id="com.amalgamasimulation.utils" version="0.0.0"/>

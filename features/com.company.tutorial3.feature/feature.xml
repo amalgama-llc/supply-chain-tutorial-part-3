@@ -206,13 +206,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.emf.edapt.history"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.emf.edit"
          download-size="0"
          install-size="0"
@@ -389,27 +382,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.emf.edapt.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf.edapt.declaration"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf.edapt.migration"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.apache.commons.codec"
          download-size="0"
          install-size="0"
@@ -536,5 +508,11 @@
          version="0.0.0"
          unpack="false"/>
 
-</feature>
+   <plugin
+         id="com.amalgamasimulation.distributionname"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
+</feature>
