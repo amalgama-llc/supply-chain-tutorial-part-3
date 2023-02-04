@@ -42,11 +42,11 @@ public class NodePage extends AbstractPage<Node> {
 			.addIdTextbox(scenarioObservable, DatamodelPackage.Literals.SCENARIO__NODES);
 		addStringSection(messages.obj_NODE_col_NAME, DatamodelPackage.Literals.NODE__NAME)
 			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addNumericSection(messages.obj_NODE_col_LATITUDE, DatamodelPackage.Literals.NODE__LATITUDE)
-			.addTextbox(UpdateValueStrategyFactory.doubleBetweenValues(-90, 90, 10, true));
-		addNumericSection(messages.obj_NODE_col_LONGITUDE, DatamodelPackage.Literals.NODE__LONGITUDE)
-			.addTextbox(UpdateValueStrategyFactory.doubleBetweenValues(-180, 180, 10, true));
+			addNumericSection(messages.obj_NODE_col_X, DatamodelPackage.Literals.NODE__X)
+				.addTextbox(UpdateValueStrategyFactory.doubleAny());
+			addNumericSection(messages.obj_NODE_col_Y, DatamodelPackage.Literals.NODE__Y)
+				.addTextbox(UpdateValueStrategyFactory.doubleAny());
+
 	}
 }
-
 

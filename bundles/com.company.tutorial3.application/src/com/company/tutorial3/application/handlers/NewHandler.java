@@ -29,10 +29,10 @@ public class NewHandler {
     @Translation
     private Messages messages;
 
-    @CanExecute
-    private boolean canExecute() {
-        return appState.isEditor();
-    }
+	@CanExecute
+	private boolean canExecute() {
+		return appState.isEditor();
+	}
 
     @Execute
     public void execute(IEventBroker eventBroker,
@@ -45,6 +45,4 @@ public class NewHandler {
 		}
     }
 }
-
-
 

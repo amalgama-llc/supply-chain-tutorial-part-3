@@ -64,4 +64,3 @@ public class ArcPage extends AbstractPage<Arc> {
 	}
 }
 
-

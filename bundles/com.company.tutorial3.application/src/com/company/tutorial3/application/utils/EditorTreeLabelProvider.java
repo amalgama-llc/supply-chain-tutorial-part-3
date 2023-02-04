@@ -13,12 +13,16 @@ import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 public abstract class EditorTreeLabelProvider extends StyledCellLabelProvider {
 
+	private static final Color GRAY_COLOR = new Color(100, 100, 100);
+	private static final Color BLACK_COLOR = new Color(0, 0, 0);
+	
 	private IMapChangeListener mapChangeListener = new IMapChangeListener() {
 		@Override
 		public void handleMapChange(MapChangeEvent event) {
@@ -39,6 +43,8 @@ public abstract class EditorTreeLabelProvider extends StyledCellLabelProvider {
 
 	public abstract String getName(Object object);
 
+	public abstract boolean isEmptyElements(Object object);
+
 	@Override
 	public String getToolTipText(Object element) {
 		return "#dummy#";
@@ -50,6 +56,11 @@ public abstract class EditorTreeLabelProvider extends StyledCellLabelProvider {
 		StyledString styledString = new StyledString(getName(cell.getElement()), null);
 		cell.setText(styledString.getString());
 		cell.setStyleRanges(styledString.getStyleRanges());
+		if(isEmptyElements(cell.getElement())) {
+			cell.setForeground(GRAY_COLOR);
+		}else {
+			cell.setForeground(BLACK_COLOR);
+		}
 		Image image = IconsMapping.getImage(getIconPath(cell.getElement()));
 		cell.setImage(image);
 	}
@@ -60,6 +71,4 @@ public abstract class EditorTreeLabelProvider extends StyledCellLabelProvider {
 		return ImageDescriptor.createFromURL(url);
 	}
 }
-
-
 

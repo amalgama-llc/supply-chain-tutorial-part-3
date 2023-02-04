@@ -1,21 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: com.company.tutorial3.datamodel;singleton:=true
 Automatic-Module-Name: com.company.tutorial3.datamodel
-Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: .
+Bundle-SymbolicName: com.company.tutorial3.datamodel;singleton:=true
+Bundle-Name: %pluginName
+Bundle-Version: 1.0.0
 Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ClassPath: .
 Export-Package: com.company.tutorial3.datamodel,
  com.company.tutorial3.datamodel.impl,
  com.company.tutorial3.datamodel.util
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- com.amalgamasimulation.randomdatamodel;visibility:=reexport,
+Require-Bundle: com.amalgamasimulation.calendardatamodel;visibility:=reexport,
  com.amalgamasimulation.ecoreutils;visibility:=reexport,
- org.eclipse.core.runtime
-Bundle-ActivationPolicy: lazy
-
-
+ com.amalgamasimulation.randomdatamodel;visibility:=reexport,
+ com.amalgamasimulation.timeseriesdatamodel;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 

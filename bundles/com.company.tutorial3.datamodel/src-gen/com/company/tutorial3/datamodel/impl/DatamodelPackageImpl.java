@@ -2,11 +2,11 @@
  */
 package com.company.tutorial3.datamodel.impl;
 
-import com.company.tutorial3.datamodel.Arc;
-import com.company.tutorial3.datamodel.Asset;
 import com.amalgamasimulation.ecoreutils.EcoreutilsPackage;
 
 import com.amalgamasimulation.randomdatamodel.RandomdatamodelPackage;
+import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.Asset;
 import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
@@ -19,8 +19,8 @@ import com.company.tutorial3.datamodel.Warehouse;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -43,12 +43,14 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	private EClass arcEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,7 +348,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNode_Latitude() {
+	public EAttribute getNode_Y() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -355,7 +357,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNode_Longitude() {
+	public EAttribute getNode_X() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -391,7 +393,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPoint_Latitude() {
+	public EAttribute getPoint_Y() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -400,7 +402,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPoint_Longitude() {
+	public EAttribute getPoint_X() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -582,14 +584,14 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		nodeEClass = createEClass(NODE);
 		createEAttribute(nodeEClass, NODE__ID);
 		createEAttribute(nodeEClass, NODE__NAME);
-		createEAttribute(nodeEClass, NODE__LATITUDE);
-		createEAttribute(nodeEClass, NODE__LONGITUDE);
+		createEAttribute(nodeEClass, NODE__Y);
+		createEAttribute(nodeEClass, NODE__X);
 		createEReference(nodeEClass, NODE__SCENARIO);
 
 		pointEClass = createEClass(POINT);
 		createEReference(pointEClass, POINT__ARC);
-		createEAttribute(pointEClass, POINT__LATITUDE);
-		createEAttribute(pointEClass, POINT__LONGITUDE);
+		createEAttribute(pointEClass, POINT__Y);
+		createEAttribute(pointEClass, POINT__X);
 
 		assetEClass = createEClass(ASSET);
 		createEAttribute(assetEClass, ASSET__ID);
@@ -703,10 +705,10 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNode_Latitude(), ecorePackage.getEDouble(), "latitude", null, 0, 1, Node.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNode_Longitude(), ecorePackage.getEDouble(), "longitude", null, 0, 1, Node.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Y(), ecorePackage.getEDouble(), "y", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_X(), ecorePackage.getEDouble(), "x", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNode_Scenario(), this.getScenario(), this.getScenario_Nodes(), "scenario", null, 0, 1,
 				Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -715,10 +717,10 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEReference(getPoint_Arc(), this.getArc(), this.getArc_Points(), "arc", null, 0, 1, Point.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPoint_Latitude(), ecorePackage.getEDouble(), "latitude", null, 0, 1, Point.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPoint_Longitude(), ecorePackage.getEDouble(), "longitude", null, 0, 1, Point.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPoint_Y(), ecorePackage.getEDouble(), "y", null, 0, 1, Point.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPoint_X(), ecorePackage.getEDouble(), "x", null, 0, 1, Point.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assetEClass, Asset.class, "Asset", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAsset_Id(), ecorePackage.getEString(), "id", null, 0, 1, Asset.class, !IS_TRANSIENT,

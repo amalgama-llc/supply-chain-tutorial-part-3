@@ -6,6 +6,7 @@ import com.amalgamasimulation.randomdatamodel.Distribution;
 import java.time.LocalDateTime;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -23,7 +23,8 @@ public class MainWindowTitleUpdater {
 		MWindow mainWindow = windows.get(0);
 	
 		Scenario scenario = appData.getScenario();
-		String title = AppInfo.getFullProductName();
+		String [] arr = mainWindow.getLabel().split(" - ");
+		String title = arr[0] + " - " + AppInfo.getVersionAsString();	
 		if (scenario != null) {
 			title = title + ",  " + scenario.getName() + ", " + formatDate(scenario.getBeginDate()) + " - " + formatDate(scenario.getEndDate());
 		}
@@ -35,6 +36,4 @@ public class MainWindowTitleUpdater {
 	}
 
 }
-
-
 

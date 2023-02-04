@@ -24,7 +24,7 @@ public class IconsMapping {
 	public static final Image ZOOM_IN = getImage("/icons/zoomIn.png");
 	public static final Image ZOOM_OUT = getImage("/icons/zoomOut.png");
 	public static final Image CENTERING = getImage("/icons/centering.png");
-
+	public static final Image MAP = getImage("/icons/map.png");
 	public static final Image REFRESH = getImage("/icons/refresh.png");
 
 	private IconsMapping() {
@@ -35,6 +35,4 @@ public class IconsMapping {
 	}
 
 }
-
-
 

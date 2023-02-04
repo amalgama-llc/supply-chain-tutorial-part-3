@@ -42,18 +42,18 @@ public class Messages {
 	public String obj_NODE_col_ID_excel;
 	public String obj_NODE_col_NAME;
 	public String obj_NODE_col_NAME_excel;
-	public String obj_NODE_col_LATITUDE;
-	public String obj_NODE_col_LATITUDE_excel;
-	public String obj_NODE_col_LONGITUDE;
-	public String obj_NODE_col_LONGITUDE_excel;
+	public String obj_NODE_col_Y;
+	public String obj_NODE_col_Y_excel;
+	public String obj_NODE_col_X;
+	public String obj_NODE_col_X_excel;
 	
 	public String obj_POINT;
 	public String obj_POINT_col_ARC;
 	public String obj_POINT_col_ARC_excel;
-	public String obj_POINT_col_LATITUDE;
-	public String obj_POINT_col_LATITUDE_excel;
-	public String obj_POINT_col_LONGITUDE;
-	public String obj_POINT_col_LONGITUDE_excel;
+	public String obj_POINT_col_X;
+	public String obj_POINT_col_X_excel;
+	public String obj_POINT_col_Y;
+	public String obj_POINT_col_Y_excel;
 	
 	public String obj_SCENARIO;
 	public String obj_SCENARIO_col_BEGIN_DATE;
@@ -113,7 +113,10 @@ public class Messages {
 	public String INDICATOR_obj_UNKNOWN;
 	public String INDICATOR_ARCS;
 	public String INDICATOR_NODES;
+	
+	public String button_simulation;
+	public String button_planning;
+	public String button_editor;
+	public String button_reset;
 }
-
-
 

@@ -12,9 +12,9 @@
       </programArgs>
       <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi -Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=false
       </vmArgs>
-      <vmArgsLin>-Defxclipse.java-modules.dir=plugins/name.abuchen.zulu.jre.linux.x86_64_11.0.4/jre/lib
+      <vmArgsLin>-Defxclipse.java-modules.dir=${JAVAFX_HOME}/lib
       </vmArgsLin>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Defxclipse.java-modules.dir=../Eclipse/plugins/name.abuchen.zulu.jre.macosx.x86_64_11.0.4/Contents/Home/lib
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Defxclipse.java-modules.dir=$[JAVAFX_HOME]/lib
       </vmArgsMac>
       <vmArgsWin>-Defxclipse.java-modules.dir=&quot;${env_var:JAVAFX_HOME}/lib&quot;
       </vmArgsWin>
@@ -37,7 +37,7 @@
       <feature id="org.eclipse.emf.ecore" installMode="root"/>
       <feature id="org.eclipse.emf.common" installMode="root"/>
       <feature id="org.eclipse.fx.runtime.min.feature" installMode="root"/>
-      <feature id="com.company.tutorial3.feature" version="1.0.0.qualifier"/>
+      <feature id="com.company.tutorial3.feature"/>
    </features>
 
    <configurations>
@@ -46,6 +46,7 @@
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="efxclipse.java-modules.dir" value="$JAVAFX_HOME$/lib" />
    </configurations>
 
    <preferencesInfo>

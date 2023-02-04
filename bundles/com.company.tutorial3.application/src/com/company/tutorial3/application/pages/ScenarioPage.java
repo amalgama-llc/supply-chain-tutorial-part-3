@@ -44,13 +44,7 @@ public class ScenarioPage extends AbstractPage<Scenario>{
 		addDateTimeSection(messages.obj_SCENARIO_col_END_DATE, DatamodelPackage.Literals.SCENARIO__END_DATE)
 			.addTextbox(UpdateValueStrategyFactory.localDateTime())
 			.addLocalDateTimeEditorButton()
-			.setEnabled(true);
-		addDistributionSection("Interval between requests, hrs", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS)
-		    .addTextbox(UpdateValueStrategyFactory.distribution())
-		    .addDialogButton("...", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS)
-		    .setEnabled(false);
+			.setEnabled(true);		
 	}
 }
-
-
 

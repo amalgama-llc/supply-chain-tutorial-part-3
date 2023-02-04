@@ -285,22 +285,22 @@ public interface DatamodelPackage extends EPackage {
 	int NODE__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Latitude</b></em>' attribute.
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__LATITUDE = 2;
+	int NODE__Y = 2;
 
 	/**
-	 * The feature id for the '<em><b>Longitude</b></em>' attribute.
+	 * The feature id for the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__LONGITUDE = 3;
+	int NODE__X = 3;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -349,22 +349,22 @@ public interface DatamodelPackage extends EPackage {
 	int POINT__ARC = 0;
 
 	/**
-	 * The feature id for the '<em><b>Latitude</b></em>' attribute.
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINT__LATITUDE = 1;
+	int POINT__Y = 1;
 
 	/**
-	 * The feature id for the '<em><b>Longitude</b></em>' attribute.
+	 * The feature id for the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINT__LONGITUDE = 2;
+	int POINT__X = 2;
 
 	/**
 	 * The number of structural features of the '<em>Point</em>' class.
@@ -869,26 +869,26 @@ public interface DatamodelPackage extends EPackage {
 	EAttribute getNode_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getLatitude <em>Latitude</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Latitude</em>'.
-	 * @see com.company.tutorial3.datamodel.Node#getLatitude()
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see com.company.tutorial3.datamodel.Node#getY()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getNode_Latitude();
+	EAttribute getNode_Y();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getLongitude <em>Longitude</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Longitude</em>'.
-	 * @see com.company.tutorial3.datamodel.Node#getLongitude()
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see com.company.tutorial3.datamodel.Node#getX()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getNode_Longitude();
+	EAttribute getNode_X();
 
 	/**
 	 * Returns the meta object for the container reference '{@link com.company.tutorial3.datamodel.Node#getScenario <em>Scenario</em>}'.
@@ -923,26 +923,26 @@ public interface DatamodelPackage extends EPackage {
 	EReference getPoint_Arc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Point#getLatitude <em>Latitude</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Point#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Latitude</em>'.
-	 * @see com.company.tutorial3.datamodel.Point#getLatitude()
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see com.company.tutorial3.datamodel.Point#getY()
 	 * @see #getPoint()
 	 * @generated
 	 */
-	EAttribute getPoint_Latitude();
+	EAttribute getPoint_Y();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Point#getLongitude <em>Longitude</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Point#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Longitude</em>'.
-	 * @see com.company.tutorial3.datamodel.Point#getLongitude()
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see com.company.tutorial3.datamodel.Point#getX()
 	 * @see #getPoint()
 	 * @generated
 	 */
-	EAttribute getPoint_Longitude();
+	EAttribute getPoint_X();
 
 	/**
 	 * Returns the meta object for class '{@link com.company.tutorial3.datamodel.Asset <em>Asset</em>}'.
@@ -1292,20 +1292,20 @@ public interface DatamodelPackage extends EPackage {
 		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Latitude</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODE__LATITUDE = eINSTANCE.getNode_Latitude();
+		EAttribute NODE__Y = eINSTANCE.getNode_Y();
 
 		/**
-		 * The meta object literal for the '<em><b>Longitude</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODE__LONGITUDE = eINSTANCE.getNode_Longitude();
+		EAttribute NODE__X = eINSTANCE.getNode_X();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
@@ -1334,20 +1334,20 @@ public interface DatamodelPackage extends EPackage {
 		EReference POINT__ARC = eINSTANCE.getPoint_Arc();
 
 		/**
-		 * The meta object literal for the '<em><b>Latitude</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POINT__LATITUDE = eINSTANCE.getPoint_Latitude();
+		EAttribute POINT__Y = eINSTANCE.getPoint_Y();
 
 		/**
-		 * The meta object literal for the '<em><b>Longitude</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute POINT__LONGITUDE = eINSTANCE.getPoint_Longitude();
+		EAttribute POINT__X = eINSTANCE.getPoint_X();
 
 		/**
 		 * The meta object literal for the '{@link com.company.tutorial3.datamodel.impl.AssetImpl <em>Asset</em>}' class.

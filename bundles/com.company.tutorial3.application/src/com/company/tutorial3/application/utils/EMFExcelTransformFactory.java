@@ -9,6 +9,9 @@ import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Scenario;
 import static com.company.tutorial3.datamodel.DatamodelPackage.eINSTANCE;
 import com.amalgamasimulation.ecoreutils.EcoreutilsPackage;
+import com.amalgamasimulation.calendardatamodel.CalendardatamodelPackage;
+import com.amalgamasimulation.randomdatamodel.RandomdatamodelPackage;
+import com.amalgamasimulation.timeseriesdatamodel.TimeseriesdatamodelPackage;
 
 public class EMFExcelTransformFactory {
 	
@@ -17,7 +20,9 @@ public class EMFExcelTransformFactory {
 	public static EMFExcelTransform<com.company.tutorial3.datamodel.Scenario> createExcelTransform() {
 		EMFExcelTransform<Scenario> emfExcelTransform = new EMFExcelTransform<Scenario>().setRootClass(DatamodelPackage.eINSTANCE.getScenario())
 				.addPackage(EcoreutilsPackage.eINSTANCE)
-				.addPackage(com.amalgamasimulation.randomdatamodel.RandomdatamodelPackage.eINSTANCE)
+				.addPackage(CalendardatamodelPackage.eINSTANCE)
+				.addPackage(RandomdatamodelPackage.eINSTANCE)
+				.addPackage(TimeseriesdatamodelPackage.eINSTANCE)
 				;
 		emfExcelTransform.setColumnHeaderProvider(EMFExcelTransformFactory.createColumnHeaderProvider(AppData.messages));
 
@@ -38,6 +43,4 @@ public class EMFExcelTransformFactory {
 	}
 
 }
-
-
 

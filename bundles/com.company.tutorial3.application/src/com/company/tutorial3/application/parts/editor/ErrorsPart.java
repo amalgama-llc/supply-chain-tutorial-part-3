@@ -11,7 +11,6 @@ import javax.inject.Inject;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
-import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
@@ -25,7 +24,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
-
+import com.amalgamasimulation.desktop.utils.MessageManager;
 
 import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.Topics;
@@ -46,7 +45,7 @@ public class ErrorsPart {
 	private Messages messages;
 	
 	@Inject
-	private IEventBroker eventBroker;
+	private MessageManager messageManager;
 	
 	@Inject
 	private EPartService partService;
@@ -107,7 +106,7 @@ public class ErrorsPart {
 
 	private void refreshErrors() {
 		ValidationManager validationManager = new ValidationManager(messages);
-		validationManager.validate(eventBroker, appData.getScenario(), partService);
+		validationManager.validate(messageManager, appData.getScenario(), partService);
 		updateTable(validationManager);
 	}
 	
@@ -121,14 +120,13 @@ public class ErrorsPart {
 	@SuppressWarnings("all")
 	@PostConstruct
 	private void postConstruct(Composite parent) {
-		eventBroker.subscribe(Topics.NEW_SCENARIO, s -> setNewScenario());
-		eventBroker.subscribe(Topics.PROBLEMS_PART, s -> {
-			ValidationManager validationManager = (ValidationManager)s.getProperty(IEventBroker.DATA);
+		messageManager.subscribe(Topics.NEW_SCENARIO, s -> setNewScenario());
+		messageManager.subscribe(Topics.PROBLEMS_PART, s -> {
 			activatePart(part.getElementId());
-			updateTable(validationManager);
+			updateTable((ValidationManager)s);
 		});
-		ToolBar toolBar = new ToolBar(parent, SWT.FLAT | SWT.RIGHT);
-		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.toolbar_update, () -> refreshErrors());
+		ToolBar toolBar = new ToolBar(parent, SWT.FLAT | SWT.HORIZONTAL);
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.toolbar_update, () -> refreshErrors()).setText(messages.toolbar_update);
 		treeViewer = new TreeView<ErrorTreeItem>(parent, t -> getSublist(t.getChildItems(), MAX_CHILD_ROWS), mainParts);
 		treeViewer.addDoubleClickListener(e -> {
 			ErrorTreeItem it = (ErrorTreeItem) ((StructuredSelection) treeViewer.getSelection()).getFirstElement();
@@ -254,10 +252,10 @@ public class ErrorsPart {
 
 	private void activatePartAndViewObject(ErrorTreeLeafItem treeItem) {
 		Object o = treeItem.object;			
-		eventBroker.send(Topics.CHANGE_VISIBILITY_TABLE_PAGE, treeItem.objectType.getTreeElementType());
-		eventBroker.send(Topics.CHANGE_SELECTED_TREE_ELEMENT, treeItem.objectType.getTreeElementType());
-		eventBroker.send(Topics.CHANGE_SELECTED_OBJECT_IN_TABLE_PAGE, o);
-		eventBroker.send(PropertyPart.PROPERTY_SELECTION_CHANGED, o);			
+		messageManager.send(Topics.CHANGE_VISIBILITY_TABLE_PAGE, treeItem.objectType.getTreeElementType());
+		messageManager.send(Topics.CHANGE_SELECTED_TREE_ELEMENT, treeItem.objectType.getTreeElementType());
+		messageManager.send(Topics.CHANGE_SELECTED_OBJECT_IN_TABLE_PAGE, o);
+		messageManager.send(PropertyPart.PROPERTY_SELECTION_CHANGED, o);			
 	}
 }
 

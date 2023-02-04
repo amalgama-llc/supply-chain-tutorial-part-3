@@ -35,6 +35,7 @@ import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.common.command.CommandFactory;
+import org.eclipse.e4.ui.workbench.UIEvents;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.Scenario;
@@ -43,8 +44,6 @@ import com.company.tutorial3.simulation.ExperimentRun;
 @Singleton
 @Creatable
 public class AppState {
-	
-	public static String [] idToolBars = new String [] {"com.amalgamasimulation.enginetoolbar", "com.amalgamasimulation.updatertoolbar"};
 
 	private String currentLanguage;
 	private boolean runEnabled = true;
@@ -56,7 +55,7 @@ public class AppState {
 	
 	@Inject
 	@Translation
-	private Messages messages;
+	public static Messages messages;
 	
 	@Inject
 	private IEventBroker eventBroker;
@@ -66,14 +65,13 @@ public class AppState {
 		
 	public final RecentlyOpenedFilesManager recentlyOpenedFilesManager = new RecentlyOpenedFilesManager(AppInfo.getProductID(), 5);
 	
-	@PostConstruct
-	private void init() {
-		currentPerspective = PerspectiveUtils.Perspective.EDITOR;
-	}
-	
 	public PerspectiveUtils.Perspective getCurrentPerspective() {
 		return currentPerspective;
 	}	
+	
+	public void setCurrentPerspective(PerspectiveUtils.Perspective currentPerspective) {
+		this.currentPerspective = currentPerspective;
+	}
 
 	public boolean isRunEnabled() {
 		return runEnabled;
@@ -84,7 +82,7 @@ public class AppState {
 	}
 
 	public void switchPerspective(PerspectiveUtils.Perspective newPerspective, MApplication app, EPartService partService, EModelService modelService, MWindow mainWindow) {
-		PerspectiveUtils.setVisibleForModelingToolBar(newPerspective.engineToolBarIsVisible(), modelService, mainWindow, idToolBars);
+		PerspectiveUtils.setVisibleForModelingToolBar(newPerspective.engineToolBarIsVisible, modelService, mainWindow);
 		MPerspective element = (MPerspective) modelService.find(newPerspective.id, app);
 		partService.switchPerspective(element);
 		currentPerspective = newPerspective;
@@ -225,6 +223,9 @@ public class AppState {
 		setActualPlanned(false);
 		recentlyOpenedFilesManager.saveString(filePath, RecentlyOpenedFilesManager.PathType.FILE);
 		CommandFactory.CROSS_REFERENCE_ADAPTER.setTarget(scenario);
+		CommandsManager.getEditingDomain().getCommandStack().addCommandStackListener(l -> {
+			eventBroker.send(UIEvents.REQUEST_ENABLEMENT_UPDATE_TOPIC, UIEvents.ALL_ELEMENT_ID );
+		});
 		eventBroker.send(Topics.NEW_SCENARIO, scenario);
 	}
 	

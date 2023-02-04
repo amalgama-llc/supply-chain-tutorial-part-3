@@ -26,52 +26,52 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link com.company.tutorial3.datamodel.impl.PointImpl#getArc <em>Arc</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.PointImpl#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.PointImpl#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.PointImpl#getY <em>Y</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.PointImpl#getX <em>X</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	/**
-	 * The default value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
+	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLatitude()
+	 * @see #getY()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double LATITUDE_EDEFAULT = 0.0;
+	protected static final double Y_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
+	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLatitude()
+	 * @see #getY()
 	 * @generated
 	 * @ordered
 	 */
-	protected double latitude = LATITUDE_EDEFAULT;
+	protected double y = Y_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
+	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLongitude()
+	 * @see #getX()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double LONGITUDE_EDEFAULT = 0.0;
+	protected static final double X_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
+	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLongitude()
+	 * @see #getX()
 	 * @generated
 	 * @ordered
 	 */
-	protected double longitude = LONGITUDE_EDEFAULT;
+	protected double x = X_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,8 +140,8 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getLatitude() {
-		return latitude;
+	public double getY() {
+		return y;
 	}
 
 	/**
@@ -149,12 +149,11 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLatitude(double newLatitude) {
-		double oldLatitude = latitude;
-		latitude = newLatitude;
+	public void setY(double newY) {
+		double oldY = y;
+		y = newY;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.POINT__LATITUDE, oldLatitude,
-					latitude));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.POINT__Y, oldY, y));
 	}
 
 	/**
@@ -162,8 +161,8 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getLongitude() {
-		return longitude;
+	public double getX() {
+		return x;
 	}
 
 	/**
@@ -171,12 +170,11 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLongitude(double newLongitude) {
-		double oldLongitude = longitude;
-		longitude = newLongitude;
+	public void setX(double newX) {
+		double oldX = x;
+		x = newX;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.POINT__LONGITUDE, oldLongitude,
-					longitude));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.POINT__X, oldX, x));
 	}
 
 	/**
@@ -233,10 +231,10 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		switch (featureID) {
 		case DatamodelPackage.POINT__ARC:
 			return getArc();
-		case DatamodelPackage.POINT__LATITUDE:
-			return getLatitude();
-		case DatamodelPackage.POINT__LONGITUDE:
-			return getLongitude();
+		case DatamodelPackage.POINT__Y:
+			return getY();
+		case DatamodelPackage.POINT__X:
+			return getX();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,11 +250,11 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		case DatamodelPackage.POINT__ARC:
 			setArc((Arc) newValue);
 			return;
-		case DatamodelPackage.POINT__LATITUDE:
-			setLatitude((Double) newValue);
+		case DatamodelPackage.POINT__Y:
+			setY((Double) newValue);
 			return;
-		case DatamodelPackage.POINT__LONGITUDE:
-			setLongitude((Double) newValue);
+		case DatamodelPackage.POINT__X:
+			setX((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -273,11 +271,11 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		case DatamodelPackage.POINT__ARC:
 			setArc((Arc) null);
 			return;
-		case DatamodelPackage.POINT__LATITUDE:
-			setLatitude(LATITUDE_EDEFAULT);
+		case DatamodelPackage.POINT__Y:
+			setY(Y_EDEFAULT);
 			return;
-		case DatamodelPackage.POINT__LONGITUDE:
-			setLongitude(LONGITUDE_EDEFAULT);
+		case DatamodelPackage.POINT__X:
+			setX(X_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -293,10 +291,10 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 		switch (featureID) {
 		case DatamodelPackage.POINT__ARC:
 			return getArc() != null;
-		case DatamodelPackage.POINT__LATITUDE:
-			return latitude != LATITUDE_EDEFAULT;
-		case DatamodelPackage.POINT__LONGITUDE:
-			return longitude != LONGITUDE_EDEFAULT;
+		case DatamodelPackage.POINT__Y:
+			return y != Y_EDEFAULT;
+		case DatamodelPackage.POINT__X:
+			return x != X_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,10 +310,10 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (latitude: ");
-		result.append(latitude);
-		result.append(", longitude: ");
-		result.append(longitude);
+		result.append(" (y: ");
+		result.append(y);
+		result.append(", x: ");
+		result.append(x);
 		result.append(')');
 		return result.toString();
 	}

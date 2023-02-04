@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getName <em>Name</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Node#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Node#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Node#getY <em>Y</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Node#getX <em>X</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -70,48 +70,48 @@ public interface Node extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Latitude</b></em>' attribute.
+	 * Returns the value of the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Latitude</em>' attribute.
-	 * @see #setLatitude(double)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_Latitude()
+	 * @return the value of the '<em>Y</em>' attribute.
+	 * @see #setY(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_Y()
 	 * @model
 	 * @generated
 	 */
-	double getLatitude();
+	double getY();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Node#getLatitude <em>Latitude</em>}' attribute.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Node#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Latitude</em>' attribute.
-	 * @see #getLatitude()
+	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * @see #getY()
 	 * @generated
 	 */
-	void setLatitude(double value);
+	void setY(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Longitude</b></em>' attribute.
+	 * Returns the value of the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Longitude</em>' attribute.
-	 * @see #setLongitude(double)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_Longitude()
+	 * @return the value of the '<em>X</em>' attribute.
+	 * @see #setX(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_X()
 	 * @model
 	 * @generated
 	 */
-	double getLongitude();
+	double getX();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Node#getLongitude <em>Longitude</em>}' attribute.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Node#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Longitude</em>' attribute.
-	 * @see #getLongitude()
+	 * @param value the new value of the '<em>X</em>' attribute.
+	 * @see #getX()
 	 * @generated
 	 */
-	void setLongitude(double value);
+	void setX(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.

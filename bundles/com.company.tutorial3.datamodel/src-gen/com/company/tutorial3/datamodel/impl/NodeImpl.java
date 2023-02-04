@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getY <em>Y</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getX <em>X</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -76,44 +76,44 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
+	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLatitude()
+	 * @see #getY()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double LATITUDE_EDEFAULT = 0.0;
+	protected static final double Y_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getLatitude() <em>Latitude</em>}' attribute.
+	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLatitude()
+	 * @see #getY()
 	 * @generated
 	 * @ordered
 	 */
-	protected double latitude = LATITUDE_EDEFAULT;
+	protected double y = Y_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
+	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLongitude()
+	 * @see #getX()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double LONGITUDE_EDEFAULT = 0.0;
+	protected static final double X_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getLongitude() <em>Longitude</em>}' attribute.
+	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLongitude()
+	 * @see #getX()
 	 * @generated
 	 * @ordered
 	 */
-	protected double longitude = LONGITUDE_EDEFAULT;
+	protected double x = X_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,8 +181,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getLatitude() {
-		return latitude;
+	public double getY() {
+		return y;
 	}
 
 	/**
@@ -190,12 +190,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLatitude(double newLatitude) {
-		double oldLatitude = latitude;
-		latitude = newLatitude;
+	public void setY(double newY) {
+		double oldY = y;
+		y = newY;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__LATITUDE, oldLatitude,
-					latitude));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__Y, oldY, y));
 	}
 
 	/**
@@ -203,8 +202,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getLongitude() {
-		return longitude;
+	public double getX() {
+		return x;
 	}
 
 	/**
@@ -212,12 +211,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLongitude(double newLongitude) {
-		double oldLongitude = longitude;
-		longitude = newLongitude;
+	public void setX(double newX) {
+		double oldX = x;
+		x = newX;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__LONGITUDE, oldLongitude,
-					longitude));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__X, oldX, x));
 	}
 
 	/**
@@ -321,10 +319,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 			return getId();
 		case DatamodelPackage.NODE__NAME:
 			return getName();
-		case DatamodelPackage.NODE__LATITUDE:
-			return getLatitude();
-		case DatamodelPackage.NODE__LONGITUDE:
-			return getLongitude();
+		case DatamodelPackage.NODE__Y:
+			return getY();
+		case DatamodelPackage.NODE__X:
+			return getX();
 		case DatamodelPackage.NODE__SCENARIO:
 			return getScenario();
 		}
@@ -345,11 +343,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		case DatamodelPackage.NODE__NAME:
 			setName((String) newValue);
 			return;
-		case DatamodelPackage.NODE__LATITUDE:
-			setLatitude((Double) newValue);
+		case DatamodelPackage.NODE__Y:
+			setY((Double) newValue);
 			return;
-		case DatamodelPackage.NODE__LONGITUDE:
-			setLongitude((Double) newValue);
+		case DatamodelPackage.NODE__X:
+			setX((Double) newValue);
 			return;
 		case DatamodelPackage.NODE__SCENARIO:
 			setScenario((Scenario) newValue);
@@ -372,11 +370,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		case DatamodelPackage.NODE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case DatamodelPackage.NODE__LATITUDE:
-			setLatitude(LATITUDE_EDEFAULT);
+		case DatamodelPackage.NODE__Y:
+			setY(Y_EDEFAULT);
 			return;
-		case DatamodelPackage.NODE__LONGITUDE:
-			setLongitude(LONGITUDE_EDEFAULT);
+		case DatamodelPackage.NODE__X:
+			setX(X_EDEFAULT);
 			return;
 		case DatamodelPackage.NODE__SCENARIO:
 			setScenario((Scenario) null);
@@ -397,10 +395,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case DatamodelPackage.NODE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case DatamodelPackage.NODE__LATITUDE:
-			return latitude != LATITUDE_EDEFAULT;
-		case DatamodelPackage.NODE__LONGITUDE:
-			return longitude != LONGITUDE_EDEFAULT;
+		case DatamodelPackage.NODE__Y:
+			return y != Y_EDEFAULT;
+		case DatamodelPackage.NODE__X:
+			return x != X_EDEFAULT;
 		case DatamodelPackage.NODE__SCENARIO:
 			return getScenario() != null;
 		}
@@ -422,10 +420,10 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		result.append(id);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", latitude: ");
-		result.append(latitude);
-		result.append(", longitude: ");
-		result.append(longitude);
+		result.append(", y: ");
+		result.append(y);
+		result.append(", x: ");
+		result.append(x);
 		result.append(')');
 		return result.toString();
 	}

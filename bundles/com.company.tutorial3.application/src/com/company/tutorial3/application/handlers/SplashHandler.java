@@ -1,7 +1,6 @@
 package com.company.tutorial3.application.handlers;
 
 import javax.inject.Inject;
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
@@ -23,9 +22,10 @@ import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
+import com.amalgamasimulation.localization.Util;
 
 public class SplashHandler {
-
+	
 	@Inject
 	@Translation
 	private Messages messages;
@@ -41,23 +41,27 @@ public class SplashHandler {
 
 	@PostContextCreate
 	void postContextCreate(IEclipseContext context) {
-		final String locale = CurrentLocale.getCurrentLocale(context);
-
+		final String locale = CurrentLocale.getCurrentLocale(context);	
 		appState.setCurrentLanguage(locale);
 	}
 
 	@ProcessAdditions
 	public void processAdditions(MApplication app, EModelService modelService, EPartService partService) {
 		PerspectiveUtils.copyAllPerspectivesFromSnippets(modelService, app);
+		
 		MWindow mainWindow = PerspectiveUtils.getMainWindow(modelService, app);
-		PerspectiveUtils.setVisibleForModelingToolBar(false, modelService, mainWindow, AppState.idToolBars);
+		PerspectiveUtils.Perspective perspective = PerspectiveUtils.getVisiblePerspective(mainWindow);
+		PerspectiveUtils.setVisibleForModelingToolBar(perspective.engineToolBarIsVisible, modelService, mainWindow);
+		appState.setCurrentPerspective(perspective);		
 		mainWindow.setLabel(AppInfo.getNameAndVersion());
+		Util.APPLICATION_NAME = "tutorial3";
+			
 
 		eventBroker.subscribe(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE, event -> {
 
-			partService.activate(partService.findPart("com.company.tutorial3.application.part.properties"));
-			partService.activate(partService.findPart("com.company.tutorial3.application.part.errors"));
-			partService.activate(partService.findPart("com.company.tutorial3.application.part.objects"));
+		partService.activate(partService.findPart("com.company.tutorial3.application.part.properties"));
+		partService.activate(partService.findPart("com.company.tutorial3.application.part.errors"));
+		partService.activate(partService.findPart("com.company.tutorial3.application.part.objects"));
 
 			mainWindow.getContext().set(IWindowCloseHandler.class, w -> {
 				// ask if user wants to close the app
@@ -67,13 +71,9 @@ public class SplashHandler {
 				}
 				// ask if user wants the (changed) scenario to be saved
 				return appState.ensureCurrentScenarioIsSaved(new Shell(), appData);
-
 			});
-
 		});
 	}
 
 }
-
-
 

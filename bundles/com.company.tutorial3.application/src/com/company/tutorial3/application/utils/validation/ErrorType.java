@@ -4,5 +4,3 @@ public enum ErrorType {
 	WARNING, ERROR, INCONSISTENT_STATE
 }
 
-
-

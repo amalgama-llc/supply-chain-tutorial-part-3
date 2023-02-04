@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.company.tutorial3.datamodel.Point#getArc <em>Arc</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Point#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Point#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Point#getY <em>Y</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Point#getX <em>X</em>}</li>
  * </ul>
  *
  * @see com.company.tutorial3.datamodel.DatamodelPackage#getPoint()
@@ -48,47 +48,47 @@ public interface Point extends EObject {
 	void setArc(Arc value);
 
 	/**
-	 * Returns the value of the '<em><b>Latitude</b></em>' attribute.
+	 * Returns the value of the '<em><b>Y</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Latitude</em>' attribute.
-	 * @see #setLatitude(double)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getPoint_Latitude()
+	 * @return the value of the '<em>Y</em>' attribute.
+	 * @see #setY(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getPoint_Y()
 	 * @model
 	 * @generated
 	 */
-	double getLatitude();
+	double getY();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Point#getLatitude <em>Latitude</em>}' attribute.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Point#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Latitude</em>' attribute.
-	 * @see #getLatitude()
+	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * @see #getY()
 	 * @generated
 	 */
-	void setLatitude(double value);
+	void setY(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Longitude</b></em>' attribute.
+	 * Returns the value of the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Longitude</em>' attribute.
-	 * @see #setLongitude(double)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getPoint_Longitude()
+	 * @return the value of the '<em>X</em>' attribute.
+	 * @see #setX(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getPoint_X()
 	 * @model
 	 * @generated
 	 */
-	double getLongitude();
+	double getX();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Point#getLongitude <em>Longitude</em>}' attribute.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Point#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Longitude</em>' attribute.
-	 * @see #getLongitude()
+	 * @param value the new value of the '<em>X</em>' attribute.
+	 * @see #getX()
 	 * @generated
 	 */
-	void setLongitude(double value);
+	void setX(double value);
 
 } // Point

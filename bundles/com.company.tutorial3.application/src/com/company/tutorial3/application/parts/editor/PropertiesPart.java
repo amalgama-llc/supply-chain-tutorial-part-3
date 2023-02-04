@@ -68,5 +68,3 @@ public class PropertiesPart extends PropertyPart {
 	}
 }
 
-
-

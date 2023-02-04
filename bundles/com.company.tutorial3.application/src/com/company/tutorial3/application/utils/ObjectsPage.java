@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
 
-import com.company.tutorial3.application.parts.editor.TreePart.TreeElementType;
+import com.company.tutorial3.application.utils.TreeElementType;
 import com.amalgamasimulation.desktop.binding.ListChangeManager;
 import com.amalgamasimulation.desktop.properties.PropertyPart;
 import com.amalgamasimulation.desktop.ui.views.TableView;
@@ -120,14 +120,14 @@ public class ObjectsPage<T extends EObject> {
 		}
 		ToolBar toolBar = new ToolBar(parent, SWT.HORIZONTAL);
 		if (newElementSupplier != null) {
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.ADD, tablePart.messages.button_add, this::addElement);
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.ADD, tablePart.messages.button_add, this::addElement).setText(tablePart.messages.button_add);
 		}
 		if (removeElement != null) {
 			ToolbarUtils.addCommandItem(toolBar, IconsMapping.REMOVE, tablePart.messages.button_remove,
-					this::removeElement);
+					this::removeElement).setText(tablePart.messages.button_remove);
 		}
 		if (copyElement != null) {
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.COPY, tablePart.messages.button_copy, this::copyElement);
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.COPY, tablePart.messages.button_copy, this::copyElement).setText(tablePart.messages.button_copy);
 		}
 		ToolbarUtils.addSeparator(toolBar);
 	}

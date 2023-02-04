@@ -26,7 +26,7 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import com.company.tutorial3.application.parts.editor.TreePart.TreeElementType;
+import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
 import com.amalgamasimulation.desktop.ui.views.TableView;
@@ -165,6 +165,4 @@ public abstract class AbstractObjectsPart {
 	}
 	
 }
-
-
 

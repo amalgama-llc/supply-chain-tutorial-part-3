@@ -1,29 +1,31 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Template Simulation
-Bundle-SymbolicName: com.company.tutorial3.simulation;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: AMALGAMASIMULATION
-Require-Bundle: com.amalgamasimulation.engine;bundle-version="1.0.2",
- com.amalgamasimulation.engine.service;bundle-version="1.0.0",
- com.amalgamasimulation.geometry;bundle-version="1.1.0",
- com.amalgamasimulation.graphagent;bundle-version="1.1.0",
- com.amalgamasimulation.utils;bundle-version="1.7.0",
- com.amalgamasimulation.charts;bundle-version="2.0.9",
- com.company.tutorial3.datamodel;bundle-version="0.1.0",
- com.company.tutorial3.common;bundle-version="1.0.0",
- org.eclipse.nebula.widgets.geomap;bundle-version="1.0.0",
- org.eclipse.swt;bundle-version="3.116.100",
- com.amalgamasimulation.platform.animation.swt;bundle-version="1.0.1",
- com.amalgamasimulation.animation.swt;bundle-version="1.0.7",
- com.amalgamasimulation.graph;bundle-version="1.0.0",
- org.apache.commons.math3;bundle-version="3.6.1"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
 Automatic-Module-Name: com.company.tutorial3.simulation
+Bundle-SymbolicName: com.company.tutorial3.simulation;singleton:=true
+Bundle-Name: Simulation
+Bundle-Version: 1.0.0
+Bundle-Vendor: Amalgama
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
 Export-Package: com.company.tutorial3.simulation,
  com.company.tutorial3.simulation.model
-Bundle-ClassPath: .
-
-
+Require-Bundle: com.company.tutorial3.common,
+ com.company.tutorial3.datamodel,
+ com.amalgamasimulation.animation.swt,
+ com.amalgamasimulation.calendardatamodel,
+ com.amalgamasimulation.charts,
+ com.amalgamasimulation.ecoreutils,
+ com.amalgamasimulation.engine.service,
+ com.amalgamasimulation.engine,
+ com.amalgamasimulation.geometry,
+ com.amalgamasimulation.graph,
+ com.amalgamasimulation.graphagent,
+ com.amalgamasimulation.platform.animation.swt,
+ com.amalgamasimulation.randomdatamodel,
+ com.amalgamasimulation.timeseriesdatamodel,
+ com.amalgamasimulation.utils,
+ org.eclipse.nebula.widgets.geomap,
+ org.eclipse.swt,
+ org.apache.commons.math3;bundle-version="3.6.1"
 

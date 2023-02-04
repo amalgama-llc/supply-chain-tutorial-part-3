@@ -5,7 +5,7 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.emf.databinding.EMFProperties;
 
-import com.company.tutorial3.application.parts.editor.TreePart.TreeElementType;
+import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.application.utils.AbstractObjectsPart;
 import com.company.tutorial3.application.utils.ObjectsPage;
 import com.company.tutorial3.application.utils.Topics;
@@ -26,28 +26,30 @@ public class ObjectsPart extends AbstractObjectsPart{
 	
 	@Override
 	protected void registerPages() {
-	
-		eventBroker.subscribe(Topics.NEW_SCENARIO, event -> scenarioObservable.setValue(appData.getScenario()));
-		
+		eventBroker.subscribe(Topics.NEW_SCENARIO, event -> scenarioObservable.setValue(appData.getScenario()));		
 		new ObjectsPage<Node>(this, DatamodelPackage.Literals.SCENARIO__NODES, TreeElementType.NODE, null, null, null)
-				.setTableRefreshBinding(DatamodelPackage.Literals.NODE__LATITUDE,DatamodelPackage.Literals.NODE__ID,DatamodelPackage.Literals.NODE__NAME,
-						DatamodelPackage.Literals.NODE__LONGITUDE)
+				.setTableRefreshBinding(
+			DatamodelPackage.Literals.NODE__X,
+					DatamodelPackage.Literals.NODE__ID,
+					DatamodelPackage.Literals.NODE__NAME,
+			DatamodelPackage.Literals.NODE__Y
+											)
 				.setAfterCreateTableElementAction(tableView -> {
 					tableView.addColumn(messages.obj_NODE_col_ID, 120, Node::getId)
 						.setIdTextEditingSupport(nodeListObservable, DatamodelPackage.Literals.NODE__ID);
 					tableView.addColumn(messages.obj_NODE_col_NAME, 100, p -> p == null ? "" : p.getName())
 						.setTextEditingSupport(DatamodelPackage.Literals.NODE__NAME, UpdateValueStrategyFactory.stringIsNotEmpty());
-					tableView.addColumn(messages.obj_NODE_col_LATITUDE, 100, Node::getLatitude).setTextEditingSupport(
-							DatamodelPackage.Literals.NODE__LATITUDE,
-							UpdateValueStrategyFactory.doubleBetweenValues(-90, 90, 10, true));
-					tableView.addColumn(messages.obj_NODE_col_LONGITUDE, 100, Node::getLongitude).setTextEditingSupport(
-							DatamodelPackage.Literals.NODE__LONGITUDE,
-							UpdateValueStrategyFactory.doubleBetweenValues(-180, 180, 10, true));
+					tableView.addColumn(messages.obj_NODE_col_X, 100, Node::getX).setTextEditingSupport(
+							DatamodelPackage.Literals.NODE__X,
+							UpdateValueStrategyFactory.doubleAny());
+					tableView.addColumn(messages.obj_NODE_col_Y, 100, Node::getY).setTextEditingSupport(
+							DatamodelPackage.Literals.NODE__Y,
+							UpdateValueStrategyFactory.doubleAny());
 				});
-
+		
 		new ObjectsPage<Arc>(this, DatamodelPackage.Literals.SCENARIO__ARCS, TreeElementType.ARC, null, null,null)
 				.setTableRefreshBinding(DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.ARC__ID,DatamodelPackage.Literals.ARC__NAME,
-						DatamodelPackage.Literals.ARC__DEST)
+					DatamodelPackage.Literals.ARC__DEST)
 				.setAfterCreateTableElementAction(tableView -> {
 					tableView.addColumn(messages.obj_ARC_col_ID, 100, Arc::getId)
 						.setIdTextEditingSupport(arcListObservable, DatamodelPackage.Literals.ARC__ID);
@@ -60,8 +62,6 @@ public class ObjectsPart extends AbstractObjectsPart{
 							.setAutoCompleteComboEditingSupport(nodeListObservable,
 									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__ID);
 				});
-	}
+		}
 }
-
-
 

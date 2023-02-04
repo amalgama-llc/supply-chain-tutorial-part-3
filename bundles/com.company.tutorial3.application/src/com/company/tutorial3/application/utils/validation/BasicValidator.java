@@ -154,19 +154,19 @@ public class BasicValidator {
 		}
 	}
 	
-	private void addProblem(EObject own, ObjectType objectType, String message, ErrorType errorType) {
+	public void addProblem(EObject own, ObjectType objectType, String message, ErrorType errorType) {
 		addProblem(own, objectType, message, errorType, objectType.getName());
 	}
 	
-	private void addProblem(EObject own, ObjectType objectType, String message, ErrorType errorType, String extractorId) {
-		String id = UniqNamesManager.getId(own);
+	public void addProblem(EObject own, ObjectType objectType, String message, ErrorType errorType, String extractorId) {
+		String id = UniqNamesManager.getInstance().getId(own);
 		if (id == null || id.length() == 0) {
 			id = extractorId;
 		}
 		addProblem(new Problem(objectType, id, errorType, message, own));
 	}
 	
-	private void addProblem(Problem problem) {
+	public void addProblem(Problem problem) {
 		problemsContainer.addProblem(problem);
 	}
 }

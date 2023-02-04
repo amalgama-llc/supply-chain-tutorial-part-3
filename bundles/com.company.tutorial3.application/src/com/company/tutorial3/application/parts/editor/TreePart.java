@@ -13,7 +13,10 @@ import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.workbench.IWorkbench;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.action.MenuManager;
@@ -26,18 +29,30 @@ import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.TreeItem;
 
+import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
 import com.company.tutorial3.application.parts.editor.treeelements.TreeElement;
 import com.company.tutorial3.application.parts.editor.treeelements.TreeElementScenario;
+import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.EditorTreeLabelProvider;
+import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.MainWindowTitleUpdater;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Scenario;
+import com.company.tutorial3.application.utils.TreeElementType;
+import com.company.tutorial3.application.utils.validation.ValidationManager;
+import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.desktop.properties.PropertyPart;
+import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.ToolbarUtils;
+import com.amalgamasimulation.engine.service.IEngineService;
 
 public class TreePart {
 
@@ -51,11 +66,30 @@ public class TreePart {
 	@Inject
 	protected IEventBroker eventBroker;
 	
+	@Inject
+	private EPartService partService;
+	
+	@Inject
+	private AppState appState;
+	
+	@Inject
+	private EModelService modelService;
+	
+	@Inject
+	private MApplication app;
+	
+	@Inject
+	private MessageManager messageManager;
+	
+	@Inject
+	private IEngineService engineService;
+	
 	private IObservableValue<Scenario> currentScenarioObservable = new WritableValue<>();
 	private IObservableList<TreeElement> rootTreeElementsObservable = new WritableList<>();
 	private ObservableListTreeContentProvider<TreeElement> contentProvider;
 	private TreeViewer treeViewer;
 	private List<EStructuralFeature> dependentScenarioListFields = new ArrayList<>();
+	private ToolItem simulationPerspectiveItem;
 	
 	@Inject
 	protected  IWorkbench workbench;
@@ -92,9 +126,12 @@ public class TreePart {
 		return res;
 	}
 
-	@SuppressWarnings("unchecked")
 	@PostConstruct
 	public void postConstruct(Composite parent) {
+		new ToolBarComposite(parent, this::initializeToolBar, this::initContents);	
+	}
+	
+	private void initContents(Composite parent) {
 		parent.setLayout(new FillLayout(SWT.HORIZONTAL));
 		initializeDependentScenarioListFields(dependentScenarioListFields);
 		initializeTreeViewer(parent);
@@ -107,6 +144,18 @@ public class TreePart {
 		
 		dependentScenarioListFields.stream().forEach(feature -> EMFProperties.list(feature).observeDetail(currentScenarioObservable).addListChangeListener(event -> refresh()));
 		createLabelMainWindow();
+	}
+	
+	private void initializeToolBar(Composite parent) {
+		ToolBar toolBar = new ToolBar(parent, SWT.HORIZONTAL);
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.toolbar_update, 
+				() -> new ValidationManager(messages).validate(messageManager, appData.getScenario(), partService))
+		.setText(messages.toolbar_update);
+		
+		simulationPerspectiveItem = ToolbarUtils.addCommandItem(toolBar, IconsMapping.getImage("/icons/simulation.png"), messages.button_simulation, 
+				() -> SwitchPerspectiveHandler.trySwitchToPerspective(Perspective.SIMULATION, parent.getShell(), app, partService, modelService, messageManager, messages, appData, appState , engineService));	
+		simulationPerspectiveItem.setText(messages.button_simulation);
+		simulationPerspectiveItem.setEnabled(false);
 	}
 	
 	private void initializeTreeViewer(Composite parent) {
@@ -144,10 +193,18 @@ public class TreePart {
 		);
 		treeViewer.setLabelProvider(new EditorTreeLabelProvider() {
 			@Override
+			public boolean isEmptyElements(Object object) {
+				if (object instanceof TreeElement treeElement){
+					return treeElement.isEmptyElements();
+				}
+				return false;
+			}
+			
+			@Override
 			public String getIconPath(Object object) {
-				if (object instanceof TreeElement){
-					TreeElementType treeElementType = ((TreeElement)object).getTreeElementType();
-					return treeElementType.iconPath;
+				if (object instanceof TreeElement treeElement){
+					TreeElementType treeElementType = treeElement.getTreeElementType();
+					return treeElementType.getIconPath();
 				}
 				return "icons/dummy.png";
 			}
@@ -155,7 +212,7 @@ public class TreePart {
 			public String getName(Object object) {
 				if (object instanceof TreeElement){
 					TreeElement treeElement = (TreeElement)object;
-					return treeElement.getName();
+					return treeElement.getLabel();
 				}
 				return String.valueOf(object);
 			}
@@ -206,6 +263,7 @@ public class TreePart {
 		if (scenario != null) {
 			rootTreeElementsObservable.add(new TreeElementScenario(scenario, messages));
 			treeViewer.expandAll();
+			simulationPerspectiveItem.setEnabled(true);
 		}
 		currentScenarioObservable.setValue(scenario);
 		refresh();
@@ -215,26 +273,6 @@ public class TreePart {
 		list.add(DatamodelPackage.Literals.SCENARIO__NODES);
 		list.add(DatamodelPackage.Literals.SCENARIO__ARCS);
 	}
-
-	public enum TreeElementType {
-		NETWORK("/icons/transportation_net.png"),
-		ARC("/icons/link.png"),
-		NODE("/icons/location.png"),
-		SCENARIO("/icons/producte_structure.png");
-		
-		private final String iconPath;
-		
-		private TreeElementType(String iconPath) {
-			this.iconPath = iconPath;
-		}
-
-		public String getIconPath() {
-			return iconPath;
-		}		
-		
-	}
 	
 }
-
-
 

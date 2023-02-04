@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import com.company.tutorial3.application.parts.editor.TreePart.TreeElementType;
+import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
@@ -21,13 +21,14 @@ public enum ObjectType {
 			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__NAME,	AppData.messages.obj_SCENARIO_col_NAME,	AppData.messages.obj_SCENARIO_col_NAME_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__BEGIN_DATE,	AppData.messages.obj_SCENARIO_col_BEGIN_DATE,	AppData.messages.obj_SCENARIO_col_BEGIN_DATE_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__END_DATE,	AppData.messages.obj_SCENARIO_col_END_DATE,	AppData.messages.obj_SCENARIO_col_END_DATE_excel)
-				),
+				)
+	,
 	
 	NODE		(TreeElementType.NODE, AppData.messages.obj_NODE,			DatamodelPackage.Literals.NODE,
 			FieldDescriptor.of(DatamodelPackage.Literals.NODE__ID, AppData.messages.obj_NODE_col_ID, AppData.messages.obj_NODE_col_ID_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.NODE__NAME,	AppData.messages.obj_NODE_col_NAME,	AppData.messages.obj_NODE_col_NAME_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__LATITUDE, AppData.messages.obj_NODE_col_LATITUDE, AppData.messages.obj_NODE_col_LATITUDE_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__LONGITUDE,	AppData.messages.obj_NODE_col_LONGITUDE, AppData.messages.obj_NODE_col_LONGITUDE_excel)
+			FieldDescriptor.of(DatamodelPackage.Literals.NODE__X, AppData.messages.obj_NODE_col_X, AppData.messages.obj_NODE_col_X_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.NODE__Y,	AppData.messages.obj_NODE_col_Y, AppData.messages.obj_NODE_col_Y_excel)
 				),
 	
 	ARC			(TreeElementType.ARC, AppData.messages.obj_ARC,					DatamodelPackage.Literals.ARC,
@@ -40,8 +41,8 @@ public enum ObjectType {
 	
 	POINT		(TreeElementType.ARC, AppData.messages.obj_POINT,					DatamodelPackage.Literals.POINT,
 			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__ARC, AppData.messages.obj_POINT_col_ARC,	AppData.messages.obj_POINT_col_ARC_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__LATITUDE, AppData.messages.obj_POINT_col_LATITUDE,	AppData.messages.obj_POINT_col_LATITUDE_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__LONGITUDE, AppData.messages.obj_POINT_col_LONGITUDE,	AppData.messages.obj_POINT_col_LONGITUDE_excel)
+			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__X, AppData.messages.obj_POINT_col_X,	AppData.messages.obj_POINT_col_X_excel),
+			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__Y, AppData.messages.obj_POINT_col_Y,	AppData.messages.obj_POINT_col_Y_excel)
 			);
 	
 	
@@ -142,6 +143,4 @@ class FieldDescriptor {
 	}
 	
 }
-
-
 

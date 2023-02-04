@@ -16,7 +16,7 @@ public class UndoHandler {
 
 	@CanExecute
 	private boolean canExecute() {
-		return appState.isEditor() && appState.isScenarioExist();
+		return appState.isEditor() && appState.isScenarioExist() && CommandsManager.getEditingDomain().getCommandStack().canUndo();
 	}
 
 	@Execute
@@ -24,6 +24,4 @@ public class UndoHandler {
 		CommandsManager.getEditingDomain().getCommandStack().undo();
 	}
 }
-
-
 

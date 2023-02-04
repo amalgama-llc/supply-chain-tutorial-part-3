@@ -1,19 +1,19 @@
 package com.company.tutorial3.simulation.model;
 
 public abstract class Asset {
-    private final Node node;
-    private final String name;
+  private final Node node;
+  private final String name;
 
-    protected Asset(Node node, String name) {
-        this.node = node;
-        this.name = name;
-    }
+  protected Asset(Node node, String name) {
+    this.node = node;
+    this.name = name;
+  }
 
-    public Node getNode() {
-        return node;
-    }
+  public Node getNode() {
+    return node;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 }

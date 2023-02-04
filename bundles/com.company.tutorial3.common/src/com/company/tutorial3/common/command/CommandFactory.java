@@ -29,10 +29,10 @@ public class CommandFactory {
 
 			// Object ID is set of there is a String-typed field with 'id' attribute set to true
 			// Object name is updated if there is a String-type field 'name'
-			EAttribute idAttribute = UniqNamesManager.getIdAttribute(object.eClass());
+			EAttribute idAttribute = UniqNamesManager.getInstance().getIdAttribute(object.eClass());
 			if (idAttribute != null) {
-				String uniqId = UniqNamesManager.generateUniqueId(container, object, patternId);
-				UniqNamesManager.setId(object, uniqId);
+				String uniqId = UniqNamesManager.getInstance().generateUniqueId(container, object, patternId);
+				UniqNamesManager.getInstance().setId(object, uniqId);
 				EAttribute nameAttr = getNameAttribute(object.eClass());
 				if (nameAttr != null) {
 					object.eSet(nameAttr, uniqId);
@@ -81,7 +81,7 @@ public class CommandFactory {
 				
 				@Override
 				protected void copyAttributeValue(EAttribute eAttribute, EObject eObject, Object value, Setting setting) {
-					EAttribute idAttribute = UniqNamesManager.getIdAttribute(object.eClass());
+					EAttribute idAttribute = UniqNamesManager.getInstance().getIdAttribute(object.eClass());
 					if (eAttribute == idAttribute) {
 						super.copyAttributeValue(eAttribute, eObject, 
 								UniqNamesManager.getInstance().getNameUniq(eObject.eContainer(), eObject, value == null ? "" : String.valueOf(value)), setting);

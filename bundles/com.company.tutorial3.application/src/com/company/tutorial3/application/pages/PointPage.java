@@ -39,14 +39,13 @@ public class PointPage extends AbstractPage<Arc>{
 	
 	@Override
 	protected void createControlsInternal() {
-		TableSection<Arc, Point> tableSection = addTableSection(observableBendPoints, DatamodelPackage.Literals.POINT__LONGITUDE, DatamodelPackage.Literals.POINT__LATITUDE);
+		TableSection<Arc, Point> tableSection = addTableSection(observableBendPoints, DatamodelPackage.Literals.POINT__X, DatamodelPackage.Literals.POINT__Y);
 		TableView<Point> tableView = tableSection.getTableView();
 		
-		tableView.addColumn(messages.obj_POINT_col_LATITUDE, 100, p -> p.getLatitude())
-			.setTextEditingSupport(DatamodelPackage.Literals.POINT__LATITUDE, UpdateValueStrategyFactory.doubleBetweenValues(-90, 90, 10, true));
-		tableView.addColumn(messages.obj_POINT_col_LONGITUDE, 100, p -> p.getLongitude())
-			.setTextEditingSupport(DatamodelPackage.Literals.POINT__LONGITUDE, UpdateValueStrategyFactory.doubleBetweenValues(-180, 180, 10, true));
+		tableView.addColumn(messages.obj_POINT_col_X, 100, p -> p.getX())
+			.setTextEditingSupport(DatamodelPackage.Literals.POINT__X, UpdateValueStrategyFactory.doubleAny());
+		tableView.addColumn(messages.obj_POINT_col_Y, 100, p -> p.getY())
+			.setTextEditingSupport(DatamodelPackage.Literals.POINT__Y, UpdateValueStrategyFactory.doubleAny());
 	}
 }
-
 

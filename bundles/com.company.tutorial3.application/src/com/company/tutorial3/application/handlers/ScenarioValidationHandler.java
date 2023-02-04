@@ -4,14 +4,13 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 
 import com.amalgamasimulation.utils.format.Formats;
-
+import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.validation.ValidationManager;
@@ -25,7 +24,7 @@ public class ScenarioValidationHandler {
 	private Messages messages;
 
 	@Inject
-	private IEventBroker eventBroker;
+	private MessageManager messageManager;
 
 	@Inject
 	private AppData appData;
@@ -44,7 +43,7 @@ public class ScenarioValidationHandler {
 			return;
 		}
 		ValidationManager validationManager = new ValidationManager(messages);
-		validationManager.validate(eventBroker, appData.getScenario(), fPartService);
+		validationManager.validate(messageManager, appData.getScenario(), fPartService);
 		if (!validationManager.isErrorExist()) {
 			MessageBoxFactory.createMessageBox(shell, SWT.ICON_INFORMATION | SWT.OK | SWT.APPLICATION_MODAL, messages.title_check_data,
 					String.format(messages.message_check_data_ok,
@@ -57,6 +56,4 @@ public class ScenarioValidationHandler {
 	}
 
 }
-
-
 

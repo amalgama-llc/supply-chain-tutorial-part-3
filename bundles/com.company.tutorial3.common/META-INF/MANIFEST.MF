@@ -1,29 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Common
-Bundle-SymbolicName: com.company.tutorial3.common;singleton:=true
-Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: com.company.tutorial3.common
-Require-Bundle: 
- org.eclipse.emf.common;bundle-version="2.16.0",
- org.eclipse.emf.ecore;bundle-version="2.18.0",
- org.eclipse.emf.ecore.xmi;bundle-version="2.16.0",
- javax.inject;bundle-version="1.0.0",
- org.eclipse.e4.core.di;bundle-version="1.7.200",
- org.eclipse.e4.ui.model.workbench;bundle-version="2.1.400",
- com.amalgamasimulation.emf;bundle-version="2.1.2",
- com.amalgamasimulation.emf.excel;bundle-version="2.2.3",
- org.eclipse.e4.core.services;bundle-version="2.1.400",
- org.eclipse.emf.edit,
- com.amalgamasimulation.utils;bundle-version="1.16.3",
- org.eclipse.core.databinding;bundle-version="1.7.400",
- org.eclipse.osgi;bundle-version="3.14.0",
- org.eclipse.core.runtime;bundle-version="3.15.300",
- com.company.tutorial3.datamodel;bundle-version="0.1.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: com.company.tutorial3.common.command,
- com.company.tutorial3.common.localization,
- com.company.tutorial3.common.states
-
-
+Bundle-SymbolicName: com.company.tutorial3.common;singleton:=true
+Bundle-Name: Common
+Bundle-Version: 1.0.0
+Bundle-Vendor: Amalgama
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: com.company.tutorial3.common.command,com.company.tutoria
+ l3.common,com.company.tutorial3.common.localization,com.company.tutoria
+ l3.common.states
+Require-Bundle: com.company.tutorial3.datamodel,com.amalgamasimulation.e
+ mf.excel,com.amalgamasimulation.emf,com.amalgamasimulation.utils,javax.
+ inject;bundle-version="1.0.0",org.eclipse.core.databinding,org.eclipse.
+ core.runtime,org.eclipse.e4.core.di,org.eclipse.e4.core.services,org.ec
+ lipse.e4.ui.model.workbench,org.eclipse.emf.common,org.eclipse.emf.ecor
+ e.xmi,org.eclipse.emf.ecore,org.eclipse.emf.edit,org.eclipse.osgi
 

@@ -48,6 +48,6 @@ public class TablePart {
         if (model == null) {
             return 0;
         }
-        return model.getCoordinatesConverter().pixelsToKm(distancePx);
+        return distancePx;
     }
 }

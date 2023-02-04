@@ -16,7 +16,7 @@ public class RedoHandler {
 	
 	@CanExecute
 	private boolean canExecute() {
-		return appState.isEditor() && appState.isScenarioExist();
+		return appState.isEditor() && appState.isScenarioExist() && CommandsManager.getEditingDomain().getCommandStack().canRedo();
 	}
 	
 	@Execute
@@ -24,6 +24,4 @@ public class RedoHandler {
 		CommandsManager.getEditingDomain().getCommandStack().redo();
 	}
 }
-
-
 
