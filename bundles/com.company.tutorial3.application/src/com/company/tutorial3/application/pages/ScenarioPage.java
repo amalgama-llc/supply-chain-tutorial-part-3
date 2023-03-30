@@ -44,7 +44,13 @@ public class ScenarioPage extends AbstractPage<Scenario>{
 		addDateTimeSection(messages.obj_SCENARIO_col_END_DATE, DatamodelPackage.Literals.SCENARIO__END_DATE)
 			.addTextbox(UpdateValueStrategyFactory.localDateTime())
 			.addLocalDateTimeEditorButton()
-			.setEnabled(true);		
+			.setEnabled(true);
+		addNumericSection("Max delivery time, hrs", DatamodelPackage.Literals.SCENARIO__MAX_DELIVERY_TIME_HRS)
+			.addTextbox(UpdateValueStrategyFactory.doublePositive());
+		addDistributionSection("Interval between requests, hrs", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
+			.addTextbox(UpdateValueStrategyFactory.distribution())
+			.addDialogButton("...", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
+			.setEnabled(false);
 	}
 }
 

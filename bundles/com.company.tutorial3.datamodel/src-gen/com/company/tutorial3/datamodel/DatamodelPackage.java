@@ -148,13 +148,13 @@ public interface DatamodelPackage extends EPackage {
 	int SCENARIO__MAX_DELIVERY_TIME_HRS = 8;
 
 	/**
-	 * The feature id for the '<em><b>Interval Between Requests</b></em>' containment reference.
+	 * The feature id for the '<em><b>Interval Between Requests Hrs</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__INTERVAL_BETWEEN_REQUESTS = 9;
+	int SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -605,13 +605,13 @@ public interface DatamodelPackage extends EPackage {
 	int TRUCK__SPEED = 2;
 
 	/**
-	 * The feature id for the '<em><b>Initial Position</b></em>' reference.
+	 * The feature id for the '<em><b>Initial Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK__INITIAL_POSITION = 3;
+	int TRUCK__INITIAL_NODE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -750,15 +750,15 @@ public interface DatamodelPackage extends EPackage {
 	EAttribute getScenario_MaxDeliveryTimeHrs();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequests <em>Interval Between Requests</em>}'.
+	 * Returns the meta object for the containment reference '{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Interval Between Requests</em>'.
-	 * @see com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequests()
+	 * @return the meta object for the containment reference '<em>Interval Between Requests Hrs</em>'.
+	 * @see com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequestsHrs()
 	 * @see #getScenario()
 	 * @generated
 	 */
-	EReference getScenario_IntervalBetweenRequests();
+	EReference getScenario_IntervalBetweenRequestsHrs();
 
 	/**
 	 * Returns the meta object for class '{@link com.company.tutorial3.datamodel.Arc <em>Arc</em>}'.
@@ -1073,15 +1073,15 @@ public interface DatamodelPackage extends EPackage {
 	EAttribute getTruck_Speed();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.company.tutorial3.datamodel.Truck#getInitialPosition <em>Initial Position</em>}'.
+	 * Returns the meta object for the reference '{@link com.company.tutorial3.datamodel.Truck#getInitialNode <em>Initial Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initial Position</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getInitialPosition()
+	 * @return the meta object for the reference '<em>Initial Node</em>'.
+	 * @see com.company.tutorial3.datamodel.Truck#getInitialNode()
 	 * @see #getTruck()
 	 * @generated
 	 */
-	EReference getTruck_InitialPosition();
+	EReference getTruck_InitialNode();
 
 	/**
 	 * Returns the meta object for the container reference '{@link com.company.tutorial3.datamodel.Truck#getScenario <em>Scenario</em>}'.
@@ -1200,12 +1200,12 @@ public interface DatamodelPackage extends EPackage {
 		EAttribute SCENARIO__MAX_DELIVERY_TIME_HRS = eINSTANCE.getScenario_MaxDeliveryTimeHrs();
 
 		/**
-		 * The meta object literal for the '<em><b>Interval Between Requests</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Interval Between Requests Hrs</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENARIO__INTERVAL_BETWEEN_REQUESTS = eINSTANCE.getScenario_IntervalBetweenRequests();
+		EReference SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS = eINSTANCE.getScenario_IntervalBetweenRequestsHrs();
 
 		/**
 		 * The meta object literal for the '{@link com.company.tutorial3.datamodel.impl.ArcImpl <em>Arc</em>}' class.
@@ -1454,12 +1454,12 @@ public interface DatamodelPackage extends EPackage {
 		EAttribute TRUCK__SPEED = eINSTANCE.getTruck_Speed();
 
 		/**
-		 * The meta object literal for the '<em><b>Initial Position</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Initial Node</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRUCK__INITIAL_POSITION = eINSTANCE.getTruck_InitialPosition();
+		EReference TRUCK__INITIAL_NODE = eINSTANCE.getTruck_InitialNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.

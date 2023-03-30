@@ -11,6 +11,9 @@ import com.company.tutorial3.application.pages.ArcPage;
 import com.company.tutorial3.application.pages.NodePage;
 import com.company.tutorial3.application.pages.PointPage;
 import com.company.tutorial3.application.pages.ScenarioPage;
+import com.company.tutorial3.application.pages.StorePage;
+import com.company.tutorial3.application.pages.TruckPage;
+import com.company.tutorial3.application.pages.WarehousePage;
 import com.company.tutorial3.common.localization.Messages;
 import com.amalgamasimulation.desktop.properties.PropertyPart;
 
@@ -45,10 +48,13 @@ public class PropertiesPart extends PropertyPart {
 
 	@Override
 	protected void registerPages() {
-		registerPage(new ScenarioPage 		(messages),  messages.tab_general);
-		registerPage(new NodePage(messages),  							messages.tab_general);
-		registerPage(new ArcPage(messages),  							messages.tab_general);
-		registerPage(new PointPage(messages),  							messages.tab_bendpoint);
+		registerPage(new ScenarioPage (messages), messages.tab_general);
+		registerPage(new NodePage(messages), messages.tab_general);
+		registerPage(new ArcPage(messages), messages.tab_general);
+		registerPage(new PointPage(messages), messages.tab_bendpoint);
+		registerPage(new WarehousePage(messages), messages.tab_general);
+		registerPage(new StorePage(messages), messages.tab_general);
+		registerPage(new TruckPage(messages), messages.tab_general);
 	}
 	
 	@Override

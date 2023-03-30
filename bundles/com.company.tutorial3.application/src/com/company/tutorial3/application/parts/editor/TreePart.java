@@ -272,6 +272,9 @@ public class TreePart {
 	private void initializeDependentScenarioListFields(List<EStructuralFeature> list) {
 		list.add(DatamodelPackage.Literals.SCENARIO__NODES);
 		list.add(DatamodelPackage.Literals.SCENARIO__ARCS);
+		list.add(DatamodelPackage.Literals.SCENARIO__WAREHOUSES);
+		list.add(DatamodelPackage.Literals.SCENARIO__STORES);
+		list.add(DatamodelPackage.Literals.SCENARIO__TRUCKS);
 	}
 	
 }

@@ -29,7 +29,9 @@ public class TreeElementScenario extends TreeElement {
 
 	@Override
 	protected List<TreeElement> createChildElements() {
-		return List.of(new TreeElementNetwork(scenario));
+		return List.of(	new TreeElementNetwork(scenario), 
+						new TreeElementAssets(scenario),
+						createLeaf(TreeElementType.TRUCK, () -> scenario.getTrucks().size()) );
 	}
 	
 }

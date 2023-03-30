@@ -136,7 +136,7 @@
         <children xsi:type="basic:PartStack" xmi:id="_28pDYB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.partstack.3">
           <children xsi:type="basic:Part" xmi:id="_yspN0B0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.part.table" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.TablePart" label="%com.company.tutorial3.application.part.table"/>
           <children xsi:type="basic:Part" xmi:id="_3ZW0kB0UEeyDD7KjvUgQBw" elementId="com.company.tutorial3.application.part.gantChart" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.GanttChartPart" label="%com.company.tutorial3.application.part.ganttChart" iconURI="platform:/plugin/com.company.tutorial3.application/icons/ganttChart.png"/>
-          <children xsi:type="basic:Part" xmi:id="_UYjDUKRbEe2RKqxklkXcSg" elementId="com.company.tutorial3.application.part.tasks" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.TasksPart" label="Tasks"/>
+          <children xsi:type="basic:Part" xmi:id="_Wlb9gM7gEe2gjIwo2cWi2g" elementId="com.company.tutorial3.application.part.tasks" contributionURI="bundleclass://com.company.tutorial3.application/com.company.tutorial3.application.parts.simulation.TasksPart" label="Tasks"/>
         </children>
       </children>
     </children>

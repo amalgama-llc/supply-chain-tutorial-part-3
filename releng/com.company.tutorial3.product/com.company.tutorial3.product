@@ -16,7 +16,7 @@
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Defxclipse.java-modules.dir=$[JAVAFX_HOME]/lib
       </vmArgsMac>
-      <vmArgsWin>-Defxclipse.java-modules.dir=&quot;${env_var:JAVAFX_HOME}/lib&quot;
+      <vmArgsWin>-Defxclipse.java-modules.dir=&quot;plugins/com.amalgamasimulation.zulu.jdk.win32.x86_64_17.0.5/jre/lib&quot;
       </vmArgsWin>
    </launcherArgs>
 

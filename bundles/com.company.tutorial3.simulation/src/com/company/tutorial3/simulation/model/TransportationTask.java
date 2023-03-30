@@ -5,52 +5,60 @@ import com.amalgamasimulation.engine.Engine;
 import com.amalgamasimulation.graphagent.GraphAgentPosition;
 
 public class TransportationTask {
-  private final String id;
-  private final Truck truck;
-  private final TransportationRequest request;
-  private final Consumer<Truck> truckReleaseHandler;
-  private final Engine engine;
-  private double beginTime;
 
-  public TransportationTask(String id, Truck truck, TransportationRequest request,
-      Consumer<Truck> truckReleaseHandler, Engine engine) {
-    this.id = id;
-    this.truck = truck;
-    this.request = request;
-    this.truckReleaseHandler = truckReleaseHandler;
-    this.engine = engine;
-  }
+	private final String id;
+	private final Truck truck;
+	private final TransportationRequest request;
+	private final Consumer<Truck> truckReleaseHandler;
+	private final Engine engine;
 
-  public String getId() {
-    return id;
-  }
+	private double beginTime;
+	private boolean movingWithCargo;
 
-  public Truck getTruck() {
-    return truck;
-  }
+	public TransportationTask(String id, Truck truck, TransportationRequest request,
+			Consumer<Truck> truckReleaseHandler, Engine engine) {
+		this.id = id;
+		this.truck = truck;
+		this.request = request;
+		this.truckReleaseHandler = truckReleaseHandler;
+		this.engine = engine;
+	}
 
-  public TransportationRequest getRequest() {
-    return request;
-  }
+	public String getId() {
+		return id;
+	}
 
-  public double getBeginTime() {
-    return beginTime;
-  }
+	public Truck getTruck() {
+		return truck;
+	}
 
-  public void execute() {
-    this.beginTime = engine.time();
-    truck.onTaskStarted(this, this::onDestinationReached);
-    truck.moveTo(request.getSourceAsset().getNode(), truck.getSpeed());
-  }
+	public TransportationRequest getRequest() {
+		return request;
+	}
 
-  private void onDestinationReached(Truck truck, GraphAgentPosition<Node, Arc> destPosition) {
-    boolean truckIsAtSourceNode = destPosition.getNode().getValue().equals(request.getSourceAsset().getNode());
-    if (truckIsAtSourceNode) {
-      truck.moveTo(request.getDestAsset().getNode(), truck.getSpeed());
-    } else {
-      truck.onTaskCompleted();
-      request.setCompletedTime(engine.time());
-      truckReleaseHandler.accept(truck);
-    }
-  }
+	public double getBeginTime() {
+		return beginTime;
+	}
+
+	public void execute() {
+		this.beginTime = engine.time();
+		truck.onTaskStarted(this, this::onDestinationReached);
+		truck.moveTo(request.getSourceAsset().getNode(), truck.getSpeed());
+	}
+	
+	public boolean isMovingWithCargo() {
+		return movingWithCargo;
+	}
+
+	private void onDestinationReached(Truck truck, GraphAgentPosition<Node, Arc> destPosition) {
+		boolean truckIsAtSourceNode = destPosition.getNode().getValue().equals(request.getSourceAsset().getNode());
+		if (truckIsAtSourceNode) {
+			movingWithCargo = true;
+			truck.moveTo(request.getDestAsset().getNode(), truck.getSpeed());
+		} else {
+			truck.onTaskCompleted();
+			request.setCompletedTime(engine.time());
+			truckReleaseHandler.accept(truck);
+		}
+	}
 }

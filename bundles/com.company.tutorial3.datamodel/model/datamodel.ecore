@@ -16,7 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="trucks" upperBound="-1"
         eType="#//Truck" containment="true" eOpposite="#//Truck/scenario"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDeliveryTimeHrs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="intervalBetweenRequests"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intervalBetweenRequestsHrs"
         eType="ecore:EClass ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.ecore#//Distribution"
         containment="true"/>
   </eClassifiers>
@@ -65,7 +65,7 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialPosition" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialNode" eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
         eOpposite="#//Scenario/trucks"/>
   </eClassifiers>

@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getStores <em>Stores</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getTrucks <em>Trucks</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getMaxDeliveryTimeHrs <em>Max Delivery Time Hrs</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequests <em>Interval Between Requests</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}</li>
  * </ul>
  *
  * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario()
@@ -194,25 +194,25 @@ public interface Scenario extends EObject {
 	void setMaxDeliveryTimeHrs(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Interval Between Requests</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Interval Between Requests Hrs</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interval Between Requests</em>' containment reference.
-	 * @see #setIntervalBetweenRequests(Distribution)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario_IntervalBetweenRequests()
+	 * @return the value of the '<em>Interval Between Requests Hrs</em>' containment reference.
+	 * @see #setIntervalBetweenRequestsHrs(Distribution)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario_IntervalBetweenRequestsHrs()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Distribution getIntervalBetweenRequests();
+	Distribution getIntervalBetweenRequestsHrs();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequests <em>Interval Between Requests</em>}' containment reference.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interval Between Requests</em>' containment reference.
-	 * @see #getIntervalBetweenRequests()
+	 * @param value the new value of the '<em>Interval Between Requests Hrs</em>' containment reference.
+	 * @see #getIntervalBetweenRequestsHrs()
 	 * @generated
 	 */
-	void setIntervalBetweenRequests(Distribution value);
+	void setIntervalBetweenRequestsHrs(Distribution value);
 
 } // Scenario

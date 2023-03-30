@@ -6,7 +6,12 @@ public enum TreeElementType {
 		NETWORK("/icons/transportation_net.png", AppData.messages.network),
 		ARC("/icons/link.png", AppData.messages.obj_ARCS),
 		NODE("/icons/location.png", AppData.messages.obj_NODES),
-	SCENARIO("/icons/producte_structure.png", AppData.messages.obj_SCENARIO);
+		SCENARIO("/icons/producte_structure.png", AppData.messages.obj_SCENARIO),
+		ASSET("/icons/object.png", "Assets"),
+		WAREHOUSE("/icons/object.png", "Warehouses"),
+		STORE("/icons/object.png", "Stores"),
+		TRUCK("/icons/object.png", "Trucks"),
+	;
 	
 	private final String iconPath;
 	private final String label;

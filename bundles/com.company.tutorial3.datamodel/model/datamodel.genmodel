@@ -21,7 +21,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/stores"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/trucks"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/maxDeliveryTimeHrs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/intervalBetweenRequests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/intervalBetweenRequestsHrs"/>
     </genClasses>
     <genClasses ecoreClass="datamodel.ecore#//Arc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Arc/id"/>
@@ -58,7 +58,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/speed"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/initialPosition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/initialNode"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/scenario"/>
     </genClasses>
   </genPackages>

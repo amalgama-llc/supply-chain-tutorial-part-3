@@ -9,10 +9,8 @@ In Simulation mode, trucks, warehouses, and stores are displayed.
 Simulation statistics is also shown and updated in real time.
 
 ## How to build and run
-1. Install JavaFX. Create a new environment variable 'JAVAFX_HOME' that contains the path to your local JavaFX installation.
-1. [Install and configure](https://platform.amalgamasimulation.com/amalgama/quick_start_eclipse.html) Eclipse IDE.
+1. Download and install [Eclipse With Amalgama Platform](https://platform.amalgamasimulation.com/amalgama/quick_start_eclipse.html).
 1. Start Eclipse with new workspace.
-1. In Eclipse, [set up](https://platform.amalgamasimulation.com/amalgama/quick_start_eclipse.html#_1_let_eclipse_know_about_your_local_javafx_libraries) JavaFX libraries location.
 1. Clone the repository to your local machine.
 1. Import the project (with its nested projects) in Eclipse.
 1. Open the 'releng/com.company.tutorial3.product/com.company.tutorial3.product' file In Eclipse.

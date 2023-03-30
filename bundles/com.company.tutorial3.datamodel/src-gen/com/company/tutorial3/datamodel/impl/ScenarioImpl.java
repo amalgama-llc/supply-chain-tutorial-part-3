@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getStores <em>Stores</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getTrucks <em>Trucks</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getMaxDeliveryTimeHrs <em>Max Delivery Time Hrs</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getIntervalBetweenRequests <em>Interval Between Requests</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}</li>
  * </ul>
  *
  * @generated
@@ -183,14 +183,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	protected double maxDeliveryTimeHrs = MAX_DELIVERY_TIME_HRS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIntervalBetweenRequests() <em>Interval Between Requests</em>}' containment reference.
+	 * The cached value of the '{@link #getIntervalBetweenRequestsHrs() <em>Interval Between Requests Hrs</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIntervalBetweenRequests()
+	 * @see #getIntervalBetweenRequestsHrs()
 	 * @generated
 	 * @ordered
 	 */
-	protected Distribution intervalBetweenRequests;
+	protected Distribution intervalBetweenRequestsHrs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -368,8 +368,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Distribution getIntervalBetweenRequests() {
-		return intervalBetweenRequests;
+	public Distribution getIntervalBetweenRequestsHrs() {
+		return intervalBetweenRequestsHrs;
 	}
 
 	/**
@@ -377,14 +377,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIntervalBetweenRequests(Distribution newIntervalBetweenRequests,
+	public NotificationChain basicSetIntervalBetweenRequestsHrs(Distribution newIntervalBetweenRequestsHrs,
 			NotificationChain msgs) {
-		Distribution oldIntervalBetweenRequests = intervalBetweenRequests;
-		intervalBetweenRequests = newIntervalBetweenRequests;
+		Distribution oldIntervalBetweenRequestsHrs = intervalBetweenRequestsHrs;
+		intervalBetweenRequestsHrs = newIntervalBetweenRequestsHrs;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS, oldIntervalBetweenRequests,
-					newIntervalBetweenRequests);
+					DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS, oldIntervalBetweenRequestsHrs,
+					newIntervalBetweenRequestsHrs);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -398,21 +398,22 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIntervalBetweenRequests(Distribution newIntervalBetweenRequests) {
-		if (newIntervalBetweenRequests != intervalBetweenRequests) {
+	public void setIntervalBetweenRequestsHrs(Distribution newIntervalBetweenRequestsHrs) {
+		if (newIntervalBetweenRequestsHrs != intervalBetweenRequestsHrs) {
 			NotificationChain msgs = null;
-			if (intervalBetweenRequests != null)
-				msgs = ((InternalEObject) intervalBetweenRequests).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS, null, msgs);
-			if (newIntervalBetweenRequests != null)
-				msgs = ((InternalEObject) newIntervalBetweenRequests).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS, null, msgs);
-			msgs = basicSetIntervalBetweenRequests(newIntervalBetweenRequests, msgs);
+			if (intervalBetweenRequestsHrs != null)
+				msgs = ((InternalEObject) intervalBetweenRequestsHrs).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS, null, msgs);
+			if (newIntervalBetweenRequestsHrs != null)
+				msgs = ((InternalEObject) newIntervalBetweenRequestsHrs).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS, null, msgs);
+			msgs = basicSetIntervalBetweenRequestsHrs(newIntervalBetweenRequestsHrs, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS,
-					newIntervalBetweenRequests, newIntervalBetweenRequests));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS, newIntervalBetweenRequestsHrs,
+					newIntervalBetweenRequestsHrs));
 	}
 
 	/**
@@ -456,8 +457,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return ((InternalEList<?>) getStores()).basicRemove(otherEnd, msgs);
 		case DatamodelPackage.SCENARIO__TRUCKS:
 			return ((InternalEList<?>) getTrucks()).basicRemove(otherEnd, msgs);
-		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS:
-			return basicSetIntervalBetweenRequests(null, msgs);
+		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
+			return basicSetIntervalBetweenRequestsHrs(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -488,8 +489,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return getTrucks();
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			return getMaxDeliveryTimeHrs();
-		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS:
-			return getIntervalBetweenRequests();
+		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
+			return getIntervalBetweenRequestsHrs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -535,8 +536,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			setMaxDeliveryTimeHrs((Double) newValue);
 			return;
-		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS:
-			setIntervalBetweenRequests((Distribution) newValue);
+		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
+			setIntervalBetweenRequestsHrs((Distribution) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -577,8 +578,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			setMaxDeliveryTimeHrs(MAX_DELIVERY_TIME_HRS_EDEFAULT);
 			return;
-		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS:
-			setIntervalBetweenRequests((Distribution) null);
+		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
+			setIntervalBetweenRequestsHrs((Distribution) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -610,8 +611,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return trucks != null && !trucks.isEmpty();
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			return maxDeliveryTimeHrs != MAX_DELIVERY_TIME_HRS_EDEFAULT;
-		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS:
-			return intervalBetweenRequests != null;
+		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
+			return intervalBetweenRequestsHrs != null;
 		}
 		return super.eIsSet(featureID);
 	}

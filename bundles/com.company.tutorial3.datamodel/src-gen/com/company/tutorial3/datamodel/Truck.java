@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.company.tutorial3.datamodel.Truck#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Truck#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Truck#getSpeed <em>Speed</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Truck#getInitialPosition <em>Initial Position</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Truck#getInitialNode <em>Initial Node</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Truck#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -92,26 +92,26 @@ public interface Truck extends EObject {
 	void setSpeed(double value);
 
 	/**
-	 * Returns the value of the '<em><b>Initial Position</b></em>' reference.
+	 * Returns the value of the '<em><b>Initial Node</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initial Position</em>' reference.
-	 * @see #setInitialPosition(Node)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getTruck_InitialPosition()
+	 * @return the value of the '<em>Initial Node</em>' reference.
+	 * @see #setInitialNode(Node)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getTruck_InitialNode()
 	 * @model
 	 * @generated
 	 */
-	Node getInitialPosition();
+	Node getInitialNode();
 
 	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Truck#getInitialPosition <em>Initial Position</em>}' reference.
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Truck#getInitialNode <em>Initial Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initial Position</em>' reference.
-	 * @see #getInitialPosition()
+	 * @param value the new value of the '<em>Initial Node</em>' reference.
+	 * @see #getInitialNode()
 	 * @generated
 	 */
-	void setInitialPosition(Node value);
+	void setInitialNode(Node value);
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.

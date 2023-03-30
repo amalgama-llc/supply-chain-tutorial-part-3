@@ -10,12 +10,16 @@ import com.company.tutorial3.application.utils.AbstractObjectsPart;
 import com.company.tutorial3.application.utils.ObjectsPage;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
+import com.company.tutorial3.datamodel.Store;
+import com.company.tutorial3.datamodel.Truck;
+import com.company.tutorial3.datamodel.Warehouse;
 import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 
-public class ObjectsPart extends AbstractObjectsPart{
+public class ObjectsPart extends AbstractObjectsPart {
 
 	@SuppressWarnings("all")
 	protected IObservableValue<Scenario> scenarioObservable = new WritableValue<>();
@@ -62,6 +66,51 @@ public class ObjectsPart extends AbstractObjectsPart{
 							.setAutoCompleteComboEditingSupport(nodeListObservable,
 									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__ID);
 				});
-		}
+		
+		
+		new ObjectsPage<Warehouse>(this, DatamodelPackage.Literals.SCENARIO__WAREHOUSES, TreeElementType.WAREHOUSE, 
+				()-> {
+					var wh = DatamodelFactory.eINSTANCE.createWarehouse();
+					wh.setScenario(scenarioObservable.getValue());
+					return wh;
+				}, null, null)
+				.setTableRefreshBinding(DatamodelPackage.Literals.ASSET__ID, DatamodelPackage.Literals.ASSET__NAME, DatamodelPackage.Literals.ASSET__NODE)
+				.setAfterCreateTableElementAction(tableView -> {
+					tableView.addColumn("ID", 100, Warehouse::getId);
+					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
+					tableView.addColumn("Node", 100, Warehouse::getNode, p -> p == null ? "" : p.getName());
+				});
+		
+		new ObjectsPage<Store>(this, DatamodelPackage.Literals.SCENARIO__STORES, TreeElementType.STORE, 
+				() -> {
+					var store = DatamodelFactory.eINSTANCE.createStore();
+					store.setScenario(scenarioObservable.getValue());
+					return store;
+				}, 
+				null, null)
+				.setTableRefreshBinding(DatamodelPackage.Literals.ASSET__ID, DatamodelPackage.Literals.ASSET__NAME, DatamodelPackage.Literals.ASSET__NODE)
+				.setAfterCreateTableElementAction(tableView -> {
+					tableView.addColumn("ID", 100, Store::getId);
+					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
+					tableView.addColumn("Node", 100, Store::getNode, p -> p == null ? "" : p.getName());
+				});
+		
+		new ObjectsPage<Truck>(this, DatamodelPackage.Literals.SCENARIO__TRUCKS, TreeElementType.TRUCK, 
+				() -> {
+					var truck = DatamodelFactory.eINSTANCE.createTruck();
+					truck.setScenario(scenarioObservable.getValue());
+					return truck;
+				},
+				null, null)
+				.setTableRefreshBinding(DatamodelPackage.Literals.TRUCK__ID, DatamodelPackage.Literals.TRUCK__NAME,
+						DatamodelPackage.Literals.TRUCK__SPEED, DatamodelPackage.Literals.TRUCK__INITIAL_NODE)
+				.setAfterCreateTableElementAction(tableView -> {
+					tableView.addColumn("ID", 100, Truck::getId);
+					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
+					tableView.addColumn("Speed", 100, Truck::getSpeed);
+					tableView.addColumn("Initial node", 100, Truck::getInitialNode, p -> p == null ? "" : p.getName());
+				});
+	}
+	
 }
 

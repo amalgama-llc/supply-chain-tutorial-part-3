@@ -249,7 +249,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScenario_IntervalBetweenRequests() {
+	public EReference getScenario_IntervalBetweenRequestsHrs() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -519,7 +519,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTruck_InitialPosition() {
+	public EReference getTruck_InitialNode() {
 		return (EReference) truckEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -571,7 +571,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEReference(scenarioEClass, SCENARIO__STORES);
 		createEReference(scenarioEClass, SCENARIO__TRUCKS);
 		createEAttribute(scenarioEClass, SCENARIO__MAX_DELIVERY_TIME_HRS);
-		createEReference(scenarioEClass, SCENARIO__INTERVAL_BETWEEN_REQUESTS);
+		createEReference(scenarioEClass, SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS);
 
 		arcEClass = createEClass(ARC);
 		createEAttribute(arcEClass, ARC__ID);
@@ -608,7 +608,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEAttribute(truckEClass, TRUCK__ID);
 		createEAttribute(truckEClass, TRUCK__NAME);
 		createEAttribute(truckEClass, TRUCK__SPEED);
-		createEReference(truckEClass, TRUCK__INITIAL_POSITION);
+		createEReference(truckEClass, TRUCK__INITIAL_NODE);
 		createEReference(truckEClass, TRUCK__SCENARIO);
 	}
 
@@ -679,8 +679,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEAttribute(getScenario_MaxDeliveryTimeHrs(), ecorePackage.getEDouble(), "maxDeliveryTimeHrs", null, 0, 1,
 				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_IntervalBetweenRequests(), theRandomdatamodelPackage.getDistribution(), null,
-				"intervalBetweenRequests", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getScenario_IntervalBetweenRequestsHrs(), theRandomdatamodelPackage.getDistribution(), null,
+				"intervalBetweenRequestsHrs", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arcEClass, Arc.class, "Arc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -749,7 +749,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTruck_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, Truck.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTruck_InitialPosition(), this.getNode(), null, "initialPosition", null, 0, 1, Truck.class,
+		initEReference(getTruck_InitialNode(), this.getNode(), null, "initialNode", null, 0, 1, Truck.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTruck_Scenario(), this.getScenario(), this.getScenario_Trucks(), "scenario", null, 0, 1,

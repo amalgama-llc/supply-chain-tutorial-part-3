@@ -12,11 +12,11 @@ import com.amalgamasimulation.engine.Engine;
 import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.geometry.Polyline;
 import com.amalgamasimulation.graphagent.GraphEnvironment;
-import com.amalgamasimulation.randomdatamodel.DistributionFactory;
 import com.amalgamasimulation.utils.Utils;
 import com.amalgamasimulation.utils.random.DefaultRandomGenerator;
 import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.simulation.Mapping;
+import com.amalgamasimulation.randomdatamodel.DistributionFactory;
 
 @SuppressWarnings("serial")
 public class Model extends com.amalgamasimulation.engine.Model {
@@ -27,13 +27,13 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	private List<Arc> arcs = new ArrayList<>();
 	
 	private List<Truck> trucks = new ArrayList<>();
-    private List<TransportationRequest> requests = new ArrayList<>();
-    private Queue<TransportationRequest> waitingRequests = new LinkedList<>();
-    private List<Warehouse> warehouses = new ArrayList<>();
-    private List<Store> stores = new ArrayList<>();
-    private final RandomGenerator randomGenerator = new DefaultRandomGenerator(1);
-    private final Dispatcher dispatcher;
-    private final Statistics statistics;
+	private List<TransportationRequest> requests = new ArrayList<>();
+	private Queue<TransportationRequest> waitingRequests = new LinkedList<>();
+	private List<Warehouse> warehouses = new ArrayList<>();
+	private List<Store> stores = new ArrayList<>();
+	private final RandomGenerator randomGenerator = new DefaultRandomGenerator(1);
+	private final Dispatcher dispatcher;
+	private final Statistics statistics;
 
 	public Model(Engine engine, Scenario scenario) {
 		super(engine);
@@ -46,7 +46,7 @@ public class Model extends com.amalgamasimulation.engine.Model {
 		initializeModelObjects();
 		
 		var newRequestIntervalDistribution = DistributionFactory
-		        .createDistribution(scenario.getIntervalBetweenRequests(), randomGenerator);
+		        .createDistribution(scenario.getIntervalBetweenRequestsHrs(), randomGenerator);
 		RequestGenerator requestGenerator = new RequestGenerator(engine, this, newRequestIntervalDistribution,
 		        scenario.getMaxDeliveryTimeHrs());
 		requestGenerator.addNewRequestHandler(this::addRequest);
@@ -135,7 +135,8 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	
 	private void initializeAssets() {
 		for (var scenarioWarehouse : scenario.getWarehouses()) {
-			warehouses.add(new Warehouse(mapping.nodesMap.get(scenarioWarehouse.getNode()), scenarioWarehouse.getName()));
+			warehouses
+					.add(new Warehouse(mapping.nodesMap.get(scenarioWarehouse.getNode()), scenarioWarehouse.getName()));
 		}
 		for (var scenarioStore : scenario.getStores()) {
 			stores.add(new Store(mapping.nodesMap.get(scenarioStore.getNode()), scenarioStore.getName()));
@@ -151,12 +152,12 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	}
 	
 	private void initializeTrucks() {
-	    for (var scenarioTruck : scenario.getTrucks()) {
-	        Truck truck = new Truck(scenarioTruck.getId(), scenarioTruck.getName(), scenarioTruck.getSpeed(), engine());
-	        trucks.add(truck);
-	        truck.setGraphEnvironment(graphEnvironment);
-	        truck.jumpTo(mapping.nodesMap.value(scenarioTruck.getInitialPosition()));
-	    }
+		for (var scenarioTruck : scenario.getTrucks()) {
+			Truck truck = new Truck(scenarioTruck.getId(), scenarioTruck.getName(), scenarioTruck.getSpeed(), engine());
+			trucks.add(truck);
+			truck.setGraphEnvironment(graphEnvironment);
+			truck.jumpTo(mapping.nodesMap.value(scenarioTruck.getInitialNode()));
+		}
 	}
 	
 	public RandomGenerator getRandomGenerator() {
@@ -164,12 +165,15 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	}
 	
 	public Statistics getStatistics() {
-	    return statistics;
+		return statistics;
+	}
+	
+	public Scenario getScenario() {
+		return scenario;
 	}
 	
 	public List<TransportationTask> getTransportationTasks() {
-	    return dispatcher.getTransportationTasks();
+		return dispatcher.getTransportationTasks();
 	}
-
 }
 

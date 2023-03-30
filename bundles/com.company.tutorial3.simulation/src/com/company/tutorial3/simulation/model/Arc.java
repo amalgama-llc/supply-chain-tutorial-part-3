@@ -9,4 +9,3 @@ public class Arc extends AgentGraphArcImpl {
 		super(polyline);
 	}
 }
-

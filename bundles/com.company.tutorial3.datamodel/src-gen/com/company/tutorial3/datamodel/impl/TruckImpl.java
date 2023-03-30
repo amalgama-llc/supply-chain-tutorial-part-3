@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getSpeed <em>Speed</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getInitialPosition <em>Initial Position</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getInitialNode <em>Initial Node</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -97,14 +97,14 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 	protected double speed = SPEED_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInitialPosition() <em>Initial Position</em>}' reference.
+	 * The cached value of the '{@link #getInitialNode() <em>Initial Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInitialPosition()
+	 * @see #getInitialNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected Node initialPosition;
+	protected Node initialNode;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,17 +193,17 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node getInitialPosition() {
-		if (initialPosition != null && initialPosition.eIsProxy()) {
-			InternalEObject oldInitialPosition = (InternalEObject) initialPosition;
-			initialPosition = (Node) eResolveProxy(oldInitialPosition);
-			if (initialPosition != oldInitialPosition) {
+	public Node getInitialNode() {
+		if (initialNode != null && initialNode.eIsProxy()) {
+			InternalEObject oldInitialNode = (InternalEObject) initialNode;
+			initialNode = (Node) eResolveProxy(oldInitialNode);
+			if (initialNode != oldInitialNode) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatamodelPackage.TRUCK__INITIAL_POSITION,
-							oldInitialPosition, initialPosition));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatamodelPackage.TRUCK__INITIAL_NODE,
+							oldInitialNode, initialNode));
 			}
 		}
-		return initialPosition;
+		return initialNode;
 	}
 
 	/**
@@ -211,8 +211,8 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Node basicGetInitialPosition() {
-		return initialPosition;
+	public Node basicGetInitialNode() {
+		return initialNode;
 	}
 
 	/**
@@ -220,12 +220,12 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitialPosition(Node newInitialPosition) {
-		Node oldInitialPosition = initialPosition;
-		initialPosition = newInitialPosition;
+	public void setInitialNode(Node newInitialNode) {
+		Node oldInitialNode = initialNode;
+		initialNode = newInitialNode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK__INITIAL_POSITION,
-					oldInitialPosition, initialPosition));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK__INITIAL_NODE, oldInitialNode,
+					initialNode));
 	}
 
 	/**
@@ -331,10 +331,10 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 			return getName();
 		case DatamodelPackage.TRUCK__SPEED:
 			return getSpeed();
-		case DatamodelPackage.TRUCK__INITIAL_POSITION:
+		case DatamodelPackage.TRUCK__INITIAL_NODE:
 			if (resolve)
-				return getInitialPosition();
-			return basicGetInitialPosition();
+				return getInitialNode();
+			return basicGetInitialNode();
 		case DatamodelPackage.TRUCK__SCENARIO:
 			return getScenario();
 		}
@@ -358,8 +358,8 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 		case DatamodelPackage.TRUCK__SPEED:
 			setSpeed((Double) newValue);
 			return;
-		case DatamodelPackage.TRUCK__INITIAL_POSITION:
-			setInitialPosition((Node) newValue);
+		case DatamodelPackage.TRUCK__INITIAL_NODE:
+			setInitialNode((Node) newValue);
 			return;
 		case DatamodelPackage.TRUCK__SCENARIO:
 			setScenario((Scenario) newValue);
@@ -385,8 +385,8 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 		case DatamodelPackage.TRUCK__SPEED:
 			setSpeed(SPEED_EDEFAULT);
 			return;
-		case DatamodelPackage.TRUCK__INITIAL_POSITION:
-			setInitialPosition((Node) null);
+		case DatamodelPackage.TRUCK__INITIAL_NODE:
+			setInitialNode((Node) null);
 			return;
 		case DatamodelPackage.TRUCK__SCENARIO:
 			setScenario((Scenario) null);
@@ -409,8 +409,8 @@ public class TruckImpl extends MinimalEObjectImpl.Container implements Truck {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DatamodelPackage.TRUCK__SPEED:
 			return speed != SPEED_EDEFAULT;
-		case DatamodelPackage.TRUCK__INITIAL_POSITION:
-			return initialPosition != null;
+		case DatamodelPackage.TRUCK__INITIAL_NODE:
+			return initialNode != null;
 		case DatamodelPackage.TRUCK__SCENARIO:
 			return getScenario() != null;
 		}
