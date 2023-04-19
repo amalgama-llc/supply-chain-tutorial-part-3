@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="com.company.tutorial3.product" uid="com.company.tutorial3.product" id="com.company.tutorial3.application.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+<product name="tutorial3" uid="tutorial3" id="com.company.tutorial3.application.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -38,6 +38,7 @@
       <feature id="org.eclipse.emf.common" installMode="root"/>
       <feature id="org.eclipse.fx.runtime.min.feature" installMode="root"/>
       <feature id="com.company.tutorial3.feature"/>
+      <feature id="name.abuchen.zulu.jre.feature" installMode="root"/>
    </features>
 
    <configurations>

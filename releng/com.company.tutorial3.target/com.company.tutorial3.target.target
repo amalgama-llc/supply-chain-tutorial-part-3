@@ -6,25 +6,38 @@
 			<unit id="org.eclipse.fx.target.rcp4.feature.feature.group" version="0.0.0"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/releases/2022-09"/>
+			<repository location="https://download.eclipse.org/releases/2023-03"/>
 			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.equinox.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.ocl.all.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.apache.commons.commons-io" version="0.0.0"/>
 			<unit id="org.json" version="0.0.0"/>
+			<unit id="bcpg" version="0.0.0"/>
+			<unit id="bcprov" version="0.0.0"/>
+			<unit id="org.bouncycastle.bcpkix" version="0.0.0"/>
+			<unit id="org.bouncycastle.bcutil" version="0.0.0"/>
+			<unit id="com.github.oshi.oshi-core" version="0.0.0"/>
+			<unit id="slf4j.api" version="0.0.0"/>
+			<unit id="slf4j.nop" version="0.0.0"/>
+			<unit id="com.sun.jna" version="0.0.0"/>
+			<unit id="com.sun.jna.platform" version="0.0.0"/>
+			<unit id="org.apache.commons.jxpath" version="0.0.0"/>
+			<unit id="org.apache.commons.logging" version="0.0.0"/>
+			<unit id="org.sat4j.core" version="0.0.0"/>
+			<unit id="org.sat4j.pb" version="0.0.0"/>
 			<unit id="org.eclipse.gef.common.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gef.fx.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gef.geometry.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gef.mvc.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
-			<unit id="com.google.guava" version="30.1.0.v20210127-2300"/>
+			<unit id="com.google.guava" version="30.1.0.v20221112-0806"/>
 			<unit id="com.google.inject" version="0.0.0"/>
 			<unit id="com.google.inject.assistedinject" version="0.0.0"/>
 			<unit id="org.aopalliance" version="0.0.0"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20220830213456/repository"/>
+			<repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository"/>
 			<unit id="org.apache.poi" version="0.0.0"/>
 			<unit id="org.apache.poi.ooxml" version="0.0.0"/>
 			<unit id="org.apache.poi.ooxml.schemas" version="0.0.0"/>

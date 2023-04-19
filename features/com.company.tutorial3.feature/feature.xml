@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<feature
-      id="com.company.tutorial3.feature"
-      label="Feature"
-      version="1.0.0.qualifier">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="com.company.tutorial3.feature" label="Feature" version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -16,530 +12,158 @@
       [Enter License Description here.]
    </license>
 
-   <plugin
-         id="com.company.tutorial3.datamodel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.company.tutorial3.application"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.company.tutorial3.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.charts"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.charts.swt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.desktop.binding"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.desktop.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.desktop.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.desktop.utils"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.emf"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.emf.excel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.ecoreutils"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.utils"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf.databinding"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.autocomplete"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.visualsets"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.excel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.math3"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.poi"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.poi.ooxml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.poi.ooxml.schemas"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.codec"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.collections4"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.compress"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.xmlbeans"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.core.resources"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ocl.ecore"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.workbench"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.core.filesystem"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ocl"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.ibm.icu"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.localization"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="lpg.runtime.java"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ocl.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.distributionname"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.scheduling"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.calendardatamodel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.randomdatamodel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.timeseriesdatamodel"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.viewupdater"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.commons-io"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.geometry"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.graph"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.mvc.fx"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.aopalliance"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.google.inject"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.google.guava"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.fx"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.geometry"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.geometry.convert.fx"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.mvc.fx.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.fx.swt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.google.inject.assistedinject"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gef.fx.jface"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.views"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.nebula.widgets.geomap"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.animation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.animation.swt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.graphagent"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.engine"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.graphicaleditor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.platform.animation.swt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.company.tutorial3.simulation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.engine.service"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.service"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.viewupdater.service"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.amalgamasimulation.engine.controls"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.osgi"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.osgi.services"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.swt"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-</feature>
+   <plugin download-size="0" id="com.company.tutorial3.datamodel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.company.tutorial3.application" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.company.tutorial3.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.charts" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.charts.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.desktop.binding" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.desktop.properties" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.desktop.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.desktop.utils" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.emf" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.emf.excel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.ecoreutils" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.utils" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.emf.databinding" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.emf.edit" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.autocomplete" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.emf" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.visualsets" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.excel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.commons.math3" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.poi" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.poi.ooxml" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.poi.ooxml.schemas" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.json" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.commons.codec" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.commons.collections4" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.commons.compress" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.xmlbeans" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.core.resources" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ocl.ecore" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ui.workbench" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.core.filesystem" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ocl" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.help" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.ibm.icu" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.localization" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="lpg.runtime.java" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ocl.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.distributionname" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.scheduling" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.calendardatamodel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.randomdatamodel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.timeseriesdatamodel" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.viewupdater" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.apache.commons.commons-io" install-size="0" unpack="false" version="0.0.0"/>
+         
+   <plugin download-size="0" id="com.amalgamasimulation.geometry" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.graph" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.mvc.fx" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.aopalliance" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.google.inject" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.google.guava" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.common" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.fx" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.geometry" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.geometry.convert.fx" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.geometry.convert.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.mvc.fx.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.fx.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" fragment="true" id="com.google.inject.assistedinject" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.gef.fx.jface" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.ui.views" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.nebula.widgets.geomap" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.animation" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.animation.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.graphagent" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.engine" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.graphicaleditor" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.platform.animation.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.company.tutorial3.simulation" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.engine.service" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.service" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.viewupdater.service" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="com.amalgamasimulation.engine.controls" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.osgi" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.osgi.services" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.swt" install-size="0" unpack="false" version="0.0.0"/>
+
+   </feature>

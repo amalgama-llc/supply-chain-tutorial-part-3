@@ -1,2 +1,9 @@
 **/target
 **/bin
+*.DS_Store
+*.lic
+
+**/*.tycho
+**/.polyglot.*
+tests/reports_output/
+tests/tests_output/

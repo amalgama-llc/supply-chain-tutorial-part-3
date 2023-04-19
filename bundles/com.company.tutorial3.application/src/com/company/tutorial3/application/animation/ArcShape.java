@@ -5,11 +5,13 @@ import com.amalgamasimulation.animation.shapes.shapes2d.PolylineShape;
 import com.amalgamasimulation.geometry.Point;
 import com.company.tutorial3.simulation.model.Arc;
 
-public class ArcShape extends GroupShape {
 
+public class ArcShape extends GroupShape {
+	
 	public ArcShape(Arc road) {
 		super(() -> new Point(0, 0));
 		withShape(new PolylineShape(() -> road.getPolyline()));
 		asStatic(() -> true);
 	}
 }
+

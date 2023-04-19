@@ -7,14 +7,14 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
-            name="com.company.tutorial3.product">
+            name="tutorial3">
          <property
                name="applicationCSS"
                value="platform:/plugin/com.company.tutorial3.application/css/default.css">
          </property>
          <property
                name="appName"
-               value="com.company.tutorial3.product">
+               value="tutorial3">
          </property>
          <property
                name="lifeCycleURI"
