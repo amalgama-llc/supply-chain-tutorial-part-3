@@ -14,7 +14,7 @@ public class RecentFilesListMenuItemIsVisibleExpression {
 	
 	@Evaluate
 	public boolean evaluate() {
-		return appState.isEditor() && appState.recentlyOpenedFilesManager.getLastFilePaths().length > 0;
+		return appState.isEditor() && appState.getRecentlyOpenedFilesManager().getLastFilePaths().length > 0;
 	}
 }
 

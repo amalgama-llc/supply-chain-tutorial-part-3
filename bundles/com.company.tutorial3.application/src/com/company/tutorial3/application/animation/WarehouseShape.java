@@ -8,10 +8,10 @@ import com.amalgamasimulation.utils.Colors;
 import com.company.tutorial3.simulation.model.Warehouse;
 
 public class WarehouseShape extends GroupShape {
-	public WarehouseShape(Warehouse warehouse) {
-		super(() -> warehouse.getNode().getPoint());
-		withShape(new CircleShape(new Point(0, 0), 15, Colors.orange).withFillColor(Colors.orange));
-		withShape(new TextShape(warehouse.getName()));
-		withFixedScale(1);
-	}
+    public WarehouseShape(Warehouse warehouse) {
+        super(() -> warehouse.getNode().getPoint());
+        withShape(new CircleShape(new Point(0, 0), 15, Colors.orange).withFillColor(Colors.orange));
+        withShape(new TextShape(warehouse.getName()));
+        withFixedScale(1);
+    }
 }

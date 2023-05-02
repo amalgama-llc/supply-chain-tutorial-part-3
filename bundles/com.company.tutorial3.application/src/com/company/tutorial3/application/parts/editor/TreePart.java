@@ -33,6 +33,7 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.TreeItem;
 
+import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
 import com.company.tutorial3.application.parts.editor.treeelements.TreeElement;
 import com.company.tutorial3.application.parts.editor.treeelements.TreeElementScenario;
@@ -62,6 +63,9 @@ public class TreePart {
 
 	@Inject
 	private AppData appData;
+	
+	@Inject
+	private AppInfo appInfo;
 	
 	@Inject
 	protected IEventBroker eventBroker;
@@ -239,7 +243,7 @@ public class TreePart {
 		IValueChangeListener<Scenario> modelChangeListener = new IValueChangeListener<Scenario>() {
 			@Override
 			public void handleValueChange(ValueChangeEvent<? extends Scenario> event) {
-				MainWindowTitleUpdater.updateMainWindowTitle(workbench, appData);
+				MainWindowTitleUpdater.updateMainWindowTitle(workbench, appData, appInfo);
 			}
 		};
 		IObservableValue<Scenario> detailedValue1 = EMFProperties.value(DatamodelPackage.Literals.SCENARIO__NAME).observeDetail(currentScenarioObservable);
@@ -251,7 +255,7 @@ public class TreePart {
 		IObservableValue<Scenario> detailedValue3 = EMFProperties.value(DatamodelPackage.Literals.SCENARIO__END_DATE).observeDetail(currentScenarioObservable);
 		detailedValue3.addValueChangeListener(modelChangeListener);
 		
-		MainWindowTitleUpdater.updateMainWindowTitle(workbench, appData);
+		MainWindowTitleUpdater.updateMainWindowTitle(workbench, appData, appInfo);
 	}
 		
 	private void onNewFileLoaded() {
@@ -276,6 +280,5 @@ public class TreePart {
 		list.add(DatamodelPackage.Literals.SCENARIO__STORES);
 		list.add(DatamodelPackage.Literals.SCENARIO__TRUCKS);
 	}
-	
 }
 

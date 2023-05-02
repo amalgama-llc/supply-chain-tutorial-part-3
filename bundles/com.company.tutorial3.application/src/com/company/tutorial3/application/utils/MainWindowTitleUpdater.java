@@ -17,14 +17,14 @@ public class MainWindowTitleUpdater {
 	
 	private MainWindowTitleUpdater() {}
 
-	public static void updateMainWindowTitle(IWorkbench workbench, AppData appData) {
+	public static void updateMainWindowTitle(IWorkbench workbench, AppData appData, AppInfo appInfo) {
 		MApplication application = workbench.getApplication();
 		List<MWindow> windows = application.getChildren();
 		MWindow mainWindow = windows.get(0);
 	
 		Scenario scenario = appData.getScenario();
 		String [] arr = mainWindow.getLabel().split(" - ");
-		String title = arr[0] + " - " + AppInfo.getVersionAsString();	
+		String title = arr[0] + " - " + appInfo.getVersionAsString();	
 		if (scenario != null) {
 			title = title + ",  " + scenario.getName() + ", " + formatDate(scenario.getBeginDate()) + " - " + formatDate(scenario.getEndDate());
 		}

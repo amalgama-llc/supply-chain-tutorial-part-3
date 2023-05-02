@@ -7,29 +7,51 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.inject.Singleton;
+
+import org.eclipse.e4.core.di.annotations.Creatable;
+import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.FrameworkUtil;
 
+import com.company.tutorial3.application.utils.IconsMapping;
+
+@Singleton
+@Creatable
 public class AppInfo {
 	
-	private AppInfo() {}
-
-	public static String getVersionAsString() {
+	public String getVersionAsString() {
 		return getStringFromResourceFile("resources/productVersion.txt");
 	}
 	
-	public static String getProductID() {
+	public String getProductID() {
 		return "tutorial3";
 	}
 	
-	public static String getFullProductName() {
+	public String getFullProductName() {
 		return "tutorial3";
 	}
-	
-	public static String getNameAndVersion() {
-		return AppInfo.getProductID() + ", v" + AppInfo.getVersionAsString();
+
+	public String getAppVendorSiteUrl() {
+		return "www.amalgamasimulation.com";
+	}
+
+	public String getAppVendorEmail() {
+		return "info@amalgamasimulation.com";
+	}
+
+	public String getAppVendorName() {
+		return "Amalgama LLC";
+	}
+
+	public Image getApplicationIcon() {
+		return IconsMapping.getImage("/icons/logo_64.png");
 	}
 	
-	public static LocalDate getReleaseDate() {
+	public String getNameAndVersion() {
+		return getProductID() + ", v" + getVersionAsString();
+	}
+	
+	public LocalDate getReleaseDate() {
 		String dateFromFile = getStringFromResourceFile("resources/releaseDate.txt");
 		return dateFromFile == null ? LocalDate.of(2100, 1, 1) : LocalDate.parse(dateFromFile, DateTimeFormatter.ISO_LOCAL_DATE);
 	}

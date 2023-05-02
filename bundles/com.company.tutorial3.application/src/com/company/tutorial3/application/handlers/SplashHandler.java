@@ -32,6 +32,9 @@ public class SplashHandler {
 
 	@Inject
 	private AppData appData;
+	
+	@Inject
+	private AppInfo appInfo;
 
 	@Inject
 	private AppState appState;
@@ -53,7 +56,7 @@ public class SplashHandler {
 		PerspectiveUtils.Perspective perspective = PerspectiveUtils.getVisiblePerspective(mainWindow);
 		PerspectiveUtils.setVisibleForModelingToolBar(perspective.engineToolBarIsVisible, modelService, mainWindow);
 		appState.setCurrentPerspective(perspective);		
-		mainWindow.setLabel(AppInfo.getNameAndVersion());
+		mainWindow.setLabel(appInfo.getNameAndVersion());
 		Util.APPLICATION_NAME = "tutorial3";
 			
 

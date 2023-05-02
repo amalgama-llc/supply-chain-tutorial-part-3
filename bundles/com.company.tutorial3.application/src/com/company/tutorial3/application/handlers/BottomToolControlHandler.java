@@ -3,7 +3,6 @@ package com.company.tutorial3.application.handlers;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
@@ -29,7 +28,13 @@ public class BottomToolControlHandler {
 	private IEventBroker eventBroker;
 	
 	@Inject
+	private IEclipseContext context;
+	
+	@Inject
 	private EModelService modelService;
+	
+	@Inject
+	private AppInfo appInfo;
 	
 	@Inject
 	@Translation
@@ -58,7 +63,7 @@ public class BottomToolControlHandler {
 		labelLicense.setText(getLicence());
 		
 		Label labelVersions = new Label(childComposite, SWT.NONE);
-		labelVersions.setText(messages.APP_VERSION + ": " + AppInfo.getVersionAsString());
+		labelVersions.setText(messages.APP_VERSION + ": " + appInfo.getVersionAsString());
 		labelVersions.setAlignment(SWT.RIGHT);
 		setFormData(labelVersions, 65, 5, 75, -5);
 		
@@ -98,7 +103,7 @@ public class BottomToolControlHandler {
 		updatePerspectiveLabel(labelPerspective);
 	}
 	
-	private String getLicence() {	
+	private String getLicence() {
 		return "";
 	}
 	

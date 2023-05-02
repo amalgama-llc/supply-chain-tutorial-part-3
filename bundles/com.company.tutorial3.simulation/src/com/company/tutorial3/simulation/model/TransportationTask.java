@@ -1,27 +1,26 @@
 package com.company.tutorial3.simulation.model;
 
 import java.util.function.Consumer;
-import com.amalgamasimulation.engine.Engine;
+
 import com.amalgamasimulation.graphagent.GraphAgentPosition;
 
 public class TransportationTask {
-
 	private final String id;
 	private final Truck truck;
 	private final TransportationRequest request;
 	private final Consumer<Truck> truckReleaseHandler;
-	private final Engine engine;
-
+	private final Model model;
+	
 	private double beginTime;
 	private boolean movingWithCargo;
 
 	public TransportationTask(String id, Truck truck, TransportationRequest request,
-			Consumer<Truck> truckReleaseHandler, Engine engine) {
+			Consumer<Truck> truckReleaseHandler, Model model) {
 		this.id = id;
 		this.truck = truck;
 		this.request = request;
 		this.truckReleaseHandler = truckReleaseHandler;
-		this.engine = engine;
+		this.model = model;
 	}
 
 	public String getId() {
@@ -35,21 +34,24 @@ public class TransportationTask {
 	public TransportationRequest getRequest() {
 		return request;
 	}
-
+	
 	public double getBeginTime() {
 		return beginTime;
 	}
 
 	public void execute() {
-		this.beginTime = engine.time();
+		this.beginTime = model.engine().time();
+//		System.out.println("%.3f\tTask #%s : TRANSPORTATION_STARTED. Request #%s; Truck #%s; From %s -> To %s"
+//		.formatted(model.engine().time(), getId(), request.getId(), truck.getId(), 
+//				request.getSourceAsset().getName(), request.getDestAsset().getName()));
 		truck.onTaskStarted(this, this::onDestinationReached);
 		truck.moveTo(request.getSourceAsset().getNode(), truck.getSpeed());
 	}
-	
+
 	public boolean isMovingWithCargo() {
 		return movingWithCargo;
 	}
-
+	
 	private void onDestinationReached(Truck truck, GraphAgentPosition<Node, Arc> destPosition) {
 		boolean truckIsAtSourceNode = destPosition.getNode().getValue().equals(request.getSourceAsset().getNode());
 		if (truckIsAtSourceNode) {
@@ -57,8 +59,9 @@ public class TransportationTask {
 			truck.moveTo(request.getDestAsset().getNode(), truck.getSpeed());
 		} else {
 			truck.onTaskCompleted();
-			request.setCompletedTime(engine.time());
+			request.setCompletedTime(model.engine().time());
 			truckReleaseHandler.accept(truck);
+//			System.out.println("%.3f\tTask #%s : TRANSPORTATION_FINISHED".formatted(model.engine().time(), getId()));
 		}
 	}
 }

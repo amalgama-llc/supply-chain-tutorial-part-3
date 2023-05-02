@@ -18,7 +18,7 @@ public class CreateMenuItemLastScenarioHandler {
 
 	@AboutToShow
 	public void aboutToShow(List<MMenuElement> items) {
-		String[] paths = appState.recentlyOpenedFilesManager.getLastFilePaths();
+		String[] paths = appState.getRecentlyOpenedFilesManager().getLastFilePaths();
 		for (String str : paths) {
 			if (!str.isEmpty()) {
 				items.add(createMenuItem(str));

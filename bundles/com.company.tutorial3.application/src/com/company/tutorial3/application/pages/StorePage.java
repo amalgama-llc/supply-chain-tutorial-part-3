@@ -11,10 +11,11 @@ import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Store;
 
 public class StorePage extends AbstractPage<Store> {
-	
+
 	@SuppressWarnings("all")
-	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES).observeDetail(scenarioObservable);
-	
+	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES)
+			.observeDetail(scenarioObservable);
+
 	public StorePage(Messages messages) {
 		super(messages, Store::getScenario);
 	}
@@ -23,36 +24,34 @@ public class StorePage extends AbstractPage<Store> {
 	public boolean isVisible(Object selectedObject) {
 		return selectedObject instanceof Store;
 	}
-	
+
 	@Override
 	protected String getNameClassObject() {
 		return "Store";
 	}
-	
+
 	@Override
 	protected String getObjectDisplayName() {
 		return observable.getValue().getId() + " - " + observable.getValue().getName();
 	}
-	
+
 	@Override
 	protected final FeaturePath[] getUpdateListeners() {
-		return new FeaturePath [] {
+		return new FeaturePath[] {
 				FeaturePath.fromList(DatamodelPackage.Literals.ASSET__ID),
-				FeaturePath.fromList(DatamodelPackage.Literals.ASSET__NAME)};
+				FeaturePath.fromList(DatamodelPackage.Literals.ASSET__NAME) };
 	}
-	
+
 	@Override
 	protected void createControlsInternal() {
 		addStringSection("ID", DatamodelPackage.Literals.ASSET__ID)
-			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
+				.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
 		addStringSection("Name", DatamodelPackage.Literals.ASSET__NAME)
-			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
+				.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
 		addReferenceSection("Node", DatamodelPackage.Literals.ASSET__NODE)
-			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
-			.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
-				tableView.addColumn("Name", 150, Node::getName);	
-			})
-			.addClearButton()
-			.setTextFieldCanBeEmpty(false);
+				.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
+				.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
+					tableView.addColumn("Name", 150, Node::getName);
+				}).addClearButton().setTextFieldCanBeEmpty(false);
 	}
 }

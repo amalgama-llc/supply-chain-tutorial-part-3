@@ -34,7 +34,7 @@ import com.company.tutorial3.application.utils.FileUtils;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.command.CommandFactory;
+import com.company.tutorial3.application.command.CommandFactory;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
@@ -62,8 +62,18 @@ public class AppState {
 	
 	@Inject
 	private AppData appData;
+	
+	@Inject
+	private AppInfo appInfo;
 		
-	public final RecentlyOpenedFilesManager recentlyOpenedFilesManager = new RecentlyOpenedFilesManager(AppInfo.getProductID(), 5);
+	private RecentlyOpenedFilesManager recentlyOpenedFilesManager;
+	
+	public RecentlyOpenedFilesManager getRecentlyOpenedFilesManager() {
+		if (recentlyOpenedFilesManager == null) {
+			recentlyOpenedFilesManager = new RecentlyOpenedFilesManager(appInfo.getProductID(), 5);
+		}
+		return recentlyOpenedFilesManager;
+	}
 	
 	public PerspectiveUtils.Perspective getCurrentPerspective() {
 		return currentPerspective;

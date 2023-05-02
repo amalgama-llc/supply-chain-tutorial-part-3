@@ -2,18 +2,20 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Automatic-Module-Name: com.company.tutorial3.datamodel
 Bundle-SymbolicName: com.company.tutorial3.datamodel;singleton:=true
-Bundle-Name: Data Model
+Bundle-Name: %pluginName
 Bundle-Version: 1.0.0
-Bundle-Vendor: Amalgama
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Bundle-ClassPath: .
-Export-Package: com.company.tutorial3.datamodel,com.company.tutorial3.da
- tamodel.impl,com.company.tutorial3.datamodel.util
-Require-Bundle: com.amalgamasimulation.calendardatamodel;visibility:=ree
- xport,com.amalgamasimulation.ecoreutils;visibility:=reexport,com.amalga
- masimulation.randomdatamodel;visibility:=reexport,com.amalgamasimulatio
- n.timeseriesdatamodel;visibility:=reexport,org.eclipse.core.runtime,org
- .eclipse.emf.ecore;visibility:=reexport
+Export-Package: com.company.tutorial3.datamodel,
+ com.company.tutorial3.datamodel.impl,
+ com.company.tutorial3.datamodel.util
+Require-Bundle: com.amalgamasimulation.calendardatamodel;visibility:=reexport,
+ com.amalgamasimulation.ecoreutils;visibility:=reexport,
+ com.amalgamasimulation.randomdatamodel;visibility:=reexport,
+ com.amalgamasimulation.timeseriesdatamodel;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
 

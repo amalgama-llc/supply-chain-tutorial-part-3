@@ -8,7 +8,7 @@ import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import com.company.tutorial3.common.command.UniqNamesManager;
+import com.company.tutorial3.application.command.UniqNamesManager;
 import com.company.tutorial3.common.localization.Messages;
 
 public class BasicValidator {

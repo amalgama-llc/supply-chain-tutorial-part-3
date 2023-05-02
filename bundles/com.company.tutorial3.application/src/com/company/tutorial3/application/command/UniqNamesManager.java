@@ -1,4 +1,4 @@
-package com.company.tutorial3.common.command;
+package com.company.tutorial3.application.command;
 
 import java.util.AbstractMap;
 import java.util.HashMap;

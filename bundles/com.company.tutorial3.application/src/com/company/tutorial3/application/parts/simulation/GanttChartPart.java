@@ -53,8 +53,8 @@ public class GanttChartPart {
 	
 	private void updateContent(Model model) {
 		ganttChart.getVisualSetContainer().clear();
-		ganttChart.getXAxis().setTimeStyle(AxisTimeStyle.getDefault(model.getScenario().getBeginDate(), model.timeUnit()))
-				.setDisplayedRange(0,  model.dateToTime(model.getScenario().getEndDate()));
+		ganttChart.getXAxis().setTimeStyle(AxisTimeStyle.getDefault(model.getBeginDate(), model.timeUnit()))
+				.setDisplayedRange(0,  model.dateToTime(model.getEndDate()));
 		model.getTrucks().forEach(truck -> {
 			var visualSet = new GanttVisualSet<>(truck.getName(), () -> truck.getTaskHistory(), t -> t.getBeginTime(), t -> getTaskEndTime(t))
 					.setBackgroundColor(t -> Colors.BLUE)

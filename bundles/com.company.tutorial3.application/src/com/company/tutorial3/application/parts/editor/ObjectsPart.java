@@ -6,7 +6,6 @@ import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.emf.databinding.EMFProperties;
 
 import com.company.tutorial3.application.utils.TreeElementType;
-import com.company.tutorial3.common.command.CommandFactory;
 import com.company.tutorial3.application.utils.AbstractObjectsPart;
 import com.company.tutorial3.application.utils.ObjectsPage;
 import com.company.tutorial3.application.utils.Topics;
@@ -68,12 +67,10 @@ public class ObjectsPart extends AbstractObjectsPart {
 									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__ID);
 				});
 		
-		
 		new ObjectsPage<Warehouse>(this, DatamodelPackage.Literals.SCENARIO__WAREHOUSES, TreeElementType.WAREHOUSE, 
 				()-> {
 					var wh = DatamodelFactory.eINSTANCE.createWarehouse();
 					wh.setScenario(scenarioObservable.getValue());
-					CommandFactory.create(scenarioObservable.getValue(), "Warehouse", "Warehouse",  () -> wh, true);
 					return wh;
 				}, null, null)
 				.setTableRefreshBinding(DatamodelPackage.Literals.ASSET__ID, DatamodelPackage.Literals.ASSET__NAME, DatamodelPackage.Literals.ASSET__NODE)

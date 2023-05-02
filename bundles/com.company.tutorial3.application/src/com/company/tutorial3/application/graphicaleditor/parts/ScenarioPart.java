@@ -7,7 +7,7 @@ import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.ecore.EObject;
 import com.amalgamasimulation.emf.commands.RemoveCommand;
 import com.amalgamasimulation.graphicaleditor.parts.AbstractContainerPart;
-import com.company.tutorial3.common.command.CommandFactory;
+import com.company.tutorial3.application.command.CommandFactory;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Scenario;

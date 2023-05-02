@@ -10,22 +10,15 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: com.company.tutorial3.simulation,
  com.company.tutorial3.simulation.model
-Require-Bundle: com.company.tutorial3.common,
- com.company.tutorial3.datamodel,
- com.amalgamasimulation.animation.swt,
+Require-Bundle: com.company.tutorial3.datamodel,
  com.amalgamasimulation.calendardatamodel,
- com.amalgamasimulation.charts,
  com.amalgamasimulation.ecoreutils,
- com.amalgamasimulation.engine.service,
  com.amalgamasimulation.engine,
  com.amalgamasimulation.geometry,
  com.amalgamasimulation.graph,
  com.amalgamasimulation.graphagent,
- com.amalgamasimulation.platform.animation.swt,
  com.amalgamasimulation.randomdatamodel,
  com.amalgamasimulation.timeseriesdatamodel,
  com.amalgamasimulation.utils,
- org.eclipse.nebula.widgets.geomap,
- org.eclipse.swt,
  org.apache.commons.math3;bundle-version="3.6.1"
 

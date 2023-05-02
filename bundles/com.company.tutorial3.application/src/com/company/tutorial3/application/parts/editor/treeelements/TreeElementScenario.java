@@ -33,6 +33,5 @@ public class TreeElementScenario extends TreeElement {
 						new TreeElementAssets(scenario),
 						createLeaf(TreeElementType.TRUCK, () -> scenario.getTrucks().size()) );
 	}
-	
 }
 

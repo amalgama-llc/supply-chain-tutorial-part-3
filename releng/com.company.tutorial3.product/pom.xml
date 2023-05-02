@@ -15,6 +15,7 @@
 	
 	<build>
 		<plugins>
+			<!-- Artifact repository is created for product; repository archive is not created --> 
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-repository-plugin</artifactId>

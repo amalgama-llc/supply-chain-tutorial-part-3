@@ -13,10 +13,6 @@
 			<unit id="org.eclipse.ocl.all.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.apache.commons.commons-io" version="0.0.0"/>
 			<unit id="org.json" version="0.0.0"/>
-			<unit id="bcpg" version="0.0.0"/>
-			<unit id="bcprov" version="0.0.0"/>
-			<unit id="org.bouncycastle.bcpkix" version="0.0.0"/>
-			<unit id="org.bouncycastle.bcutil" version="0.0.0"/>
 			<unit id="com.github.oshi.oshi-core" version="0.0.0"/>
 			<unit id="slf4j.api" version="0.0.0"/>
 			<unit id="slf4j.nop" version="0.0.0"/>

@@ -53,4 +53,3 @@ public class ScenarioPage extends AbstractPage<Scenario>{
 			.setEnabled(false);
 	}
 }
-

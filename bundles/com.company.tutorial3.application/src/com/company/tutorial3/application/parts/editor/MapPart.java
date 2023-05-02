@@ -22,7 +22,7 @@ import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
-import com.company.tutorial3.common.command.CommandFactory;
+import com.company.tutorial3.application.command.CommandFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.amalgamasimulation.desktop.properties.PropertyPage;
 import com.amalgamasimulation.desktop.properties.PropertyPart;

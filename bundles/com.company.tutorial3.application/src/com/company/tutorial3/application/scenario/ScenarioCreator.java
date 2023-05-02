@@ -4,7 +4,6 @@ import java.io.File;
 import java.time.LocalDateTime;
 import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.utils.FileUtils;
-import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.Scenario;
 
@@ -18,8 +17,8 @@ public class ScenarioCreator {
 	 * 
 	 * @return file path to created scenario
 	 */
-	public static String createNew(Messages messages) {
-		String newScenarioFolderPath = System.getProperty("user.home") + File.separator + AppInfo.getProductID();
+	public static String createNew(AppInfo appInfo) {
+		String newScenarioFolderPath = System.getProperty("user.home") + File.separator + appInfo.getProductID();
 		File newScenarioFolder = new File(newScenarioFolderPath);
 		newScenarioFolder.mkdirs();
 
@@ -31,12 +30,12 @@ public class ScenarioCreator {
 			fullPath = newScenarioFolderPath + File.separator + name;
 		} while (FileUtils.checkIsFileAndExists(fullPath));
 		FileUtils.createFile(fullPath);
-		Scenario scenario = ScenarioCreator.createScenario(name, messages);
+		Scenario scenario = ScenarioCreator.createScenario(name);
 		ScenarioSaver.save(scenario, fullPath);
 		return fullPath;
 	}
 
-	private static Scenario createScenario(String name, Messages messages) {
+	private static Scenario createScenario(String name) {
 		LocalDateTime beginModeling = LocalDateTime.now();
 		Scenario scenario = DatamodelFactory.eINSTANCE.createScenario();
 		scenario.setName(name);

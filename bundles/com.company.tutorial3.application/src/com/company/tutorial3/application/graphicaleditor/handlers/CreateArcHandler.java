@@ -7,7 +7,7 @@ import com.amalgamasimulation.emf.commands.AddCommand;
 import com.amalgamasimulation.graphicaleditor.factories.ContentPartFactory;
 import com.amalgamasimulation.graphicaleditor.handlers.CreateArcClickHandler;
 import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.command.UniqNamesManager;
+import com.company.tutorial3.application.command.UniqNamesManager;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
 public class CreateArcHandler extends CreateArcClickHandler{

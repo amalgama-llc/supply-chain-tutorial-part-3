@@ -4,17 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.amalgamasimulation.engine.Engine;
-
 public class Dispatcher {
-
-	private final Engine engine;
 	private final Model model;
 	private int lastTaskId = 0;
 	private List<TransportationTask> transportationTasks = new ArrayList<>();
 
-	public Dispatcher(Engine engine, Model model) {
-		this.engine = engine;
+	public Dispatcher(Model model) {
 		this.model = model;
 	}
 
@@ -32,8 +27,7 @@ public class Dispatcher {
 	}
 
 	private void startTransportation(Truck truck, TransportationRequest request) {
-		TransportationTask task = new TransportationTask("Task_" + (++lastTaskId), truck, request, this::onTruckRelease,
-				engine);
+		TransportationTask task = new TransportationTask(String.valueOf(++lastTaskId), truck, request, this::onTruckRelease, model);
 		transportationTasks.add(task);
 		task.execute();
 	}

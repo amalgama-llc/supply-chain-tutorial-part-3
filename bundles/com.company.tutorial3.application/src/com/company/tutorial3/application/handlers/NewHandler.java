@@ -12,6 +12,7 @@ import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.widgets.Shell;
 
+import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.scenario.ScenarioCreator;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.common.localization.Messages;
@@ -21,6 +22,9 @@ public class NewHandler {
 
     @Inject
     private AppData appData;
+    
+    @Inject
+    private AppInfo appInfo;
 
     @Inject
     private AppState appState;
@@ -40,7 +44,7 @@ public class NewHandler {
 						MApplication app, EPartService partService, EModelService modelService, MWindow mainWindow) {
    		// ask if user wants the (changed) scenario to be saved
 		if (appState.ensureCurrentScenarioIsSaved(shell, appData)) {
-			String filePath = ScenarioCreator.createNew(messages);
+			String filePath = ScenarioCreator.createNew(appInfo);
 	        appState.loadScenario(filePath, true);
 		}
     }

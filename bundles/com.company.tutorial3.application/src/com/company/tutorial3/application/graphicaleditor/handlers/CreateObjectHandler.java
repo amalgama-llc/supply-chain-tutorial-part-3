@@ -9,7 +9,7 @@ import com.amalgamasimulation.graphicaleditor.factories.ContentPartFactory;
 import com.amalgamasimulation.graphicaleditor.handlers.CreateObjectClickHandler;
 import com.amalgamasimulation.graphicaleditor.models.ActionModel;
 import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.command.UniqNamesManager;
+import com.company.tutorial3.application.command.UniqNamesManager;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import javafx.scene.Node;
 

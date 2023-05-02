@@ -1,7 +1,6 @@
 package com.company.tutorial3.simulation.model;
 
 public abstract class Asset {
-
 	private final Node node;
 	private final String name;
 

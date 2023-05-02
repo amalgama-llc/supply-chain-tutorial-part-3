@@ -7,9 +7,8 @@ Bundle-Version: 1.0.0
 Bundle-Vendor: Amalgama
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
-Export-Package: com.company.tutorial3.common.command,com.company.tutoria
- l3.common,com.company.tutorial3.common.localization,com.company.tutoria
- l3.common.states
+Export-Package: com.company.tutorial3.common.localization,com.company.tu
+ torial3.common.states
 Require-Bundle: com.company.tutorial3.datamodel,com.amalgamasimulation.e
  mf.excel,com.amalgamasimulation.emf,com.amalgamasimulation.utils,javax.
  inject;bundle-version="1.0.0",org.eclipse.core.databinding,org.eclipse.

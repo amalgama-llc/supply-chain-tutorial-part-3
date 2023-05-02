@@ -61,7 +61,6 @@ public class SimulationPart {
 		
 		model.getGraphEnvironment().getNodeValues().stream().forEach(n -> animationView.addShape(new NodeShape(n)));
 		model.getArcs().forEach(r -> animationView.addShape(new ArcShape(r)));		
-
 		model.getWarehouses().forEach(w -> animationView.addShape(new WarehouseShape(w)));
 		model.getStores().forEach(w -> animationView.addShape(new StoreShape(w)));
 		model.getTrucks().forEach(t -> animationView.addShape(new TruckShape(t)));
