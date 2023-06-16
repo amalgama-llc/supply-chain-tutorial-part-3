@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.apache.commons.math3.distribution.RealDistribution;
@@ -164,4 +165,7 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	public List<TransportationTask> getTransportationTasks() {
 		return dispatcher.getTransportationTasks();
 	}
-}
+	
+	public void addTaskCompletedHandler(Consumer<TransportationTask> handler) {
+		dispatcher.addTaskCompletedHandler(handler);
+	}
