@@ -169,3 +169,4 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	public void addTaskCompletedHandler(Consumer<TransportationTask> handler) {
 		dispatcher.addTaskCompletedHandler(handler);
 	}
+}
