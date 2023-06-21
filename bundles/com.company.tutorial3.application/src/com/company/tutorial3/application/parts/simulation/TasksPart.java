@@ -16,6 +16,7 @@ import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.simulation.model.Model;
 import com.company.tutorial3.simulation.model.TransportationTask;
+import com.company.tutorial3.simulation.model.Truck;
 
 public class TasksPart {
 
@@ -33,18 +34,18 @@ public class TasksPart {
 		tableView = new TableView<>(parent, Collections.emptyList());
 		Function<LocalDateTime, String> labelExtractor = v -> v == null ? "" : Formats.getDefaultFormats().dayMonthLongYearHoursMinutes(v);
 		tableView.addColumn("Id", t -> t.getId());
-		tableView.addColumn("Truck", t -> t.getTruck() == null ? "<not assigned>" : t.getTruck().getName());
+		tableView.addColumn("Truck", t -> t.getTruck())
+					.setLabelExtractorNullable(Truck::getName);
 		tableView.addColumn("Source", t -> t.getRequest().getSourceAsset().getName());
 		tableView.addColumn("Destination", t -> t.getRequest().getDestAsset().getName());
 		tableView.addColumn("Created", t -> model.timeToDate(t.getRequest().getCreatedTime()))
 				.setLabelExtractor(labelExtractor);
 		tableView.addColumn("Deadline", t -> model.timeToDate(t.getRequest().getDeadlineTime()))
 				.setLabelExtractor(labelExtractor);
-		tableView
-				.addColumn("Completed",
+		tableView.addColumn("Completed",
 						t -> t.getRequest().isCompleted() ? model.timeToDate(t.getRequest().getCompletedTime()) : null)
-				.setLabelExtractor(labelExtractor);
-		tableView.addColumn("Status", this::getTaskStatus);
+					.setLabelExtractor(labelExtractor);
+		tableView.addColumn("Status", 200, t -> t.getStatus().toString());
 
 		messageManager.subscribe(Topics.SHOW_MODEL, this::onShowModel, true);
 		viewUpdaterService.getDefaultUpdater().addView(tableView);
@@ -53,15 +54,5 @@ public class TasksPart {
 	private void onShowModel(Model model) {
 		this.model = model;
 		tableView.setData(model.getTransportationTasks());
-	}
-	
-	private String getTaskStatus(TransportationTask task) {
-		var request = task.getRequest();
-		if (request.isCompleted()) {
-			return request.getCompletedTime() <= request.getDeadlineTime() ? "COMPLETED ON TIME" : "COMPLETED AFTER DEADLINE";
-		} else if (task.getTruck() != null) {
-			return "IN PROGRESS";
-		}
-		return "NOT STARTED";
 	}
 }
