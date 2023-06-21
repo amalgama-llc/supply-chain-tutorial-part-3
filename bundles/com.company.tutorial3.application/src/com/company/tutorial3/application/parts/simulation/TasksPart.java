@@ -33,7 +33,7 @@ public class TasksPart {
 		tableView = new TableView<>(parent, Collections.emptyList());
 		Function<LocalDateTime, String> labelExtractor = v -> v == null ? "" : Formats.getDefaultFormats().dayMonthLongYearHoursMinutes(v);
 		tableView.addColumn("Id", t -> t.getId());
-		tableView.addColumn("Truck", t -> t.getTruck().getName());
+		tableView.addColumn("Truck", t -> t.getTruck() == null ? "<not assigned>" : t.getTruck().getName());
 		tableView.addColumn("Source", t -> t.getRequest().getSourceAsset().getName());
 		tableView.addColumn("Destination", t -> t.getRequest().getDestAsset().getName());
 		tableView.addColumn("Created", t -> model.timeToDate(t.getRequest().getCreatedTime()))
@@ -59,7 +59,9 @@ public class TasksPart {
 		var request = task.getRequest();
 		if (request.isCompleted()) {
 			return request.getCompletedTime() <= request.getDeadlineTime() ? "COMPLETED ON TIME" : "COMPLETED AFTER DEADLINE";
+		} else if (task.getTruck() != null) {
+			return "IN PROGRESS";
 		}
-		return "IN PROGRESS";
+		return "NOT STARTED";
 	}
 }

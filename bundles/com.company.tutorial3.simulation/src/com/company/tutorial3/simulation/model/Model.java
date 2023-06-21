@@ -166,7 +166,7 @@ public class Model extends com.amalgamasimulation.engine.Model {
 		return dispatcher.getTransportationTasks();
 	}
 	
-	public void addTaskCompletedHandler(Consumer<TransportationTask> handler) {
-		dispatcher.addTaskCompletedHandler(handler);
+	public void addTaskStateChangeHandler(Consumer<TransportationTask> handler) {
+		dispatcher.addTaskStateChangeHandler(handler);
 	}
 }
