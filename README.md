@@ -1,7 +1,7 @@
 # Part 3: Adding User-friendly Interface
 
 ## About
-This repository contains the source code for the [Part 3 of the Supply Chain tutorial](https://platform.amalgamasimulation.com/amalgama/SupplyChainTutorial/sc_tutorial_part_3.html).
+This repository contains the source code for the [Part 3 of the Supply Chain tutorial](https://platform.amalgamasimulation.com/amalgama/SupplyChainTutorial/part3/sc_tutorial_part_3.html).
 
 The desktop application simulates the functionality of a simple supply chain.
 A road network can be edited and displayed over a map.
