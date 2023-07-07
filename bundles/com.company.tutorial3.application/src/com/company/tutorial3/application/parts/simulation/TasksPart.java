@@ -39,13 +39,15 @@ public class TasksPart {
 		tableView.addColumn("Source", t -> t.getRequest().getSourceAsset().getName());
 		tableView.addColumn("Destination", t -> t.getRequest().getDestAsset().getName());
 		tableView.addColumn("Created", t -> model.timeToDate(t.getRequest().getCreatedTime()))
-				.setLabelExtractor(labelExtractor);
+					.setLabelExtractor(labelExtractor);
+		tableView.addColumn("Started", t -> model.timeToDate(t.getBeginTime()))
+					.setLabelExtractor(labelExtractor);
 		tableView.addColumn("Deadline", t -> model.timeToDate(t.getRequest().getDeadlineTime()))
-				.setLabelExtractor(labelExtractor);
+					.setLabelExtractor(labelExtractor);
 		tableView.addColumn("Completed",
 						t -> t.getRequest().isCompleted() ? model.timeToDate(t.getRequest().getCompletedTime()) : null)
 					.setLabelExtractor(labelExtractor);
-		tableView.addColumn("Status", 200, t -> t.getStatus().toString());
+		tableView.addColumn("Status", 200, t -> t.getStatus().toString().replace("_", " "));
 
 		messageManager.subscribe(Topics.SHOW_MODEL, this::onShowModel, true);
 		viewUpdaterService.getDefaultUpdater().addView(tableView);

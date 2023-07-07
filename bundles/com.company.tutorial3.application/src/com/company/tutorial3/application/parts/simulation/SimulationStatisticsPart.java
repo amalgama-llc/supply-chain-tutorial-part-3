@@ -49,10 +49,6 @@ public class SimulationStatisticsPart {
 	protected void onShowModel(Model model) {
 		if (model != null) {
 			List<Indicator> data = List.of(
-					new Indicator(messages.INDICATOR_ARCS, () -> (double) appData.getScenario().getArcs().size(),
-							Formats.getDefaultFormats()::noDecimals, false),
-					new Indicator(messages.INDICATOR_NODES, () -> (double) appData.getScenario().getNodes().size(),
-							Formats.getDefaultFormats()::noDecimals, false),
 					new Indicator("Service level", () -> model.getStatistics().getServiceLevel(),
 							Formats.getDefaultFormats()::percent, false),
 					new Indicator("Expenses", () -> model.getStatistics().getExpenses(),

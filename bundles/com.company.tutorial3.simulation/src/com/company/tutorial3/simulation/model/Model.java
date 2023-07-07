@@ -169,4 +169,8 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	public void addTaskStateChangeHandler(Consumer<TransportationTask> handler) {
 		dispatcher.addTaskStateChangeHandler(handler);
 	}
+	
+	public void clearTaskStateChangeHandlers() {
+		dispatcher.clearTaskStateChangeHandlers();
+	}
 }
