@@ -54,6 +54,7 @@ public class WarehouseImpl extends AssetImpl implements Warehouse {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scenario getScenario() {
 		if (eContainerFeatureID() != DatamodelPackage.WAREHOUSE__SCENARIO)
 			return null;
@@ -75,6 +76,7 @@ public class WarehouseImpl extends AssetImpl implements Warehouse {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScenario(Scenario newScenario) {
 		if (newScenario != eInternalContainer()
 				|| (eContainerFeatureID() != DatamodelPackage.WAREHOUSE__SCENARIO && newScenario != null)) {

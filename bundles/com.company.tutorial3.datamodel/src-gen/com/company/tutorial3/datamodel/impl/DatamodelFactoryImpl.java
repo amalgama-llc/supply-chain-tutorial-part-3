@@ -68,8 +68,8 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 			return createWarehouse();
 		case DatamodelPackage.STORE:
 			return createStore();
-		case DatamodelPackage.TRUCK:
-			return createTruck();
+		case DatamodelPackage.TRUCK_TYPE:
+			return createTruckType();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,6 +80,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scenario createScenario() {
 		ScenarioImpl scenario = new ScenarioImpl();
 		return scenario;
@@ -90,6 +91,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Arc createArc() {
 		ArcImpl arc = new ArcImpl();
 		return arc;
@@ -100,6 +102,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Node createNode() {
 		NodeImpl node = new NodeImpl();
 		return node;
@@ -110,6 +113,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Point createPoint() {
 		PointImpl point = new PointImpl();
 		return point;
@@ -120,6 +124,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Warehouse createWarehouse() {
 		WarehouseImpl warehouse = new WarehouseImpl();
 		return warehouse;
@@ -130,6 +135,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Store createStore() {
 		StoreImpl store = new StoreImpl();
 		return store;
@@ -140,9 +146,10 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Truck createTruck() {
-		TruckImpl truck = new TruckImpl();
-		return truck;
+	@Override
+	public TruckType createTruckType() {
+		TruckTypeImpl truckType = new TruckTypeImpl();
+		return truckType;
 	}
 
 	/**
@@ -150,6 +157,7 @@ public class DatamodelFactoryImpl extends EFactoryImpl implements DatamodelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatamodelPackage getDatamodelPackage() {
 		return (DatamodelPackage) getEPackage();
 	}

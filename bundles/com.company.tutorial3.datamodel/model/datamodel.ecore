@@ -13,8 +13,9 @@
         eType="#//Warehouse" containment="true" eOpposite="#//Warehouse/scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//Store" containment="true" eOpposite="#//Store/scenario"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="trucks" upperBound="-1"
-        eType="#//Truck" containment="true" eOpposite="#//Truck/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="truckTypes" upperBound="-1"
+        eType="#//TruckType" containment="true" eOpposite="#//TruckType/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="truckSite" eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDeliveryTimeHrs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="intervalBetweenRequestsHrs"
         eType="ecore:EClass ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.ecore#//Distribution"
@@ -60,13 +61,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
         eOpposite="#//Scenario/stores"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Truck">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+  <eClassifiers xsi:type="ecore:EClass" name="TruckType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialNode" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//Scenario"
-        eOpposite="#//Scenario/trucks"/>
+        eOpposite="#//Scenario/truckTypes"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -25,7 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getArcs <em>Arcs</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getWarehouses <em>Warehouses</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getStores <em>Stores</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.Scenario#getTrucks <em>Trucks</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Scenario#getTruckTypes <em>Truck Types</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.Scenario#getTruckSite <em>Truck Site</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getMaxDeliveryTimeHrs <em>Max Delivery Time Hrs</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Scenario#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}</li>
  * </ul>
@@ -158,18 +159,40 @@ public interface Scenario extends EObject {
 	EList<Store> getStores();
 
 	/**
-	 * Returns the value of the '<em><b>Trucks</b></em>' containment reference list.
-	 * The list contents are of type {@link com.company.tutorial3.datamodel.Truck}.
-	 * It is bidirectional and its opposite is '{@link com.company.tutorial3.datamodel.Truck#getScenario <em>Scenario</em>}'.
+	 * Returns the value of the '<em><b>Truck Types</b></em>' containment reference list.
+	 * The list contents are of type {@link com.company.tutorial3.datamodel.TruckType}.
+	 * It is bidirectional and its opposite is '{@link com.company.tutorial3.datamodel.TruckType#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trucks</em>' containment reference list.
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario_Trucks()
-	 * @see com.company.tutorial3.datamodel.Truck#getScenario
+	 * @return the value of the '<em>Truck Types</em>' containment reference list.
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario_TruckTypes()
+	 * @see com.company.tutorial3.datamodel.TruckType#getScenario
 	 * @model opposite="scenario" containment="true"
 	 * @generated
 	 */
-	EList<Truck> getTrucks();
+	EList<TruckType> getTruckTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Truck Site</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Truck Site</em>' reference.
+	 * @see #setTruckSite(Node)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getScenario_TruckSite()
+	 * @model
+	 * @generated
+	 */
+	Node getTruckSite();
+
+	/**
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Scenario#getTruckSite <em>Truck Site</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Truck Site</em>' reference.
+	 * @see #getTruckSite()
+	 * @generated
+	 */
+	void setTruckSite(Node value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Delivery Time Hrs</b></em>' attribute.

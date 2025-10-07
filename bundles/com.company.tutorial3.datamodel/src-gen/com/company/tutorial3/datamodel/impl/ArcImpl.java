@@ -138,6 +138,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -147,6 +148,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -159,6 +161,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -168,6 +171,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -180,6 +184,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Node getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject) source;
@@ -207,6 +212,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(Node newSource) {
 		Node oldSource = source;
 		source = newSource;
@@ -219,6 +225,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Node getDest() {
 		if (dest != null && dest.eIsProxy()) {
 			InternalEObject oldDest = (InternalEObject) dest;
@@ -246,6 +253,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDest(Node newDest) {
 		Node oldDest = dest;
 		dest = newDest;
@@ -258,6 +266,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Point> getPoints() {
 		if (points == null) {
 			points = new EObjectContainmentWithInverseEList<Point>(Point.class, this, DatamodelPackage.ARC__POINTS,
@@ -271,6 +280,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scenario getScenario() {
 		if (eContainerFeatureID() != DatamodelPackage.ARC__SCENARIO)
 			return null;
@@ -292,6 +302,7 @@ public class ArcImpl extends MinimalEObjectImpl.Container implements Arc {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScenario(Scenario newScenario) {
 		if (newScenario != eInternalContainer()
 				|| (eContainerFeatureID() != DatamodelPackage.ARC__SCENARIO && newScenario != null)) {

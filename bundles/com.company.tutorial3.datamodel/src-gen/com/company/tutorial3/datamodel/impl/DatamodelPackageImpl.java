@@ -14,7 +14,7 @@ import com.company.tutorial3.datamodel.Point;
 import com.company.tutorial3.datamodel.Scenario;
 
 import com.company.tutorial3.datamodel.Store;
-import com.company.tutorial3.datamodel.Truck;
+import com.company.tutorial3.datamodel.TruckType;
 import com.company.tutorial3.datamodel.Warehouse;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -84,7 +84,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass truckEClass = null;
+	private EClass truckTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -159,6 +159,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getScenario() {
 		return scenarioEClass;
 	}
@@ -168,6 +169,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScenario_Name() {
 		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(0);
 	}
@@ -177,6 +179,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScenario_BeginDate() {
 		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(1);
 	}
@@ -186,6 +189,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScenario_EndDate() {
 		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(2);
 	}
@@ -195,6 +199,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScenario_Nodes() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(3);
 	}
@@ -204,6 +209,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScenario_Arcs() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(4);
 	}
@@ -213,6 +219,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScenario_Warehouses() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(5);
 	}
@@ -222,6 +229,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScenario_Stores() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(6);
 	}
@@ -231,7 +239,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScenario_Trucks() {
+	@Override
+	public EReference getScenario_TruckTypes() {
 		return (EReference) scenarioEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -240,8 +249,19 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getScenario_TruckSite() {
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getScenario_MaxDeliveryTimeHrs() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -249,8 +269,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScenario_IntervalBetweenRequestsHrs() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(9);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -258,6 +279,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getArc() {
 		return arcEClass;
 	}
@@ -267,6 +289,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArc_Id() {
 		return (EAttribute) arcEClass.getEStructuralFeatures().get(0);
 	}
@@ -276,6 +299,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getArc_Name() {
 		return (EAttribute) arcEClass.getEStructuralFeatures().get(1);
 	}
@@ -285,6 +309,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArc_Source() {
 		return (EReference) arcEClass.getEStructuralFeatures().get(2);
 	}
@@ -294,6 +319,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArc_Dest() {
 		return (EReference) arcEClass.getEStructuralFeatures().get(3);
 	}
@@ -303,6 +329,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArc_Points() {
 		return (EReference) arcEClass.getEStructuralFeatures().get(4);
 	}
@@ -312,6 +339,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getArc_Scenario() {
 		return (EReference) arcEClass.getEStructuralFeatures().get(5);
 	}
@@ -321,6 +349,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNode() {
 		return nodeEClass;
 	}
@@ -330,6 +359,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Id() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
 	}
@@ -339,6 +369,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Name() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(1);
 	}
@@ -348,6 +379,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Y() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(2);
 	}
@@ -357,6 +389,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_X() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(3);
 	}
@@ -366,6 +399,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Scenario() {
 		return (EReference) nodeEClass.getEStructuralFeatures().get(4);
 	}
@@ -375,6 +409,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPoint() {
 		return pointEClass;
 	}
@@ -384,6 +419,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPoint_Arc() {
 		return (EReference) pointEClass.getEStructuralFeatures().get(0);
 	}
@@ -393,6 +429,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPoint_Y() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(1);
 	}
@@ -402,6 +439,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPoint_X() {
 		return (EAttribute) pointEClass.getEStructuralFeatures().get(2);
 	}
@@ -411,6 +449,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAsset() {
 		return assetEClass;
 	}
@@ -420,6 +459,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAsset_Id() {
 		return (EAttribute) assetEClass.getEStructuralFeatures().get(0);
 	}
@@ -429,6 +469,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAsset_Name() {
 		return (EAttribute) assetEClass.getEStructuralFeatures().get(1);
 	}
@@ -438,6 +479,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAsset_Node() {
 		return (EReference) assetEClass.getEStructuralFeatures().get(2);
 	}
@@ -447,6 +489,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWarehouse() {
 		return warehouseEClass;
 	}
@@ -456,6 +499,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWarehouse_Scenario() {
 		return (EReference) warehouseEClass.getEStructuralFeatures().get(0);
 	}
@@ -465,6 +509,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStore() {
 		return storeEClass;
 	}
@@ -474,6 +519,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStore_Scenario() {
 		return (EReference) storeEClass.getEStructuralFeatures().get(0);
 	}
@@ -483,8 +529,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTruck() {
-		return truckEClass;
+	@Override
+	public EClass getTruckType() {
+		return truckTypeEClass;
 	}
 
 	/**
@@ -492,8 +539,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTruck_Id() {
-		return (EAttribute) truckEClass.getEStructuralFeatures().get(0);
+	@Override
+	public EAttribute getTruckType_Name() {
+		return (EAttribute) truckTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -501,8 +549,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTruck_Name() {
-		return (EAttribute) truckEClass.getEStructuralFeatures().get(1);
+	@Override
+	public EAttribute getTruckType_Speed() {
+		return (EAttribute) truckTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -510,8 +559,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTruck_Speed() {
-		return (EAttribute) truckEClass.getEStructuralFeatures().get(2);
+	@Override
+	public EAttribute getTruckType_Quantity() {
+		return (EAttribute) truckTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -519,8 +569,9 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTruck_InitialNode() {
-		return (EReference) truckEClass.getEStructuralFeatures().get(3);
+	@Override
+	public EReference getTruckType_Scenario() {
+		return (EReference) truckTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -528,15 +579,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTruck_Scenario() {
-		return (EReference) truckEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public DatamodelFactory getDatamodelFactory() {
 		return (DatamodelFactory) getEFactoryInstance();
 	}
@@ -569,7 +612,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEReference(scenarioEClass, SCENARIO__ARCS);
 		createEReference(scenarioEClass, SCENARIO__WAREHOUSES);
 		createEReference(scenarioEClass, SCENARIO__STORES);
-		createEReference(scenarioEClass, SCENARIO__TRUCKS);
+		createEReference(scenarioEClass, SCENARIO__TRUCK_TYPES);
+		createEReference(scenarioEClass, SCENARIO__TRUCK_SITE);
 		createEAttribute(scenarioEClass, SCENARIO__MAX_DELIVERY_TIME_HRS);
 		createEReference(scenarioEClass, SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS);
 
@@ -604,12 +648,11 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		storeEClass = createEClass(STORE);
 		createEReference(storeEClass, STORE__SCENARIO);
 
-		truckEClass = createEClass(TRUCK);
-		createEAttribute(truckEClass, TRUCK__ID);
-		createEAttribute(truckEClass, TRUCK__NAME);
-		createEAttribute(truckEClass, TRUCK__SPEED);
-		createEReference(truckEClass, TRUCK__INITIAL_NODE);
-		createEReference(truckEClass, TRUCK__SCENARIO);
+		truckTypeEClass = createEClass(TRUCK_TYPE);
+		createEAttribute(truckTypeEClass, TRUCK_TYPE__NAME);
+		createEAttribute(truckTypeEClass, TRUCK_TYPE__SPEED);
+		createEAttribute(truckTypeEClass, TRUCK_TYPE__QUANTITY);
+		createEReference(truckTypeEClass, TRUCK_TYPE__SCENARIO);
 	}
 
 	/**
@@ -673,9 +716,12 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		initEReference(getScenario_Stores(), this.getStore(), this.getStore_Scenario(), "stores", null, 0, -1,
 				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_Trucks(), this.getTruck(), this.getTruck_Scenario(), "trucks", null, 0, -1,
-				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getScenario_TruckTypes(), this.getTruckType(), this.getTruckType_Scenario(), "truckTypes", null,
+				0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_TruckSite(), this.getNode(), null, "truckSite", null, 0, 1, Scenario.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_MaxDeliveryTimeHrs(), ecorePackage.getEDouble(), "maxDeliveryTimeHrs", null, 0, 1,
 				Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -742,18 +788,16 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(truckEClass, Truck.class, "Truck", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTruck_Id(), ecorePackage.getEString(), "id", null, 0, 1, Truck.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTruck_Name(), ecorePackage.getEString(), "name", null, 0, 1, Truck.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTruck_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, Truck.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTruck_InitialNode(), this.getNode(), null, "initialNode", null, 0, 1, Truck.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTruck_Scenario(), this.getScenario(), this.getScenario_Trucks(), "scenario", null, 0, 1,
-				Truck.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEClass(truckTypeEClass, TruckType.class, "TruckType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTruckType_Name(), ecorePackage.getEString(), "name", null, 0, 1, TruckType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckType_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, TruckType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckType_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, TruckType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTruckType_Scenario(), this.getScenario(), this.getScenario_TruckTypes(), "scenario", null, 0,
+				1, TruckType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

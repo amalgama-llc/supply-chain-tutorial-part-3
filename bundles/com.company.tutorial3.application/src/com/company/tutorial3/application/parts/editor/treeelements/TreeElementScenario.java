@@ -30,7 +30,7 @@ public class TreeElementScenario extends TreeElement {
 	protected List<TreeElement> createChildElements() {
 		return List.of(	new TreeElementNetwork(scenario), 
 						new TreeElementAssets(scenario),
-						createLeaf(TreeElementType.TRUCK, () -> scenario.getTrucks().size()) );
+						createLeaf(TreeElementType.TRUCK_TYPE, () -> scenario.getTruckTypes().size()) );
 	}
 }
 

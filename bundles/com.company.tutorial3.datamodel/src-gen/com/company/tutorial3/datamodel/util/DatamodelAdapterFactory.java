@@ -102,8 +102,8 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTruck(Truck object) {
-			return createTruckAdapter();
+		public Adapter caseTruckType(TruckType object) {
+			return createTruckTypeAdapter();
 		}
 
 		@Override
@@ -224,16 +224,16 @@ public class DatamodelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.company.tutorial3.datamodel.Truck <em>Truck</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.company.tutorial3.datamodel.TruckType <em>Truck Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.company.tutorial3.datamodel.Truck
+	 * @see com.company.tutorial3.datamodel.TruckType
 	 * @generated
 	 */
-	public Adapter createTruckAdapter() {
+	public Adapter createTruckTypeAdapter() {
 		return null;
 	}
 

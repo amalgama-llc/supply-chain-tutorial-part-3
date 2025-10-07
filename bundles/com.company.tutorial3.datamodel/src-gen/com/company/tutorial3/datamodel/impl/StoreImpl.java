@@ -54,6 +54,7 @@ public class StoreImpl extends AssetImpl implements Store {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Scenario getScenario() {
 		if (eContainerFeatureID() != DatamodelPackage.STORE__SCENARIO)
 			return null;
@@ -75,6 +76,7 @@ public class StoreImpl extends AssetImpl implements Store {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScenario(Scenario newScenario) {
 		if (newScenario != eInternalContainer()
 				|| (eContainerFeatureID() != DatamodelPackage.STORE__SCENARIO && newScenario != null)) {

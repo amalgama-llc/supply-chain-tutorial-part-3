@@ -3,8 +3,8 @@
 package com.company.tutorial3.datamodel.impl;
 
 import com.company.tutorial3.datamodel.DatamodelPackage;
-import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
+import com.company.tutorial3.datamodel.TruckType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,42 +19,21 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Node</b></em>'.
+ * An implementation of the model object '<em><b>Truck Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getId <em>Id</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getY <em>Y</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getX <em>X</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
+public class TruckTypeImpl extends MinimalEObjectImpl.Container implements TruckType {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,51 +55,51 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * The default value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getY()
+	 * @see #getSpeed()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double Y_EDEFAULT = 0.0;
+	protected static final double SPEED_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getY()
+	 * @see #getSpeed()
 	 * @generated
 	 * @ordered
 	 */
-	protected double y = Y_EDEFAULT;
+	protected double speed = SPEED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
+	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getX()
+	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double X_EDEFAULT = 0.0;
+	protected static final int QUANTITY_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getX()
+	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
 	 */
-	protected double x = X_EDEFAULT;
+	protected int quantity = QUANTITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NodeImpl() {
+	protected TruckTypeImpl() {
 		super();
 	}
 
@@ -131,30 +110,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DatamodelPackage.Literals.NODE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__ID, oldId, id));
+		return DatamodelPackage.Literals.TRUCK_TYPE;
 	}
 
 	/**
@@ -177,7 +133,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -186,8 +142,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public double getY() {
-		return y;
+	public double getSpeed() {
+		return speed;
 	}
 
 	/**
@@ -196,11 +152,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public void setY(double newY) {
-		double oldY = y;
-		y = newY;
+	public void setSpeed(double newSpeed) {
+		double oldSpeed = speed;
+		speed = newSpeed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__Y, oldY, y));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__SPEED, oldSpeed, speed));
 	}
 
 	/**
@@ -209,8 +165,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public double getX() {
-		return x;
+	public int getQuantity() {
+		return quantity;
 	}
 
 	/**
@@ -219,11 +175,12 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public void setX(double newX) {
-		double oldX = x;
-		x = newX;
+	public void setQuantity(int newQuantity) {
+		int oldQuantity = quantity;
+		quantity = newQuantity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__X, oldX, x));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__QUANTITY, oldQuantity,
+					quantity));
 	}
 
 	/**
@@ -233,7 +190,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 */
 	@Override
 	public Scenario getScenario() {
-		if (eContainerFeatureID() != DatamodelPackage.NODE__SCENARIO)
+		if (eContainerFeatureID() != DatamodelPackage.TRUCK_TYPE__SCENARIO)
 			return null;
 		return (Scenario) eInternalContainer();
 	}
@@ -244,7 +201,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	public NotificationChain basicSetScenario(Scenario newScenario, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newScenario, DatamodelPackage.NODE__SCENARIO, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newScenario, DatamodelPackage.TRUCK_TYPE__SCENARIO, msgs);
 		return msgs;
 	}
 
@@ -256,20 +213,20 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void setScenario(Scenario newScenario) {
 		if (newScenario != eInternalContainer()
-				|| (eContainerFeatureID() != DatamodelPackage.NODE__SCENARIO && newScenario != null)) {
+				|| (eContainerFeatureID() != DatamodelPackage.TRUCK_TYPE__SCENARIO && newScenario != null)) {
 			if (EcoreUtil.isAncestor(this, newScenario))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newScenario != null)
-				msgs = ((InternalEObject) newScenario).eInverseAdd(this, DatamodelPackage.SCENARIO__NODES,
+				msgs = ((InternalEObject) newScenario).eInverseAdd(this, DatamodelPackage.SCENARIO__TRUCK_TYPES,
 						Scenario.class, msgs);
 			msgs = basicSetScenario(newScenario, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__SCENARIO, newScenario,
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__SCENARIO, newScenario,
 					newScenario));
 	}
 
@@ -281,7 +238,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetScenario((Scenario) otherEnd, msgs);
@@ -297,7 +254,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			return basicSetScenario(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -311,8 +268,9 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-		case DatamodelPackage.NODE__SCENARIO:
-			return eInternalContainer().eInverseRemove(this, DatamodelPackage.SCENARIO__NODES, Scenario.class, msgs);
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
+			return eInternalContainer().eInverseRemove(this, DatamodelPackage.SCENARIO__TRUCK_TYPES, Scenario.class,
+					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -325,15 +283,13 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			return getId();
-		case DatamodelPackage.NODE__NAME:
+		case DatamodelPackage.TRUCK_TYPE__NAME:
 			return getName();
-		case DatamodelPackage.NODE__Y:
-			return getY();
-		case DatamodelPackage.NODE__X:
-			return getX();
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SPEED:
+			return getSpeed();
+		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
+			return getQuantity();
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			return getScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -347,19 +303,16 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			setId((String) newValue);
-			return;
-		case DatamodelPackage.NODE__NAME:
+		case DatamodelPackage.TRUCK_TYPE__NAME:
 			setName((String) newValue);
 			return;
-		case DatamodelPackage.NODE__Y:
-			setY((Double) newValue);
+		case DatamodelPackage.TRUCK_TYPE__SPEED:
+			setSpeed((Double) newValue);
 			return;
-		case DatamodelPackage.NODE__X:
-			setX((Double) newValue);
+		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
+			setQuantity((Integer) newValue);
 			return;
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			setScenario((Scenario) newValue);
 			return;
 		}
@@ -374,19 +327,16 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			setId(ID_EDEFAULT);
-			return;
-		case DatamodelPackage.NODE__NAME:
+		case DatamodelPackage.TRUCK_TYPE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case DatamodelPackage.NODE__Y:
-			setY(Y_EDEFAULT);
+		case DatamodelPackage.TRUCK_TYPE__SPEED:
+			setSpeed(SPEED_EDEFAULT);
 			return;
-		case DatamodelPackage.NODE__X:
-			setX(X_EDEFAULT);
+		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
 			return;
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			setScenario((Scenario) null);
 			return;
 		}
@@ -401,15 +351,13 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-		case DatamodelPackage.NODE__NAME:
+		case DatamodelPackage.TRUCK_TYPE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case DatamodelPackage.NODE__Y:
-			return y != Y_EDEFAULT;
-		case DatamodelPackage.NODE__X:
-			return x != X_EDEFAULT;
-		case DatamodelPackage.NODE__SCENARIO:
+		case DatamodelPackage.TRUCK_TYPE__SPEED:
+			return speed != SPEED_EDEFAULT;
+		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
+			return quantity != QUANTITY_EDEFAULT;
+		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			return getScenario() != null;
 		}
 		return super.eIsSet(featureID);
@@ -426,16 +374,14 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
-		result.append(", y: ");
-		result.append(y);
-		result.append(", x: ");
-		result.append(x);
+		result.append(", speed: ");
+		result.append(speed);
+		result.append(", quantity: ");
+		result.append(quantity);
 		result.append(')');
 		return result.toString();
 	}
 
-} //NodeImpl
+} //TruckTypeImpl

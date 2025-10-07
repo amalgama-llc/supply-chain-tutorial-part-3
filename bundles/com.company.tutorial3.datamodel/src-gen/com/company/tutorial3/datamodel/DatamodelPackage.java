@@ -130,13 +130,22 @@ public interface DatamodelPackage extends EPackage {
 	int SCENARIO__STORES = 6;
 
 	/**
-	 * The feature id for the '<em><b>Trucks</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Truck Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__TRUCKS = 7;
+	int SCENARIO__TRUCK_TYPES = 7;
+
+	/**
+	 * The feature id for the '<em><b>Truck Site</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__TRUCK_SITE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Max Delivery Time Hrs</b></em>' attribute.
@@ -145,7 +154,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__MAX_DELIVERY_TIME_HRS = 8;
+	int SCENARIO__MAX_DELIVERY_TIME_HRS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Interval Between Requests Hrs</b></em>' containment reference.
@@ -154,7 +163,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS = 9;
+	int SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS = 10;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -163,7 +172,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 10;
+	int SCENARIO_FEATURE_COUNT = 11;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -568,23 +577,14 @@ public interface DatamodelPackage extends EPackage {
 	int STORE_OPERATION_COUNT = ASSET_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.company.tutorial3.datamodel.impl.TruckImpl <em>Truck</em>}' class.
+	 * The meta object id for the '{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl <em>Truck Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.company.tutorial3.datamodel.impl.TruckImpl
-	 * @see com.company.tutorial3.datamodel.impl.DatamodelPackageImpl#getTruck()
+	 * @see com.company.tutorial3.datamodel.impl.TruckTypeImpl
+	 * @see com.company.tutorial3.datamodel.impl.DatamodelPackageImpl#getTruckType()
 	 * @generated
 	 */
-	int TRUCK = 7;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRUCK__ID = 0;
+	int TRUCK_TYPE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -593,7 +593,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK__NAME = 1;
+	int TRUCK_TYPE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Speed</b></em>' attribute.
@@ -602,16 +602,16 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK__SPEED = 2;
+	int TRUCK_TYPE__SPEED = 1;
 
 	/**
-	 * The feature id for the '<em><b>Initial Node</b></em>' reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK__INITIAL_NODE = 3;
+	int TRUCK_TYPE__QUANTITY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -620,25 +620,25 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK__SCENARIO = 4;
+	int TRUCK_TYPE__SCENARIO = 3;
 
 	/**
-	 * The number of structural features of the '<em>Truck</em>' class.
+	 * The number of structural features of the '<em>Truck Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK_FEATURE_COUNT = 5;
+	int TRUCK_TYPE_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Truck</em>' class.
+	 * The number of operations of the '<em>Truck Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK_OPERATION_COUNT = 0;
+	int TRUCK_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link com.company.tutorial3.datamodel.Scenario <em>Scenario</em>}'.
@@ -728,15 +728,26 @@ public interface DatamodelPackage extends EPackage {
 	EReference getScenario_Stores();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.company.tutorial3.datamodel.Scenario#getTrucks <em>Trucks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.company.tutorial3.datamodel.Scenario#getTruckTypes <em>Truck Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Trucks</em>'.
-	 * @see com.company.tutorial3.datamodel.Scenario#getTrucks()
+	 * @return the meta object for the containment reference list '<em>Truck Types</em>'.
+	 * @see com.company.tutorial3.datamodel.Scenario#getTruckTypes()
 	 * @see #getScenario()
 	 * @generated
 	 */
-	EReference getScenario_Trucks();
+	EReference getScenario_TruckTypes();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.company.tutorial3.datamodel.Scenario#getTruckSite <em>Truck Site</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Truck Site</em>'.
+	 * @see com.company.tutorial3.datamodel.Scenario#getTruckSite()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_TruckSite();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Scenario#getMaxDeliveryTimeHrs <em>Max Delivery Time Hrs</em>}'.
@@ -1030,69 +1041,58 @@ public interface DatamodelPackage extends EPackage {
 	EReference getStore_Scenario();
 
 	/**
-	 * Returns the meta object for class '{@link com.company.tutorial3.datamodel.Truck <em>Truck</em>}'.
+	 * Returns the meta object for class '{@link com.company.tutorial3.datamodel.TruckType <em>Truck Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Truck</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck
+	 * @return the meta object for class '<em>Truck Type</em>'.
+	 * @see com.company.tutorial3.datamodel.TruckType
 	 * @generated
 	 */
-	EClass getTruck();
+	EClass getTruckType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Truck#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getId()
-	 * @see #getTruck()
-	 * @generated
-	 */
-	EAttribute getTruck_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Truck#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.TruckType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getName()
-	 * @see #getTruck()
+	 * @see com.company.tutorial3.datamodel.TruckType#getName()
+	 * @see #getTruckType()
 	 * @generated
 	 */
-	EAttribute getTruck_Name();
+	EAttribute getTruckType_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Truck#getSpeed <em>Speed</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.TruckType#getSpeed <em>Speed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Speed</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getSpeed()
-	 * @see #getTruck()
+	 * @see com.company.tutorial3.datamodel.TruckType#getSpeed()
+	 * @see #getTruckType()
 	 * @generated
 	 */
-	EAttribute getTruck_Speed();
+	EAttribute getTruckType_Speed();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.company.tutorial3.datamodel.Truck#getInitialNode <em>Initial Node</em>}'.
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.TruckType#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initial Node</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getInitialNode()
-	 * @see #getTruck()
+	 * @return the meta object for the attribute '<em>Quantity</em>'.
+	 * @see com.company.tutorial3.datamodel.TruckType#getQuantity()
+	 * @see #getTruckType()
 	 * @generated
 	 */
-	EReference getTruck_InitialNode();
+	EAttribute getTruckType_Quantity();
 
 	/**
-	 * Returns the meta object for the container reference '{@link com.company.tutorial3.datamodel.Truck#getScenario <em>Scenario</em>}'.
+	 * Returns the meta object for the container reference '{@link com.company.tutorial3.datamodel.TruckType#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Scenario</em>'.
-	 * @see com.company.tutorial3.datamodel.Truck#getScenario()
-	 * @see #getTruck()
+	 * @see com.company.tutorial3.datamodel.TruckType#getScenario()
+	 * @see #getTruckType()
 	 * @generated
 	 */
-	EReference getTruck_Scenario();
+	EReference getTruckType_Scenario();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1184,12 +1184,20 @@ public interface DatamodelPackage extends EPackage {
 		EReference SCENARIO__STORES = eINSTANCE.getScenario_Stores();
 
 		/**
-		 * The meta object literal for the '<em><b>Trucks</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Truck Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCENARIO__TRUCKS = eINSTANCE.getScenario_Trucks();
+		EReference SCENARIO__TRUCK_TYPES = eINSTANCE.getScenario_TruckTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Truck Site</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__TRUCK_SITE = eINSTANCE.getScenario_TruckSite();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Delivery Time Hrs</b></em>' attribute feature.
@@ -1420,22 +1428,14 @@ public interface DatamodelPackage extends EPackage {
 		EReference STORE__SCENARIO = eINSTANCE.getStore_Scenario();
 
 		/**
-		 * The meta object literal for the '{@link com.company.tutorial3.datamodel.impl.TruckImpl <em>Truck</em>}' class.
+		 * The meta object literal for the '{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl <em>Truck Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.company.tutorial3.datamodel.impl.TruckImpl
-		 * @see com.company.tutorial3.datamodel.impl.DatamodelPackageImpl#getTruck()
+		 * @see com.company.tutorial3.datamodel.impl.TruckTypeImpl
+		 * @see com.company.tutorial3.datamodel.impl.DatamodelPackageImpl#getTruckType()
 		 * @generated
 		 */
-		EClass TRUCK = eINSTANCE.getTruck();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRUCK__ID = eINSTANCE.getTruck_Id();
+		EClass TRUCK_TYPE = eINSTANCE.getTruckType();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1443,7 +1443,7 @@ public interface DatamodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRUCK__NAME = eINSTANCE.getTruck_Name();
+		EAttribute TRUCK_TYPE__NAME = eINSTANCE.getTruckType_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
@@ -1451,15 +1451,15 @@ public interface DatamodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRUCK__SPEED = eINSTANCE.getTruck_Speed();
+		EAttribute TRUCK_TYPE__SPEED = eINSTANCE.getTruckType_Speed();
 
 		/**
-		 * The meta object literal for the '<em><b>Initial Node</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRUCK__INITIAL_NODE = eINSTANCE.getTruck_InitialNode();
+		EAttribute TRUCK_TYPE__QUANTITY = eINSTANCE.getTruckType_Quantity();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
@@ -1467,7 +1467,7 @@ public interface DatamodelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRUCK__SCENARIO = eINSTANCE.getTruck_Scenario();
+		EReference TRUCK_TYPE__SCENARIO = eINSTANCE.getTruckType_Scenario();
 
 	}
 

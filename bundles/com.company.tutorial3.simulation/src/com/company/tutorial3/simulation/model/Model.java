@@ -6,18 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import org.apache.commons.math3.distribution.ExponentialDistribution;
-import org.apache.commons.math3.distribution.RealDistribution;
 import org.apache.commons.math3.random.RandomGenerator;
 
 import com.amalgamasimulation.engine.Engine;
 import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.geometry.Polyline;
 import com.amalgamasimulation.graphagent.GraphEnvironment;
+import com.amalgamasimulation.randomdatamodel.DistributionFactory;
 import com.amalgamasimulation.utils.random.DefaultRandomGenerator;
 import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.simulation.Mapping;
-import com.amalgamasimulation.randomdatamodel.DistributionFactory;
 
 public class Model extends com.amalgamasimulation.engine.Model {
 	private final Scenario scenario;
@@ -59,12 +57,15 @@ public class Model extends com.amalgamasimulation.engine.Model {
 	}
 
 	private void initializeTrucks() {
-		for (var scenarioTruck : scenario.getTrucks()) {
-			Truck truck = new Truck(scenarioTruck.getId(), scenarioTruck.getName(), scenarioTruck.getSpeed(), engine());
-			truck.setGraphEnvironment(graphEnvironment);
-			Node homeNode = mapping.nodesMap.get(scenarioTruck.getInitialNode());
-			truck.jumpTo(homeNode);
-			trucks.add(truck);
+		for (var truckType : scenario.getTruckTypes()) {
+			for (int i = 1; i <= truckType.getQuantity(); i++) {
+				String name = truckType.getName() + "-" + i;
+				Truck truck = new Truck(name, truckType.getSpeed(), engine());
+				truck.setGraphEnvironment(graphEnvironment);
+				Node homeNode = mapping.nodesMap.get(scenario.getTruckSite());
+				truck.jumpTo(homeNode);
+				trucks.add(truck);
+			}
 		}
 	}
 

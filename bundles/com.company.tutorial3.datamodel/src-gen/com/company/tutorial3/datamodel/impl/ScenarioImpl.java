@@ -9,7 +9,7 @@ import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
 
 import com.company.tutorial3.datamodel.Store;
-import com.company.tutorial3.datamodel.Truck;
+import com.company.tutorial3.datamodel.TruckType;
 import com.company.tutorial3.datamodel.Warehouse;
 import java.time.LocalDateTime;
 
@@ -44,7 +44,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getArcs <em>Arcs</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getWarehouses <em>Warehouses</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getStores <em>Stores</em>}</li>
- *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getTrucks <em>Trucks</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getTruckTypes <em>Truck Types</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getTruckSite <em>Truck Site</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getMaxDeliveryTimeHrs <em>Max Delivery Time Hrs</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.ScenarioImpl#getIntervalBetweenRequestsHrs <em>Interval Between Requests Hrs</em>}</li>
  * </ul>
@@ -153,14 +154,24 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	protected EList<Store> stores;
 
 	/**
-	 * The cached value of the '{@link #getTrucks() <em>Trucks</em>}' containment reference list.
+	 * The cached value of the '{@link #getTruckTypes() <em>Truck Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTrucks()
+	 * @see #getTruckTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Truck> trucks;
+	protected EList<TruckType> truckTypes;
+
+	/**
+	 * The cached value of the '{@link #getTruckSite() <em>Truck Site</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTruckSite()
+	 * @generated
+	 * @ordered
+	 */
+	protected Node truckSite;
 
 	/**
 	 * The default value of the '{@link #getMaxDeliveryTimeHrs() <em>Max Delivery Time Hrs</em>}' attribute.
@@ -216,6 +227,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -225,6 +237,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -237,6 +250,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalDateTime getBeginDate() {
 		return beginDate;
 	}
@@ -246,6 +260,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBeginDate(LocalDateTime newBeginDate) {
 		LocalDateTime oldBeginDate = beginDate;
 		beginDate = newBeginDate;
@@ -259,6 +274,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalDateTime getEndDate() {
 		return endDate;
 	}
@@ -268,6 +284,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEndDate(LocalDateTime newEndDate) {
 		LocalDateTime oldEndDate = endDate;
 		endDate = newEndDate;
@@ -281,6 +298,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
 			nodes = new EObjectContainmentWithInverseEList<Node>(Node.class, this, DatamodelPackage.SCENARIO__NODES,
@@ -294,6 +312,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Arc> getArcs() {
 		if (arcs == null) {
 			arcs = new EObjectContainmentWithInverseEList<Arc>(Arc.class, this, DatamodelPackage.SCENARIO__ARCS,
@@ -307,6 +326,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Warehouse> getWarehouses() {
 		if (warehouses == null) {
 			warehouses = new EObjectContainmentWithInverseEList<Warehouse>(Warehouse.class, this,
@@ -320,6 +340,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Store> getStores() {
 		if (stores == null) {
 			stores = new EObjectContainmentWithInverseEList<Store>(Store.class, this, DatamodelPackage.SCENARIO__STORES,
@@ -333,12 +354,13 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Truck> getTrucks() {
-		if (trucks == null) {
-			trucks = new EObjectContainmentWithInverseEList<Truck>(Truck.class, this, DatamodelPackage.SCENARIO__TRUCKS,
-					DatamodelPackage.TRUCK__SCENARIO);
+	@Override
+	public EList<TruckType> getTruckTypes() {
+		if (truckTypes == null) {
+			truckTypes = new EObjectContainmentWithInverseEList<TruckType>(TruckType.class, this,
+					DatamodelPackage.SCENARIO__TRUCK_TYPES, DatamodelPackage.TRUCK_TYPE__SCENARIO);
 		}
-		return trucks;
+		return truckTypes;
 	}
 
 	/**
@@ -346,6 +368,49 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Node getTruckSite() {
+		if (truckSite != null && truckSite.eIsProxy()) {
+			InternalEObject oldTruckSite = (InternalEObject) truckSite;
+			truckSite = (Node) eResolveProxy(oldTruckSite);
+			if (truckSite != oldTruckSite) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DatamodelPackage.SCENARIO__TRUCK_SITE,
+							oldTruckSite, truckSite));
+			}
+		}
+		return truckSite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Node basicGetTruckSite() {
+		return truckSite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTruckSite(Node newTruckSite) {
+		Node oldTruckSite = truckSite;
+		truckSite = newTruckSite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.SCENARIO__TRUCK_SITE, oldTruckSite,
+					truckSite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public double getMaxDeliveryTimeHrs() {
 		return maxDeliveryTimeHrs;
 	}
@@ -355,6 +420,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxDeliveryTimeHrs(double newMaxDeliveryTimeHrs) {
 		double oldMaxDeliveryTimeHrs = maxDeliveryTimeHrs;
 		maxDeliveryTimeHrs = newMaxDeliveryTimeHrs;
@@ -368,6 +434,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Distribution getIntervalBetweenRequestsHrs() {
 		return intervalBetweenRequestsHrs;
 	}
@@ -398,6 +465,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIntervalBetweenRequestsHrs(Distribution newIntervalBetweenRequestsHrs) {
 		if (newIntervalBetweenRequestsHrs != intervalBetweenRequestsHrs) {
 			NotificationChain msgs = null;
@@ -433,8 +501,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getWarehouses()).basicAdd(otherEnd, msgs);
 		case DatamodelPackage.SCENARIO__STORES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getStores()).basicAdd(otherEnd, msgs);
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTrucks()).basicAdd(otherEnd, msgs);
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTruckTypes()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -455,8 +523,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return ((InternalEList<?>) getWarehouses()).basicRemove(otherEnd, msgs);
 		case DatamodelPackage.SCENARIO__STORES:
 			return ((InternalEList<?>) getStores()).basicRemove(otherEnd, msgs);
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			return ((InternalEList<?>) getTrucks()).basicRemove(otherEnd, msgs);
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			return ((InternalEList<?>) getTruckTypes()).basicRemove(otherEnd, msgs);
 		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
 			return basicSetIntervalBetweenRequestsHrs(null, msgs);
 		}
@@ -485,8 +553,12 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return getWarehouses();
 		case DatamodelPackage.SCENARIO__STORES:
 			return getStores();
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			return getTrucks();
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			return getTruckTypes();
+		case DatamodelPackage.SCENARIO__TRUCK_SITE:
+			if (resolve)
+				return getTruckSite();
+			return basicGetTruckSite();
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			return getMaxDeliveryTimeHrs();
 		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:
@@ -529,9 +601,12 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			getStores().clear();
 			getStores().addAll((Collection<? extends Store>) newValue);
 			return;
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			getTrucks().clear();
-			getTrucks().addAll((Collection<? extends Truck>) newValue);
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			getTruckTypes().clear();
+			getTruckTypes().addAll((Collection<? extends TruckType>) newValue);
+			return;
+		case DatamodelPackage.SCENARIO__TRUCK_SITE:
+			setTruckSite((Node) newValue);
 			return;
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			setMaxDeliveryTimeHrs((Double) newValue);
@@ -572,8 +647,11 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		case DatamodelPackage.SCENARIO__STORES:
 			getStores().clear();
 			return;
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			getTrucks().clear();
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			getTruckTypes().clear();
+			return;
+		case DatamodelPackage.SCENARIO__TRUCK_SITE:
+			setTruckSite((Node) null);
 			return;
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			setMaxDeliveryTimeHrs(MAX_DELIVERY_TIME_HRS_EDEFAULT);
@@ -607,8 +685,10 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			return warehouses != null && !warehouses.isEmpty();
 		case DatamodelPackage.SCENARIO__STORES:
 			return stores != null && !stores.isEmpty();
-		case DatamodelPackage.SCENARIO__TRUCKS:
-			return trucks != null && !trucks.isEmpty();
+		case DatamodelPackage.SCENARIO__TRUCK_TYPES:
+			return truckTypes != null && !truckTypes.isEmpty();
+		case DatamodelPackage.SCENARIO__TRUCK_SITE:
+			return truckSite != null;
 		case DatamodelPackage.SCENARIO__MAX_DELIVERY_TIME_HRS:
 			return maxDeliveryTimeHrs != MAX_DELIVERY_TIME_HRS_EDEFAULT;
 		case DatamodelPackage.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS:

@@ -97,6 +97,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Arc getArc() {
 		if (eContainerFeatureID() != DatamodelPackage.POINT__ARC)
 			return null;
@@ -118,6 +119,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setArc(Arc newArc) {
 		if (newArc != eInternalContainer()
 				|| (eContainerFeatureID() != DatamodelPackage.POINT__ARC && newArc != null)) {
@@ -140,6 +142,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getY() {
 		return y;
 	}
@@ -149,6 +152,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setY(double newY) {
 		double oldY = y;
 		y = newY;
@@ -161,6 +165,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getX() {
 		return x;
 	}
@@ -170,6 +175,7 @@ public class PointImpl extends MinimalEObjectImpl.Container implements Point {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setX(double newX) {
 		double oldX = x;
 		x = newX;

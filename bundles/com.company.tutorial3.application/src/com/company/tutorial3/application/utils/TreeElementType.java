@@ -10,7 +10,7 @@ public enum TreeElementType {
 		ASSET("/icons/object.png", "Assets"),
 		WAREHOUSE("/icons/object.png", "Warehouses"),
 		STORE("/icons/object.png", "Stores"),
-		TRUCK("/icons/object.png", "Trucks"),
+		TRUCK_TYPE("/icons/object.png", "Trucks"),
 	;
 	
 	private final String iconPath;

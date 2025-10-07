@@ -76,13 +76,13 @@ public interface DatamodelFactory extends EFactory {
 	Store createStore();
 
 	/**
-	 * Returns a new object of class '<em>Truck</em>'.
+	 * Returns a new object of class '<em>Truck Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Truck</em>'.
+	 * @return a new object of class '<em>Truck Type</em>'.
 	 * @generated
 	 */
-	Truck createTruck();
+	TruckType createTruckType();
 
 	/**
 	 * Returns the package supported by this factory.

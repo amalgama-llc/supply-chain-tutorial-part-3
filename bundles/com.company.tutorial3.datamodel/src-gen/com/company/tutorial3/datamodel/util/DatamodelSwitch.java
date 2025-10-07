@@ -119,9 +119,9 @@ public class DatamodelSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DatamodelPackage.TRUCK: {
-			Truck truck = (Truck) theEObject;
-			T result = caseTruck(truck);
+		case DatamodelPackage.TRUCK_TYPE: {
+			TruckType truckType = (TruckType) theEObject;
+			T result = caseTruckType(truckType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -237,17 +237,17 @@ public class DatamodelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Truck</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Truck Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Truck</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Truck Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTruck(Truck object) {
+	public T caseTruckType(TruckType object) {
 		return null;
 	}
 

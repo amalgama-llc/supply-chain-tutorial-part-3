@@ -4,7 +4,7 @@
     modelDirectory="/com.company.tutorial3.datamodel/src-gen" creationIcons="false"
     editDirectory="/com.company.tutorial3.datamodel.edit/src-gen" editorDirectory="/com.company.tutorial3.datamodel.editor/src-gen"
     modelPluginID="com.company.tutorial3.datamodel" modelName="Datamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
     copyrightFields="false" usedGenPackages="../../com.amalgamasimulation.ecoreutils/model/ecoreutils.genmodel#//ecoreutils ../../com.amalgamasimulation.randomdatamodel/model/randomdatamodel.genmodel#//randomdatamodel"
     operationReflection="true" importOrganizing="true">
   <foreignModel>datamodel.ecore</foreignModel>
@@ -19,7 +19,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/arcs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/warehouses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/stores"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/trucks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/truckTypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/truckSite"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Scenario/maxDeliveryTimeHrs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference datamodel.ecore#//Scenario/intervalBetweenRequestsHrs"/>
     </genClasses>
@@ -54,12 +55,11 @@
     <genClasses ecoreClass="datamodel.ecore#//Store">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Store/scenario"/>
     </genClasses>
-    <genClasses ecoreClass="datamodel.ecore#//Truck">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//Truck/speed"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/initialNode"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//Truck/scenario"/>
+    <genClasses ecoreClass="datamodel.ecore#//TruckType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckType/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute datamodel.ecore#//TruckType/quantity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference datamodel.ecore#//TruckType/scenario"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

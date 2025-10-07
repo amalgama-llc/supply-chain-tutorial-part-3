@@ -279,7 +279,7 @@ public class TreePart {
 		list.add(DatamodelPackage.Literals.SCENARIO__ARCS);
 		list.add(DatamodelPackage.Literals.SCENARIO__WAREHOUSES);
 		list.add(DatamodelPackage.Literals.SCENARIO__STORES);
-		list.add(DatamodelPackage.Literals.SCENARIO__TRUCKS);
+		list.add(DatamodelPackage.Literals.SCENARIO__TRUCK_TYPES);
 	}
 }
 

@@ -30,7 +30,6 @@ public class TablePart {
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		tableView = new TableView<>(parent, Collections.emptyList(), false, true);
-		tableView.addColumn("ID", t -> t.getId());
 		tableView.addColumn("Name", t -> t.getName());
 		tableView.addColumn("Expenses", t -> t.getExpenses()).setLabelExtractor(Formats.getDefaultFormats()::dollarTwoDecimals);
 		tableView.addColumn("Distance traveled, km", 125, t -> getDistanceKm(t.getDistanceTraveled())).setLabelExtractor(Formats.getDefaultFormats()::twoDecimals);

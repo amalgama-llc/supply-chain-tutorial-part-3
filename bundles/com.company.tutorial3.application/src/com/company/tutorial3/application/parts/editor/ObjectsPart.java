@@ -16,7 +16,7 @@ import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.datamodel.Store;
-import com.company.tutorial3.datamodel.Truck;
+import com.company.tutorial3.datamodel.TruckType;
 import com.company.tutorial3.datamodel.Warehouse;
 
 public class ObjectsPart extends AbstractObjectsPart {
@@ -94,20 +94,20 @@ public class ObjectsPart extends AbstractObjectsPart {
 					tableView.addColumn("Node", 100, Store::getNode, p -> p == null ? "" : p.getName());
 				});
 		
-		new ObjectsPage<Truck>(this, DatamodelPackage.Literals.SCENARIO__TRUCKS, TreeElementType.TRUCK, 
+		new ObjectsPage<TruckType>(this, DatamodelPackage.Literals.SCENARIO__TRUCK_TYPES, TreeElementType.TRUCK_TYPE, 
 				() -> {
-					var truck = DatamodelFactory.eINSTANCE.createTruck();
+					var truck = DatamodelFactory.eINSTANCE.createTruckType();
 					truck.setScenario(scenarioObservable.getValue());
 					return truck;
 				},
 				null, null)
-				.setTableRefreshBinding(DatamodelPackage.Literals.TRUCK__ID, DatamodelPackage.Literals.TRUCK__NAME,
-						DatamodelPackage.Literals.TRUCK__SPEED, DatamodelPackage.Literals.TRUCK__INITIAL_NODE)
+				.setTableRefreshBinding(DatamodelPackage.Literals.TRUCK_TYPE__NAME,
+						DatamodelPackage.Literals.TRUCK_TYPE__SPEED, 
+						DatamodelPackage.Literals.TRUCK_TYPE__QUANTITY)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn("ID", 100, Truck::getId);
 					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
-					tableView.addColumn("Speed", 100, Truck::getSpeed);
-					tableView.addColumn("Initial node", 100, Truck::getInitialNode, p -> p == null ? "" : p.getName());
+					tableView.addColumn("Speed", 100, TruckType::getSpeed);
+					tableView.addColumn("Quantity", 100, TruckType::getQuantity);
 				});
 	}
 	

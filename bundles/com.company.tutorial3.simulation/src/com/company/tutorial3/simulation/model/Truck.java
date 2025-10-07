@@ -13,7 +13,6 @@ public class Truck extends GraphAgent<Node, Arc> {
 	private final double OWNERSHIP_COST_PER_HOUR = 10;
 	private final double USAGE_COST_PER_HOUR = 25;
 
-	private final String id;
 	private final String name;
 	private final double speed;
 	
@@ -25,17 +24,12 @@ public class Truck extends GraphAgent<Node, Arc> {
 	private List<TransportationTask> taskHistory = new ArrayList<>();
 	private BiConsumer<Truck, GeometricGraphPosition<Node, Arc>> destinationReachedHandler;
 
-	public Truck(String id, String name, double speed, Engine engine) {
+	public Truck(String name, double speed, Engine engine) {
 		super(engine);
-		this.id = id;
 		this.name = name;
 		this.speed = speed;
 	}
 
-	public String getId() {
-		return id;
-	}
-	
 	@Override
 	public String getName() {
 		return name;
