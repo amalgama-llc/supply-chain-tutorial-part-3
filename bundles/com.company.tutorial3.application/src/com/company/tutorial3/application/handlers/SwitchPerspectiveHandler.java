@@ -19,19 +19,18 @@ import org.eclipse.swt.widgets.Shell;
 
 import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.engine.service.IEngineService;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
 import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.application.utils.validation.ValidationManager;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.simulation.ExperimentRun;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-
 
 public class SwitchPerspectiveHandler {
 	

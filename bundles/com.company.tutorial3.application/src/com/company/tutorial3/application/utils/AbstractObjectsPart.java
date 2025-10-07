@@ -24,8 +24,8 @@ import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 
 import com.amalgamasimulation.desktop.ui.views.TableView;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;

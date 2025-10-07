@@ -7,11 +7,10 @@ import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 
-import com.company.tutorial3.application.AppInfo;
-import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.datamodel.Scenario;
 import com.amalgamasimulation.utils.format.Formats;
-
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.AppInfo;
+import com.company.tutorial3.datamodel.Scenario;
 
 public class MainWindowTitleUpdater {
 	

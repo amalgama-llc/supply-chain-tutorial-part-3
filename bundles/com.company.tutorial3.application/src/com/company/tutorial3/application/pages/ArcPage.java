@@ -1,15 +1,14 @@
 package com.company.tutorial3.application.pages;
 
-
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 
-import com.company.tutorial3.common.localization.Messages;
+import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 
 public class ArcPage extends AbstractPage<Arc> {
 	

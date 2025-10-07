@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.utils.TreeElementType;
-import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
 

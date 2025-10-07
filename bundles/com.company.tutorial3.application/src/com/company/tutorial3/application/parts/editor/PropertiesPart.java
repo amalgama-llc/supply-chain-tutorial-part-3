@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.amalgamasimulation.desktop.properties.PropertyPart;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.pages.ArcPage;
 import com.company.tutorial3.application.pages.NodePage;
 import com.company.tutorial3.application.pages.PointPage;
@@ -13,7 +14,6 @@ import com.company.tutorial3.application.pages.ScenarioPage;
 import com.company.tutorial3.application.pages.StorePage;
 import com.company.tutorial3.application.pages.TruckPage;
 import com.company.tutorial3.application.pages.WarehousePage;
-import com.company.tutorial3.common.localization.Messages;
 
 import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;

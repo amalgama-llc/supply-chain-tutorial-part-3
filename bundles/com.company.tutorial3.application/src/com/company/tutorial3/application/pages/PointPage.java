@@ -3,14 +3,13 @@ package com.company.tutorial3.application.pages;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.databinding.EMFProperties;
 
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.datamodel.Arc;
-import com.company.tutorial3.datamodel.DatamodelPackage;
-import com.company.tutorial3.datamodel.Point;
 import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 import com.amalgamasimulation.desktop.properties.sections.TableSection;
 import com.amalgamasimulation.desktop.ui.views.TableView;
-
+import com.company.tutorial3.application.localization.Messages;
+import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.DatamodelPackage;
+import com.company.tutorial3.datamodel.Point;
 
 public class PointPage extends AbstractPage<Arc>{
 

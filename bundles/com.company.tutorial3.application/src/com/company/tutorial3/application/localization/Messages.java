@@ -1,11 +1,9 @@
-package com.company.tutorial3.common.localization;
-
+package com.company.tutorial3.application.localization;
 
 import org.eclipse.e4.core.services.nls.Message;
 import org.eclipse.e4.core.services.nls.Message.ReferenceType;
 
-
-@Message (contributionURI="platform:/plugin/com.company.tutorial3.common/OSGI-INF/l10n", referenceType=ReferenceType.NONE)
+@Message (contributionURI="platform:/plugin/com.company.tutorial3.application/OSGI-INF/l10n", referenceType=ReferenceType.NONE)
 public class Messages {
 	
 	public String APP_VERSION;

@@ -4,10 +4,9 @@ import java.time.temporal.ChronoField;
 import java.util.List;
 
 import com.amalgamasimulation.utils.format.Formats;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.TreeElementType;
-import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.datamodel.Scenario;
-
 
 public class TreeElementScenario extends TreeElement {
 	private Scenario scenario;

@@ -11,9 +11,9 @@ import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.widgets.Shell;
 
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 
 import jakarta.inject.Inject;
 

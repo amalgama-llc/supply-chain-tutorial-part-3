@@ -1,6 +1,6 @@
 package com.company.tutorial3.application.utils;
 
-import com.company.tutorial3.common.states.AppData;
+import com.company.tutorial3.application.AppData;
 
 public enum TreeElementType {
 		NETWORK("/icons/transportation_net.png", AppData.messages.network),

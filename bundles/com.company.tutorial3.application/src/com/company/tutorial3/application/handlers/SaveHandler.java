@@ -4,8 +4,8 @@ import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.swt.widgets.Shell;
 
+import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.states.AppData;
 
 import jakarta.inject.Inject;
 

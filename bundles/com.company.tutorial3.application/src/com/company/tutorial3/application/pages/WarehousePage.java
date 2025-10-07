@@ -5,7 +5,7 @@ import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 
 import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
-import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Warehouse;

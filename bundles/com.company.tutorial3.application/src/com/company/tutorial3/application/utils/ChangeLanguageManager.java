@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 import org.eclipse.jface.dialogs.MessageDialog;
 
-import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.application.localization.Messages;
 
 
 public class ChangeLanguageManager {

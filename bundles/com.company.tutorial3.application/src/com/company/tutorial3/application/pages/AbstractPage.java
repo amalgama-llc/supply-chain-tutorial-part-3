@@ -9,11 +9,10 @@ import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EObject;
 
-
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.datamodel.Scenario;
 import com.amalgamasimulation.desktop.properties.PropertyPage;
 import com.amalgamasimulation.desktop.properties.sections.PropertySection.ControlsMarginRule;
+import com.company.tutorial3.application.localization.Messages;
+import com.company.tutorial3.datamodel.Scenario;
 
 public abstract class AbstractPage<T extends EObject> extends PropertyPage<T>{
 

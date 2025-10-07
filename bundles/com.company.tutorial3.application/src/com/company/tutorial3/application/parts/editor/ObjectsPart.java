@@ -5,10 +5,11 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.emf.databinding.EMFProperties;
 
-import com.company.tutorial3.application.utils.TreeElementType;
+import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 import com.company.tutorial3.application.utils.AbstractObjectsPart;
 import com.company.tutorial3.application.utils.ObjectsPage;
 import com.company.tutorial3.application.utils.Topics;
+import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
@@ -17,7 +18,6 @@ import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.datamodel.Store;
 import com.company.tutorial3.datamodel.Truck;
 import com.company.tutorial3.datamodel.Warehouse;
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 
 public class ObjectsPart extends AbstractObjectsPart {
 

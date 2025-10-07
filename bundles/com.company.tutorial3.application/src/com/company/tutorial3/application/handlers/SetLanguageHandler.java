@@ -5,9 +5,9 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.ChangeLanguageManager;
-import com.company.tutorial3.common.localization.Messages;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;

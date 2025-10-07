@@ -11,10 +11,10 @@ import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.widgets.Shell;
 
 import com.amalgamasimulation.desktop.ui.dialogs.DialogUtils;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.scenario.ScenarioFileFormat;
 import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 
 import jakarta.inject.Inject;
 

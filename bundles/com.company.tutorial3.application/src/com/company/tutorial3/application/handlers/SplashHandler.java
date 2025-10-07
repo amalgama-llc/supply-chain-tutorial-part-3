@@ -15,13 +15,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 
 import com.amalgamasimulation.localization.Util;
+import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.AppInfo;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.CurrentLocale;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 
 import jakarta.inject.Inject;
 

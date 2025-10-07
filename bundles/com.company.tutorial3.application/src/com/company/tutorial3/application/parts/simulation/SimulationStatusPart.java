@@ -17,14 +17,14 @@ import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationView;
 import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationViewImpl;
 import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
+import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.animation.SimulationStatusShape;
 import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.simulation.model.Model;
 
 import jakarta.annotation.PostConstruct;

@@ -26,14 +26,14 @@ import com.amalgamasimulation.desktop.ui.views.TreeView;
 import com.amalgamasimulation.desktop.ui.views.TreeViewerColumnDescriptor;
 import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.application.utils.validation.ErrorType;
 import com.company.tutorial3.application.utils.validation.ObjectType;
 import com.company.tutorial3.application.utils.validation.Problem;
 import com.company.tutorial3.application.utils.validation.ValidationManager;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;

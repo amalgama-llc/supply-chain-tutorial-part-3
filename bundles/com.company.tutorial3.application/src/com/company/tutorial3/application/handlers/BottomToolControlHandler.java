@@ -1,8 +1,5 @@
 package com.company.tutorial3.application.handlers;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.inject.Inject;
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
@@ -20,8 +17,11 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 
 import com.company.tutorial3.application.AppInfo;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class BottomToolControlHandler {
 	@Inject

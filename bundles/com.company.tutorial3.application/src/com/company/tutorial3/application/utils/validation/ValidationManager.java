@@ -3,15 +3,17 @@ package com.company.tutorial3.application.utils.validation;
 
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
+
 import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
-		import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelPackage;
-		import com.company.tutorial3.datamodel.Node;
-		import com.company.tutorial3.datamodel.Point;
+import com.company.tutorial3.datamodel.Node;
+import com.company.tutorial3.datamodel.Point;
 import com.company.tutorial3.datamodel.Scenario;
 
 public final class ValidationManager {

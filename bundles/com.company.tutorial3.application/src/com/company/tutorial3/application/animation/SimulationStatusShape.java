@@ -6,9 +6,6 @@ import java.util.function.Supplier;
 
 import org.eclipse.swt.widgets.Display;
 
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.simulation.model.Model;
 import com.amalgamasimulation.animation.shapes.shapes2d.GroupShape;
 import com.amalgamasimulation.animation.shapes.shapes2d.RectangleShape;
 import com.amalgamasimulation.animation.shapes.shapes2d.RoundedRectangleShape;
@@ -16,6 +13,9 @@ import com.amalgamasimulation.animation.shapes.shapes2d.TextShape;
 import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.utils.Utils;
 import com.amalgamasimulation.utils.format.Formats;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
+import com.company.tutorial3.simulation.model.Model;
 
 public class SimulationStatusShape extends GroupShape {
 	

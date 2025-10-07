@@ -9,9 +9,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.company.tutorial3.application.command.UniqNamesManager;
-import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.application.localization.Messages;
 
 public class BasicValidator {
+	
 	private Messages messages;	
 	private final ProblemsContainer problemsContainer;
 	

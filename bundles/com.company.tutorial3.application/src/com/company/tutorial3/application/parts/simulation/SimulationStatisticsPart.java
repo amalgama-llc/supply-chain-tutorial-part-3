@@ -12,9 +12,9 @@ import com.amalgamasimulation.desktop.ui.views.TableView;
 import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.utils.format.Formats;
 import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
+import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.simulation.model.Model;
 
 import jakarta.annotation.PostConstruct;
