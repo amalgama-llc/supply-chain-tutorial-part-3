@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.company.tutorial3.datamodel.Node#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getY <em>Y</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.Node#getX <em>X</em>}</li>
@@ -26,35 +25,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Node extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_Id()
-	 * @model id="true"
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link com.company.tutorial3.datamodel.Node#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getNode_Name()
-	 * @model
+	 * @model id="true"
 	 * @generated
 	 */
 	String getName();

@@ -360,7 +360,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNode_Id() {
+	public EAttribute getNode_Name() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -370,7 +370,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNode_Name() {
+	public EAttribute getNode_Y() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -380,7 +380,7 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNode_Y() {
+	public EAttribute getNode_X() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -390,18 +390,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNode_X() {
-		return (EAttribute) nodeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getNode_Scenario() {
-		return (EReference) nodeEClass.getEStructuralFeatures().get(4);
+		return (EReference) nodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -570,8 +560,28 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTruckType_OwnershipCostPerHour() {
+		return (EAttribute) truckTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTruckType_UsageCostPerHour() {
+		return (EAttribute) truckTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTruckType_Scenario() {
-		return (EReference) truckTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference) truckTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -626,7 +636,6 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEReference(arcEClass, ARC__SCENARIO);
 
 		nodeEClass = createEClass(NODE);
-		createEAttribute(nodeEClass, NODE__ID);
 		createEAttribute(nodeEClass, NODE__NAME);
 		createEAttribute(nodeEClass, NODE__Y);
 		createEAttribute(nodeEClass, NODE__X);
@@ -652,6 +661,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 		createEAttribute(truckTypeEClass, TRUCK_TYPE__NAME);
 		createEAttribute(truckTypeEClass, TRUCK_TYPE__SPEED);
 		createEAttribute(truckTypeEClass, TRUCK_TYPE__QUANTITY);
+		createEAttribute(truckTypeEClass, TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR);
+		createEAttribute(truckTypeEClass, TRUCK_TYPE__USAGE_COST_PER_HOUR);
 		createEReference(truckTypeEClass, TRUCK_TYPE__SCENARIO);
 	}
 
@@ -747,10 +758,8 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNode_Id(), ecorePackage.getEString(), "id", null, 0, 1, Node.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_Y(), ecorePackage.getEDouble(), "y", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNode_X(), ecorePackage.getEDouble(), "x", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -796,6 +805,12 @@ public class DatamodelPackageImpl extends EPackageImpl implements DatamodelPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTruckType_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, TruckType.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckType_OwnershipCostPerHour(), ecorePackage.getEDouble(), "ownershipCostPerHour", null, 0,
+				1, TruckType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTruckType_UsageCostPerHour(), ecorePackage.getEDouble(), "usageCostPerHour", null, 0, 1,
+				TruckType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEReference(getTruckType_Scenario(), this.getScenario(), this.getScenario_TruckTypes(), "scenario", null, 0,
 				1, TruckType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

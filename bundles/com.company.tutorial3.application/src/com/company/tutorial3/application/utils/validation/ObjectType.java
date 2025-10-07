@@ -25,7 +25,6 @@ public enum ObjectType {
 	,
 	
 	NODE		(TreeElementType.NODE, AppData.messages.obj_NODE,			DatamodelPackage.Literals.NODE,
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__ID, AppData.messages.obj_NODE_col_ID, AppData.messages.obj_NODE_col_ID_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.NODE__NAME,	AppData.messages.obj_NODE_col_NAME,	AppData.messages.obj_NODE_col_NAME_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.NODE__X, AppData.messages.obj_NODE_col_X, AppData.messages.obj_NODE_col_X_excel),
 			FieldDescriptor.of(DatamodelPackage.Literals.NODE__Y,	AppData.messages.obj_NODE_col_Y, AppData.messages.obj_NODE_col_Y_excel)

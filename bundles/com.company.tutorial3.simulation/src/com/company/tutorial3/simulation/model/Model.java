@@ -18,6 +18,7 @@ import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.simulation.Mapping;
 
 public class Model extends com.amalgamasimulation.engine.Model {
+	
 	private final Scenario scenario;
 	private final RandomGenerator randomGenerator = new DefaultRandomGenerator(1);
 	private Mapping mapping = new Mapping();
@@ -60,7 +61,9 @@ public class Model extends com.amalgamasimulation.engine.Model {
 		for (var truckType : scenario.getTruckTypes()) {
 			for (int i = 1; i <= truckType.getQuantity(); i++) {
 				String name = truckType.getName() + "-" + i;
-				Truck truck = new Truck(name, truckType.getSpeed(), engine());
+				Truck truck = new Truck(name, truckType.getSpeed(),
+						truckType.getOwnershipCostPerHour(), truckType.getUsageCostPerHour(),
+						engine());
 				truck.setGraphEnvironment(graphEnvironment);
 				Node homeNode = mapping.nodesMap.get(scenario.getTruckSite());
 				truck.jumpTo(homeNode);

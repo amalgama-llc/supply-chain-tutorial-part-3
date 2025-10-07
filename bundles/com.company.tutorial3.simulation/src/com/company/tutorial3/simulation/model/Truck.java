@@ -10,11 +10,10 @@ import com.amalgamasimulation.graphagent.GeometricGraphPosition;
 import com.amalgamasimulation.graphagent.GraphAgent;
 
 public class Truck extends GraphAgent<Node, Arc> {
-	private final double OWNERSHIP_COST_PER_HOUR = 10;
-	private final double USAGE_COST_PER_HOUR = 25;
-
 	private final String name;
 	private final double speed;
+	private final double ownershipCostPerHour;
+	private final double usageCostPerHour;
 	
 	private record ActivePeriod(double startTime, double endTime) {}
 
@@ -24,10 +23,14 @@ public class Truck extends GraphAgent<Node, Arc> {
 	private List<TransportationTask> taskHistory = new ArrayList<>();
 	private BiConsumer<Truck, GeometricGraphPosition<Node, Arc>> destinationReachedHandler;
 
-	public Truck(String name, double speed, Engine engine) {
+	public Truck(String name, double speed,
+			double ownershipCostPerHour, double usageCostPerHour,
+			Engine engine) {
 		super(engine);
 		this.name = name;
 		this.speed = speed;
+		this.ownershipCostPerHour = ownershipCostPerHour;
+		this.usageCostPerHour = usageCostPerHour;
 	}
 
 	@Override
@@ -54,7 +57,7 @@ public class Truck extends GraphAgent<Node, Arc> {
 	public double getExpenses() {
 		double ownershipDurationHours = engine.time() / engine.hour();
 		double usageDurationHours = getAllActivePeriodsDurationHrs();
-		return ownershipDurationHours * OWNERSHIP_COST_PER_HOUR + usageDurationHours * USAGE_COST_PER_HOUR; 
+		return ownershipDurationHours * ownershipCostPerHour + usageDurationHours * usageCostPerHour; 
 	}
 
 	private double getAllActivePeriodsDurationHrs() {

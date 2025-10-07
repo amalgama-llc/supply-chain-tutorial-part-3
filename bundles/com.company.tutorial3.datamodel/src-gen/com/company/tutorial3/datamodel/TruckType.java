@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.company.tutorial3.datamodel.TruckType#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.TruckType#getSpeed <em>Speed</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.TruckType#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.TruckType#getOwnershipCostPerHour <em>Ownership Cost Per Hour</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.TruckType#getUsageCostPerHour <em>Usage Cost Per Hour</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.TruckType#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -89,6 +91,50 @@ public interface TruckType extends EObject {
 	 * @generated
 	 */
 	void setQuantity(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Ownership Cost Per Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ownership Cost Per Hour</em>' attribute.
+	 * @see #setOwnershipCostPerHour(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getTruckType_OwnershipCostPerHour()
+	 * @model
+	 * @generated
+	 */
+	double getOwnershipCostPerHour();
+
+	/**
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.TruckType#getOwnershipCostPerHour <em>Ownership Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ownership Cost Per Hour</em>' attribute.
+	 * @see #getOwnershipCostPerHour()
+	 * @generated
+	 */
+	void setOwnershipCostPerHour(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Usage Cost Per Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Usage Cost Per Hour</em>' attribute.
+	 * @see #setUsageCostPerHour(double)
+	 * @see com.company.tutorial3.datamodel.DatamodelPackage#getTruckType_UsageCostPerHour()
+	 * @model
+	 * @generated
+	 */
+	double getUsageCostPerHour();
+
+	/**
+	 * Sets the value of the '{@link com.company.tutorial3.datamodel.TruckType#getUsageCostPerHour <em>Usage Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Usage Cost Per Hour</em>' attribute.
+	 * @see #getUsageCostPerHour()
+	 * @generated
+	 */
+	void setUsageCostPerHour(double value);
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.

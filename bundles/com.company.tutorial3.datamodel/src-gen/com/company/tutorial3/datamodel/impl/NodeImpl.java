@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getY <em>Y</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.NodeImpl#getX <em>X</em>}</li>
@@ -35,26 +34,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -132,29 +111,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	protected EClass eStaticClass() {
 		return DatamodelPackage.Literals.NODE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.NODE__ID, oldId, id));
 	}
 
 	/**
@@ -325,8 +281,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			return getId();
 		case DatamodelPackage.NODE__NAME:
 			return getName();
 		case DatamodelPackage.NODE__Y:
@@ -347,9 +301,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			setId((String) newValue);
-			return;
 		case DatamodelPackage.NODE__NAME:
 			setName((String) newValue);
 			return;
@@ -374,9 +325,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			setId(ID_EDEFAULT);
-			return;
 		case DatamodelPackage.NODE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -401,8 +349,6 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DatamodelPackage.NODE__ID:
-			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case DatamodelPackage.NODE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DatamodelPackage.NODE__Y:
@@ -426,9 +372,7 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(", y: ");
 		result.append(y);

@@ -276,22 +276,13 @@ public interface DatamodelPackage extends EPackage {
 	int NODE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = 1;
+	int NODE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -300,7 +291,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__Y = 2;
+	int NODE__Y = 1;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -309,7 +300,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__X = 3;
+	int NODE__X = 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -318,7 +309,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__SCENARIO = 4;
+	int NODE__SCENARIO = 3;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -327,7 +318,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = 5;
+	int NODE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Node</em>' class.
@@ -614,13 +605,31 @@ public interface DatamodelPackage extends EPackage {
 	int TRUCK_TYPE__QUANTITY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Ownership Cost Per Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Usage Cost Per Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUCK_TYPE__USAGE_COST_PER_HOUR = 4;
+
+	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK_TYPE__SCENARIO = 3;
+	int TRUCK_TYPE__SCENARIO = 5;
 
 	/**
 	 * The number of structural features of the '<em>Truck Type</em>' class.
@@ -629,7 +638,7 @@ public interface DatamodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRUCK_TYPE_FEATURE_COUNT = 4;
+	int TRUCK_TYPE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Truck Type</em>' class.
@@ -858,17 +867,6 @@ public interface DatamodelPackage extends EPackage {
 	EClass getNode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see com.company.tutorial3.datamodel.Node#getId()
-	 * @see #getNode()
-	 * @generated
-	 */
-	EAttribute getNode_Id();
-
-	/**
 	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.Node#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1084,6 +1082,28 @@ public interface DatamodelPackage extends EPackage {
 	EAttribute getTruckType_Quantity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.TruckType#getOwnershipCostPerHour <em>Ownership Cost Per Hour</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ownership Cost Per Hour</em>'.
+	 * @see com.company.tutorial3.datamodel.TruckType#getOwnershipCostPerHour()
+	 * @see #getTruckType()
+	 * @generated
+	 */
+	EAttribute getTruckType_OwnershipCostPerHour();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.company.tutorial3.datamodel.TruckType#getUsageCostPerHour <em>Usage Cost Per Hour</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Usage Cost Per Hour</em>'.
+	 * @see com.company.tutorial3.datamodel.TruckType#getUsageCostPerHour()
+	 * @see #getTruckType()
+	 * @generated
+	 */
+	EAttribute getTruckType_UsageCostPerHour();
+
+	/**
 	 * Returns the meta object for the container reference '{@link com.company.tutorial3.datamodel.TruckType#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1284,14 +1304,6 @@ public interface DatamodelPackage extends EPackage {
 		EClass NODE = eINSTANCE.getNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NODE__ID = eINSTANCE.getNode_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1460,6 +1472,22 @@ public interface DatamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRUCK_TYPE__QUANTITY = eINSTANCE.getTruckType_Quantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Ownership Cost Per Hour</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR = eINSTANCE.getTruckType_OwnershipCostPerHour();
+
+		/**
+		 * The meta object literal for the '<em><b>Usage Cost Per Hour</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRUCK_TYPE__USAGE_COST_PER_HOUR = eINSTANCE.getTruckType_UsageCostPerHour();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.

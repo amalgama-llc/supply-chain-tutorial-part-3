@@ -1,13 +1,20 @@
 package com.company.tutorial3.application.pages;
 
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 
 import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
+import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
 
-public class ScenarioPage extends AbstractPage<Scenario>{
+public class ScenarioPage extends AbstractPage<Scenario> {
+	
+	@SuppressWarnings("all")
+	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES)
+			.observeDetail(observable);
 	
 	public ScenarioPage(Messages messages) {
 		super(messages, null);
@@ -51,5 +58,11 @@ public class ScenarioPage extends AbstractPage<Scenario>{
 			.addTextbox(UpdateValueStrategyFactory.distribution())
 			.addDialogButton("...", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
 			.setEnabled(false);
+		
+		addReferenceSection("Truck initial node", DatamodelPackage.Literals.SCENARIO__TRUCK_SITE)
+				.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
+				.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
+					tableView.addColumn("Name", 150, Node::getName);
+				}).addClearButton().setTextFieldCanBeEmpty(false);
 	}
 }

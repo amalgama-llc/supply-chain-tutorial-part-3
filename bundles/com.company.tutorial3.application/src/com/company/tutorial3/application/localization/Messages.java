@@ -36,8 +36,6 @@ public class Messages {
 
 	
 	public String obj_NODE;
-	public String obj_NODE_col_ID;
-	public String obj_NODE_col_ID_excel;
 	public String obj_NODE_col_NAME;
 	public String obj_NODE_col_NAME_excel;
 	public String obj_NODE_col_Y;

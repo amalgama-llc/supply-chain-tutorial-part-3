@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getSpeed <em>Speed</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getOwnershipCostPerHour <em>Ownership Cost Per Hour</em>}</li>
+ *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getUsageCostPerHour <em>Usage Cost Per Hour</em>}</li>
  *   <li>{@link com.company.tutorial3.datamodel.impl.TruckTypeImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  *
@@ -93,6 +95,46 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 	 * @ordered
 	 */
 	protected int quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOwnershipCostPerHour() <em>Ownership Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnershipCostPerHour()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double OWNERSHIP_COST_PER_HOUR_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getOwnershipCostPerHour() <em>Ownership Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnershipCostPerHour()
+	 * @generated
+	 * @ordered
+	 */
+	protected double ownershipCostPerHour = OWNERSHIP_COST_PER_HOUR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUsageCostPerHour() <em>Usage Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsageCostPerHour()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double USAGE_COST_PER_HOUR_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getUsageCostPerHour() <em>Usage Cost Per Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsageCostPerHour()
+	 * @generated
+	 * @ordered
+	 */
+	protected double usageCostPerHour = USAGE_COST_PER_HOUR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,6 +223,54 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__QUANTITY, oldQuantity,
 					quantity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public double getOwnershipCostPerHour() {
+		return ownershipCostPerHour;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwnershipCostPerHour(double newOwnershipCostPerHour) {
+		double oldOwnershipCostPerHour = ownershipCostPerHour;
+		ownershipCostPerHour = newOwnershipCostPerHour;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR,
+					oldOwnershipCostPerHour, ownershipCostPerHour));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public double getUsageCostPerHour() {
+		return usageCostPerHour;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUsageCostPerHour(double newUsageCostPerHour) {
+		double oldUsageCostPerHour = usageCostPerHour;
+		usageCostPerHour = newUsageCostPerHour;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DatamodelPackage.TRUCK_TYPE__USAGE_COST_PER_HOUR,
+					oldUsageCostPerHour, usageCostPerHour));
 	}
 
 	/**
@@ -289,6 +379,10 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 			return getSpeed();
 		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
 			return getQuantity();
+		case DatamodelPackage.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR:
+			return getOwnershipCostPerHour();
+		case DatamodelPackage.TRUCK_TYPE__USAGE_COST_PER_HOUR:
+			return getUsageCostPerHour();
 		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			return getScenario();
 		}
@@ -311,6 +405,12 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 			return;
 		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
 			setQuantity((Integer) newValue);
+			return;
+		case DatamodelPackage.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR:
+			setOwnershipCostPerHour((Double) newValue);
+			return;
+		case DatamodelPackage.TRUCK_TYPE__USAGE_COST_PER_HOUR:
+			setUsageCostPerHour((Double) newValue);
 			return;
 		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			setScenario((Scenario) newValue);
@@ -336,6 +436,12 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
 			setQuantity(QUANTITY_EDEFAULT);
 			return;
+		case DatamodelPackage.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR:
+			setOwnershipCostPerHour(OWNERSHIP_COST_PER_HOUR_EDEFAULT);
+			return;
+		case DatamodelPackage.TRUCK_TYPE__USAGE_COST_PER_HOUR:
+			setUsageCostPerHour(USAGE_COST_PER_HOUR_EDEFAULT);
+			return;
 		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			setScenario((Scenario) null);
 			return;
@@ -357,6 +463,10 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 			return speed != SPEED_EDEFAULT;
 		case DatamodelPackage.TRUCK_TYPE__QUANTITY:
 			return quantity != QUANTITY_EDEFAULT;
+		case DatamodelPackage.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR:
+			return ownershipCostPerHour != OWNERSHIP_COST_PER_HOUR_EDEFAULT;
+		case DatamodelPackage.TRUCK_TYPE__USAGE_COST_PER_HOUR:
+			return usageCostPerHour != USAGE_COST_PER_HOUR_EDEFAULT;
 		case DatamodelPackage.TRUCK_TYPE__SCENARIO:
 			return getScenario() != null;
 		}
@@ -380,6 +490,10 @@ public class TruckTypeImpl extends MinimalEObjectImpl.Container implements Truck
 		result.append(speed);
 		result.append(", quantity: ");
 		result.append(quantity);
+		result.append(", ownershipCostPerHour: ");
+		result.append(ownershipCostPerHour);
+		result.append(", usageCostPerHour: ");
+		result.append(usageCostPerHour);
 		result.append(')');
 		return result.toString();
 	}

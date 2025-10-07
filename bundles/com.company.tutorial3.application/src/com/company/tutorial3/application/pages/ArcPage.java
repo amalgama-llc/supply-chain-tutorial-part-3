@@ -49,15 +49,13 @@ public class ArcPage extends AbstractPage<Arc> {
 		addStringSection(messages.obj_ARC_col_NAME, DatamodelPackage.Literals.ARC__NAME)
 			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
 		addReferenceSection(messages.obj_ARC_col_SOURCE, DatamodelPackage.Literals.ARC__SOURCE)
-			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__ID, nodeListObservable)
+			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
 			.addSelectionDialogButton(messages.object_for_select_dialog_node_source, nodeListObservable, tableView -> {
-				tableView.addColumn(messages.obj_NODE_col_ID, 150, node -> node.getId());
 				tableView.addColumn(messages.obj_NODE_col_NAME, 150, node -> node.getName());
 			});
 		addReferenceSection(messages.obj_ARC_col_DEST, DatamodelPackage.Literals.ARC__DEST)
-			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__ID, nodeListObservable)
+			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
 			.addSelectionDialogButton(messages.object_for_select_dialog_node_dest, nodeListObservable, tableView -> {
-				tableView.addColumn(messages.obj_NODE_col_ID, 150, node -> node.getId());
 				tableView.addColumn(messages.obj_NODE_col_NAME, 150, node -> node.getName());
 			});
 	}

@@ -13,7 +13,7 @@ import com.company.tutorial3.application.command.UniqNamesManager;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import javafx.scene.Node;
 
-public class CreateObjectHandler extends CreateObjectClickHandler{
+public class CreateObjectHandler extends CreateObjectClickHandler {
 	
 	@Override
 	public EObject executeCreateObject(	ActionModel actionModel,
@@ -26,7 +26,7 @@ public class CreateObjectHandler extends CreateObjectClickHandler{
 		AddCommand<EObject> command = createDefaultCommand(actionModel, contentPartFactory, eClass, rootPart, clickedPart, container, x, y);
 		if (eClass == DatamodelPackage.Literals.NODE) {
 			command.setActionBefore(() -> {
-				command.getObject().eSet(DatamodelPackage.Literals.NODE__ID, UniqNamesManager.getInstance().generateUniqueId(container, command.getObject(), AppState.messages.obj_NODE));
+				command.getObject().eSet(DatamodelPackage.Literals.NODE__NAME, UniqNamesManager.getInstance().generateUniqueId(container, command.getObject(), AppState.messages.obj_NODE));
 			});
 		}
 		command.executeInStack();

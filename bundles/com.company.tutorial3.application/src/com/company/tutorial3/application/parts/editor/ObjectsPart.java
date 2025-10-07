@@ -34,15 +34,12 @@ public class ObjectsPart extends AbstractObjectsPart {
 		new ObjectsPage<Node>(this, DatamodelPackage.Literals.SCENARIO__NODES, TreeElementType.NODE, null, null, null)
 				.setTableRefreshBinding(
 			DatamodelPackage.Literals.NODE__X,
-					DatamodelPackage.Literals.NODE__ID,
-					DatamodelPackage.Literals.NODE__NAME,
+			DatamodelPackage.Literals.NODE__NAME,
 			DatamodelPackage.Literals.NODE__Y
 											)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn(messages.obj_NODE_col_ID, 120, Node::getId)
-						.setIdTextEditingSupport(nodeListObservable, DatamodelPackage.Literals.NODE__ID);
-					tableView.addColumn(messages.obj_NODE_col_NAME, 100, p -> p == null ? "" : p.getName())
-						.setTextEditingSupport(DatamodelPackage.Literals.NODE__NAME, UpdateValueStrategyFactory.stringIsNotEmpty());
+					tableView.addColumn(messages.obj_NODE_col_NAME, 120, Node::getName)
+						.setIdTextEditingSupport(nodeListObservable, DatamodelPackage.Literals.NODE__NAME);
 					tableView.addColumn(messages.obj_NODE_col_X, 100, Node::getX).setTextEditingSupport(
 							DatamodelPackage.Literals.NODE__X,
 							UpdateValueStrategyFactory.doubleAny());
@@ -59,12 +56,12 @@ public class ObjectsPart extends AbstractObjectsPart {
 						.setIdTextEditingSupport(arcListObservable, DatamodelPackage.Literals.ARC__ID);
 					tableView.addColumn(messages.obj_ARC_col_NAME, 100, p -> p == null ? "" : p.getName())
 						.setTextEditingSupport(DatamodelPackage.Literals.ARC__NAME, UpdateValueStrategyFactory.stringIsNotEmpty());
-					tableView.addColumn(messages.obj_ARC_col_SOURCE, 100, Arc::getSource, p -> p == null ? "" : p.getId())
+					tableView.addColumn(messages.obj_ARC_col_SOURCE, 100, Arc::getSource, p -> p == null ? "" : p.getName())
 							.setAutoCompleteComboEditingSupport(nodeListObservable,
-									DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.NODE__ID);
-					tableView.addColumn(messages.obj_ARC_col_DEST, 100, Arc::getDest, p -> p == null ? "" : p.getId())
+									DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.NODE__NAME);
+					tableView.addColumn(messages.obj_ARC_col_DEST, 100, Arc::getDest, p -> p == null ? "" : p.getName())
 							.setAutoCompleteComboEditingSupport(nodeListObservable,
-									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__ID);
+									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__NAME);
 				});
 		
 		new ObjectsPage<Warehouse>(this, DatamodelPackage.Literals.SCENARIO__WAREHOUSES, TreeElementType.WAREHOUSE, 
