@@ -8,8 +8,7 @@ Bundle-Vendor: Amalgama
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Import-Package: jakarta.annotation;version="[2.1.0,3.0.0)",
  jakarta.inject;version="[2.0.0,3.0.0)"
-Require-Bundle: com.amalgamasimulation.desktop.properties,
- com.amalgamasimulation.graphagent,
+Require-Bundle: com.amalgamasimulation.graphagent,
  com.amalgamasimulation.viewupdater.service,
  org.eclipse.gef.fx,
  com.amalgamasimulation.charts,
@@ -63,5 +62,6 @@ Require-Bundle: com.amalgamasimulation.desktop.properties,
  org.eclipse.gef.mvc.fx.ui,
  com.amalgamasimulation.animation;bundle-version="1.8.1",
  org.eclipse.emf.databinding,
- org.eclipse.jface
+ org.eclipse.jface,
+ com.amalgamasimulation.desktop.ui.editor;bundle-version="1.1.4"
 

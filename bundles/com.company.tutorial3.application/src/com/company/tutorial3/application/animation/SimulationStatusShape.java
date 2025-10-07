@@ -13,13 +13,10 @@ import com.amalgamasimulation.animation.shapes.shapes2d.TextShape;
 import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.utils.Utils;
 import com.amalgamasimulation.utils.format.Formats;
-import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.simulation.model.Model;
 
 public class SimulationStatusShape extends GroupShape {
-	
-	private Messages messages = AppData.messages;
 	
 	private static double systemFontScaling() {
 		final double defaultScaling = 96.0;
@@ -55,7 +52,7 @@ public class SimulationStatusShape extends GroupShape {
 				.withLength(17.235)
 				.withLineColor((Color)null)
 				.withFillColor(new Color(89, 132, 174)));
-			withShape(new TextShape(() -> String.format(messages.SIMULATION_STATUS_MODELLED_DURATION, 
+			withShape(new TextShape(() -> String.format(Messages.messages().SIMULATION_STATUS_MODELLED_DURATION, 
 														Formats.getDefaultFormats().noDecimals(model.time() / model.day()),
 														Formats.getDefaultFormats().noDecimals(model.getEndTime() / model.day())))
 				.withPoint(new Point(170 / 2, 33.297))

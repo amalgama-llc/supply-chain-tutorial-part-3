@@ -6,7 +6,6 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
@@ -16,9 +15,8 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
-import com.amalgamasimulation.desktop.properties.PropertyPage;
-import com.amalgamasimulation.desktop.properties.PropertyPart;
 import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.PlatformTopics;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
 import com.amalgamasimulation.graphicaleditor.GraphicalEditorUiModule;
 import com.amalgamasimulation.graphicaleditor.palette.nodes.PaletteNode;
@@ -59,10 +57,6 @@ public class MapPart {
 	private EPartService partService;
 	
 	@Inject
-	@Translation
-	private Messages messages;
-
-	@Inject
 		private AppData appData;
 		
 		private GraphicalEditor<Scenario> editor;
@@ -72,7 +66,7 @@ public class MapPart {
 		protected void initializaToolBar( Composite parent ) {
 			toolBar = new ToolBar(parent, SWT.HORIZONTAL);	
 			
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.CENTERING, messages.toolbar_centering, () -> editor.adjustWindow()).setText(messages.toolbar_centering);	
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.CENTERING, Messages.messages().toolbar_centering, () -> editor.adjustWindow()).setText(Messages.messages().toolbar_centering);	
 		}
 			
 		@PostConstruct
@@ -130,12 +124,12 @@ public class MapPart {
 						eventBroker.send(Topics.CHANGE_VISIBILITY_TABLE_PAGE, treeElement);
 						eventBroker.send(Topics.CHANGE_SELECTED_TREE_ELEMENT, treeElement);
 						eventBroker.send(Topics.CHANGE_SELECTED_OBJECT_IN_TABLE_PAGE, o);
-						eventBroker.send(PropertyPart.PROPERTY_SELECTION_CHANGED, o);	
+						eventBroker.send(PlatformTopics.PROPERTY_SELECTION_CHANGED, o);	
 					}
 				}
 			});
 			
-			eventBroker.subscribe(PropertyPage.WAITING_FOR_FILTERED_OBJECT_SELECTION, event -> {
+			eventBroker.subscribe(PlatformTopics.WAITING_FOR_FILTERED_OBJECT_SELECTION, event -> {
 				Pair<Predicate<Object>, Consumer<Object>> pair = (Pair<Predicate<Object>, Consumer<Object>>)event.getProperty(IEventBroker.DATA);
 				this.onObjectSelectedFilter = pair.first;
 				this.onObjectSelectedHandler = pair.second;
@@ -144,7 +138,7 @@ public class MapPart {
 	
 	eventBroker.subscribe(Topics.NAVIGATE_TO, e -> { 
 		Object o = e.getProperty(IEventBroker.DATA);
-		editor.getContentViewer().navigateTo(o);
+		editor.getContentViewer().navigateTo(List.of(o), true, false);
 		});
                            		
                            		

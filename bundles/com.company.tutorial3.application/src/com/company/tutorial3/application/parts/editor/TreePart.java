@@ -10,7 +10,6 @@ import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
@@ -31,9 +30,9 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.TreeItem;
 
-import com.amalgamasimulation.desktop.properties.PropertyPart;
 import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
 import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.amalgamasimulation.desktop.utils.PlatformTopics;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
 import com.amalgamasimulation.engine.service.IEngineService;
 import com.company.tutorial3.application.AppData;
@@ -57,10 +56,6 @@ import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
 
 public class TreePart {
-
-	@Inject
-	@Translation
-	public Messages messages;
 
 	@Inject
 	private AppData appData;
@@ -153,13 +148,13 @@ public class TreePart {
 	
 	private void initializeToolBar(Composite parent) {
 		ToolBar toolBar = new ToolBar(parent, SWT.HORIZONTAL);
-		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.toolbar_update, 
-				() -> new ValidationManager(messages).validate(messageManager, appData.getScenario(), partService))
-		.setText(messages.toolbar_update);
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, Messages.messages().toolbar_update, 
+				() -> new ValidationManager(Messages.messages()).validate(messageManager, appData.getScenario(), partService))
+		.setText(Messages.messages().toolbar_update);
 		
-		simulationPerspectiveItem = ToolbarUtils.addCommandItem(toolBar, IconsMapping.getImage("/icons/simulation.png"), messages.button_simulation, 
-				() -> SwitchPerspectiveHandler.trySwitchToPerspective(Perspective.SIMULATION, parent.getShell(), app, partService, modelService, messageManager, messages, appData, appState , engineService));	
-		simulationPerspectiveItem.setText(messages.button_simulation);
+		simulationPerspectiveItem = ToolbarUtils.addCommandItem(toolBar, IconsMapping.getImage("/icons/simulation.png"), Messages.messages().button_simulation, 
+				() -> SwitchPerspectiveHandler.trySwitchToPerspective(Perspective.SIMULATION, parent.getShell(), app, partService, modelService, messageManager, Messages.messages(), appData, appState , engineService));	
+		simulationPerspectiveItem.setText(Messages.messages().button_simulation);
 		simulationPerspectiveItem.setEnabled(false);
 	}
 	
@@ -231,7 +226,7 @@ public class TreePart {
 				eventBroker.send(Topics.CHANGE_VISIBILITY_TABLE_PAGE, treeElementType);
 				eventBroker.send(Topics.CHANGE_SELECTED_OBJECT_IN_TABLE_PAGE, null);
 				if (treeElementType == TreeElementType.SCENARIO) {
-					eventBroker.send(PropertyPart.PROPERTY_SELECTION_CHANGED, treeElement.getEObject());
+					eventBroker.send(PlatformTopics.PROPERTY_SELECTION_CHANGED, treeElement.getEObject());
 				}
 			}
 		}));
@@ -266,7 +261,7 @@ public class TreePart {
 		refresh();
 		Scenario scenario = appData.getScenario();	
 		if (scenario != null) {
-			rootTreeElementsObservable.add(new TreeElementScenario(scenario, messages));
+			rootTreeElementsObservable.add(new TreeElementScenario(scenario, Messages.messages()));
 			treeViewer.expandAll();
 			simulationPerspectiveItem.setEnabled(true);
 		}

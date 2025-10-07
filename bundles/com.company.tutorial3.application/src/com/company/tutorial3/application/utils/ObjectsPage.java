@@ -19,19 +19,21 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
-
-import com.company.tutorial3.application.utils.TreeElementType;
 import com.amalgamasimulation.desktop.binding.ListChangeManager;
-import com.amalgamasimulation.desktop.properties.PropertyPart;
-import com.amalgamasimulation.desktop.ui.views.TableView;
+import com.amalgamasimulation.desktop.ui.tables.EMFTable;
+import com.amalgamasimulation.desktop.ui.tables.Table;
+import com.amalgamasimulation.desktop.ui.tables.Tables;
 import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.PlatformTopics;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
+import com.company.tutorial3.application.localization.Messages;
+
 public class ObjectsPage<T extends EObject> {
 
 	private AbstractObjectsPart tablePart;
 	private IObservableList<T> elementsList = new WritableList<>();
 	private WritableValue<EObject> observableContainer = new WritableValue<>();
-	private TableView<T> tableView;
+	private EMFTable<T> tableView;
 	private TreeElementType treeElementType;
 	private EReference contentsFeature;
 
@@ -71,7 +73,7 @@ public class ObjectsPage<T extends EObject> {
 	public void setSelectionObject(Object selection, boolean navigateTo) {
 		if (selection != null) {
 			tableView.setSelection(new StructuredSelection(selection), true);
-			tablePart.eventBroker.send(PropertyPart.PROPERTY_SELECTION_CHANGED, selection);
+			tablePart.eventBroker.send(PlatformTopics.PROPERTY_SELECTION_CHANGED, selection);
 			if(navigateTo) {
 				tablePart.eventBroker.send(Topics.NAVIGATE_TO, selection);	
 			}
@@ -96,20 +98,20 @@ public class ObjectsPage<T extends EObject> {
 	protected void initContents(Composite parent) {
 		elementsList = EMFProperties.list(contentsFeature).observeDetail(observableContainer);
 
-		tableView = new TableView<>(parent, elementsList);		
+		tableView = Tables.emf(elementsList).parent(parent).create();		
 		tableView.setQuickFilterAllowed(true);
 		ObservableListContentProvider<T> locationListContentProvider = new ObservableListContentProvider<>();
 		tableView.setContentProvider(locationListContentProvider);
 		tableView.setInput(elementsList);
 		tableView.getTable().addSelectionListener(SelectionListener.widgetSelectedAdapter(c -> {
 			Object selection = ((IStructuredSelection) tableView.getSelection()).getFirstElement();
-			tablePart.eventBroker.send(PropertyPart.PROPERTY_SELECTION_CHANGED, selection);
+			tablePart.eventBroker.send(PlatformTopics.PROPERTY_SELECTION_CHANGED, selection);
 			tablePart.eventBroker.send(Topics.NAVIGATE_TO, selection);	
 		}));
 
 	}
 
-	public ObjectsPage<T> setAfterCreateTableElementAction(Consumer<TableView<T>> afterCreateTable) {
+	public ObjectsPage<T> setAfterCreateTableElementAction(Consumer<EMFTable<T>> afterCreateTable) {
 		afterCreateTable.accept(tableView);
 		return this;
 	}
@@ -120,14 +122,14 @@ public class ObjectsPage<T extends EObject> {
 		}
 		ToolBar toolBar = new ToolBar(parent, SWT.HORIZONTAL);
 		if (newElementSupplier != null) {
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.ADD, tablePart.messages.button_add, this::addElement).setText(tablePart.messages.button_add);
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.ADD, Messages.messages().button_add, this::addElement).setText(Messages.messages().button_add);
 		}
 		if (removeElement != null) {
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.REMOVE, tablePart.messages.button_remove,
-					this::removeElement).setText(tablePart.messages.button_remove);
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.REMOVE, Messages.messages().button_remove,
+					this::removeElement).setText(Messages.messages().button_remove);
 		}
 		if (copyElement != null) {
-			ToolbarUtils.addCommandItem(toolBar, IconsMapping.COPY, tablePart.messages.button_copy, this::copyElement).setText(tablePart.messages.button_copy);
+			ToolbarUtils.addCommandItem(toolBar, IconsMapping.COPY, Messages.messages().button_copy, this::copyElement).setText(Messages.messages().button_copy);
 		}
 		ToolbarUtils.addSeparator(toolBar);
 	}

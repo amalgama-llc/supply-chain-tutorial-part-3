@@ -4,7 +4,6 @@ import java.io.File;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
@@ -51,10 +50,6 @@ public class AppState {
 	private ExperimentRun currentExperiment;
 	
 	private boolean actualPlanned = false;
-	
-	@Inject
-	@Translation
-	public static Messages messages;
 	
 	@Inject
 	private IEventBroker eventBroker;
@@ -156,7 +151,7 @@ public class AppState {
 	public boolean ensureCurrentScenarioIsSaved(Shell shell, AppData appData) {
 		if (ScenarioSaver.isSaveNeeded()) {
 			// scenario requires saving
-			switch (askUserToSaveScenario(shell, appData, messages)) {
+			switch (askUserToSaveScenario(shell, appData, Messages.messages())) {
 			case SWT.YES:
 				// user has agreed to save the scenario
 				return saveScenario(appData.getFilePath(), appData);
@@ -194,11 +189,11 @@ public class AppState {
  		
  		if (!FileUtils.checkIsFileAndExists(filePath)) {
 			MessageBoxFactory.createMessageBox(new Shell(), SWT.ICON_ERROR | SWT.OK | SWT.APPLICATION_MODAL,
-					messages.title_error, messages.message_error_check_filepath);
+					Messages.messages().title_error, Messages.messages().message_error_check_filepath);
  			return null;
  		}
 		
-		ProgressDialog.execute(messages.title_open_scenario, () -> {
+		ProgressDialog.execute(Messages.messages().title_open_scenario, () -> {
 			loader = ScenarioLoader.loadExcel(emfExcelTransform, filePath);
 			if (!loader.getWarnings().isEmpty() || !loader.getErrors().isEmpty()) {
 				isExistErrorsFromEMF = true;
@@ -214,8 +209,8 @@ public class AppState {
 		if (isExistErrorsFromEMF) {
 			new ResourceErrorsViewDialog(
 					Display.getDefault().getActiveShell(), 
-					messages.title_resource_errors_view_dialog, 
-					messages.message_resource_errors_view_dialog, 
+					Messages.messages().title_resource_errors_view_dialog, 
+					Messages.messages().message_resource_errors_view_dialog, 
 					loader.getErrors(), 
 					loader.getWarnings())
 				.open();
@@ -250,8 +245,8 @@ public class AppState {
 					.setName(scenarioNameBeforeSave);
 			MessageBoxFactory.createMessageBox(new Shell(),
 	                                      SWT.ICON_WARNING | SWT.OK | SWT.APPLICATION_MODAL,
-	                                      messages.title_save_scenario,
-	                                      String.format(messages.message_scenario_saving_error, e.getMessage()));
+	                                      Messages.messages().title_save_scenario,
+	                                      String.format(Messages.messages().message_scenario_saving_error, e.getMessage()));
 			return false;
 		}
 

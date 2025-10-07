@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import com.amalgamasimulation.emf.commands.AddCommand;
 import com.amalgamasimulation.graphicaleditor.factories.ContentPartFactory;
 import com.amalgamasimulation.graphicaleditor.handlers.CreateArcClickHandler;
-import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.command.UniqNamesManager;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
 public class CreateArcHandler extends CreateArcClickHandler {
@@ -17,7 +17,7 @@ public class CreateArcHandler extends CreateArcClickHandler {
 			EObject sourceNode, EObject destNode) {
 		AddCommand<? extends EObject> command = createArcCommand(contentPartFactory, arcClass, container, sourceNode, destNode);
 		command.setActionBefore(() -> {
-				command.getObject().eSet(DatamodelPackage.Literals.ARC__ID, UniqNamesManager.getInstance().generateUniqueId(container, command.getObject(), AppState.messages.obj_ARC));
+				command.getObject().eSet(DatamodelPackage.Literals.ARC__ID, UniqNamesManager.getInstance().generateUniqueId(container, command.getObject(), Messages.messages().obj_ARC));
 		});
 		command.executeInStack();
 		return command.getObject();

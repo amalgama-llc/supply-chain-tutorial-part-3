@@ -7,7 +7,6 @@ import java.util.Map;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.jface.databinding.viewers.ObservableListTreeContentProvider;
@@ -21,10 +20,10 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
-import com.amalgamasimulation.desktop.properties.PropertyPart;
 import com.amalgamasimulation.desktop.ui.views.TreeView;
 import com.amalgamasimulation.desktop.ui.views.TreeViewerColumnDescriptor;
 import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.amalgamasimulation.desktop.utils.PlatformTopics;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
 import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.localization.Messages;
@@ -40,10 +39,6 @@ import jakarta.inject.Inject;
 
 public class ErrorsPart {
 
-	@Inject
-	@Translation
-	private Messages messages;
-	
 	@Inject
 	private MessageManager messageManager;
 	
@@ -94,7 +89,7 @@ public class ErrorsPart {
 		// Errors go before warnings
 		for (ErrorType errorType : List.of(ErrorType.ERROR, ErrorType.WARNING)) {
 			List<ErrorTreeItem> listOfSecondLevelItems = mapOfSecondLevelElements.get(errorType);
-			String label = errorType == ErrorType.ERROR ? messages.label_error : messages.label_warning;
+			String label = errorType == ErrorType.ERROR ? Messages.messages().label_error : Messages.messages().label_warning;
 			if (listOfSecondLevelItems != null && !listOfSecondLevelItems.isEmpty()) {
 				ErrorTreeItem mainPart = new ErrorTreeErrorTypeItem(errorType, label, listOfSecondLevelItems);
 				mainParts.add(mainPart);
@@ -105,7 +100,7 @@ public class ErrorsPart {
 	}
 
 	private void refreshErrors() {
-		ValidationManager validationManager = new ValidationManager(messages);
+		ValidationManager validationManager = new ValidationManager(Messages.messages());
 		validationManager.validate(messageManager, appData.getScenario(), partService);
 		updateTable(validationManager);
 	}
@@ -126,7 +121,7 @@ public class ErrorsPart {
 			updateTable((ValidationManager)s);
 		});
 		ToolBar toolBar = new ToolBar(parent, SWT.FLAT | SWT.HORIZONTAL);
-		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.toolbar_update, () -> refreshErrors()).setText(messages.toolbar_update);
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, Messages.messages().toolbar_update, () -> refreshErrors()).setText(Messages.messages().toolbar_update);
 		treeViewer = new TreeView<ErrorTreeItem>(parent, t -> getSublist(t.getChildItems(), MAX_CHILD_ROWS), mainParts);
 		treeViewer.addDoubleClickListener(e -> {
 			ErrorTreeItem it = (ErrorTreeItem) ((StructuredSelection) treeViewer.getSelection()).getFirstElement();
@@ -135,10 +130,10 @@ public class ErrorsPart {
 			}
 		});
 
-		TreeViewerColumnDescriptor<ErrorTreeItem, ErrorTreeItem> des = treeViewer.addColumn(messages.column_description, 700, e -> e);
+		TreeViewerColumnDescriptor<ErrorTreeItem, ErrorTreeItem> des = treeViewer.addColumn(Messages.messages().column_description, 700, e -> e);
 		des.setLabelExtractor(e -> getStyledTextForViewLabelProvider(e).toString());
 		des.getViewerColumn().setLabelProvider(new DelegatingStyledCellLabelProvider(new ViewLabelProvider()));
-		treeViewer.addColumn(messages.column_object, 150, treeItem -> treeItem instanceof ErrorTreeLeafItem ? ((ErrorTreeLeafItem)treeItem).id : "");
+		treeViewer.addColumn(Messages.messages().column_object, 150, treeItem -> treeItem instanceof ErrorTreeLeafItem ? ((ErrorTreeLeafItem)treeItem).id : "");
 		treeViewer.setData(mainParts);
 		setNewScenario();
 	}
@@ -255,7 +250,7 @@ public class ErrorsPart {
 		messageManager.send(Topics.CHANGE_VISIBILITY_TABLE_PAGE, treeItem.objectType.getTreeElementType());
 		messageManager.send(Topics.CHANGE_SELECTED_TREE_ELEMENT, treeItem.objectType.getTreeElementType());
 		messageManager.send(Topics.CHANGE_SELECTED_OBJECT_IN_TABLE_PAGE, o);
-		messageManager.send(PropertyPart.PROPERTY_SELECTION_CHANGED, o);			
+		messageManager.send(PlatformTopics.PROPERTY_SELECTION_CHANGED, o);			
 	}
 }
 

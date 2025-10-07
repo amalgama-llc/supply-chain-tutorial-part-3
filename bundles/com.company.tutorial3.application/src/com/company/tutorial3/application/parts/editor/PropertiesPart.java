@@ -1,12 +1,10 @@
 package com.company.tutorial3.application.parts.editor;
 
-import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.e4.core.services.nls.Translation;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.amalgamasimulation.desktop.properties.PropertyPart;
-import com.company.tutorial3.application.localization.Messages;
+import com.amalgamasimulation.desktop.ui.editor.Page;
+import com.amalgamasimulation.desktop.ui.editor.PropertyPart;
 import com.company.tutorial3.application.pages.ArcPage;
 import com.company.tutorial3.application.pages.NodePage;
 import com.company.tutorial3.application.pages.PointPage;
@@ -15,63 +13,19 @@ import com.company.tutorial3.application.pages.StorePage;
 import com.company.tutorial3.application.pages.TruckPage;
 import com.company.tutorial3.application.pages.WarehousePage;
 
-import jakarta.annotation.PreDestroy;
-import jakarta.inject.Inject;
-
 public class PropertiesPart extends PropertyPart {
 
-	@Inject
-	@Translation
-	private Messages messages;
-	
 	@Override
-	protected boolean isPartVisible() {
-		return true;
-	}
+	protected List<Class<? extends Page<?>>> getPages() {
+		List<Class<? extends Page<?>>> list = new ArrayList<>();
+		list.add(ArcPage.class);
+		list.add(NodePage.class);
+		list.add(PointPage.class);
+		list.add(ScenarioPage.class);
+		list.add(StorePage.class);
+		list.add(TruckPage.class);
+		list.add(WarehousePage.class);
 
-	@Override
-	public void setPartVisible(boolean visible) {
-	}
-	
-	@Override
-	protected void setLabeledSelectedObject(IObservableValue<EObject> labeledSelectedObject, Object selectedObject) {
-	}
-
-	@Override
-	protected boolean isAlternativeTitle() {
-		return true;
-	}
-
-	@Override
-	protected EStructuralFeature getLabeledField() {
-		return null;
-	}
-
-	@Override
-	protected void registerPages() {
-		registerPage(new ScenarioPage (messages), messages.tab_general);
-		registerPage(new NodePage(messages), messages.tab_general);
-		registerPage(new ArcPage(messages), messages.tab_general);
-		registerPage(new PointPage(messages), messages.tab_bendpoint);
-		registerPage(new WarehousePage(messages), messages.tab_general);
-		registerPage(new StorePage(messages), messages.tab_general);
-		registerPage(new TruckPage(messages), messages.tab_general);
-	}
-	
-	@Override
-	protected String getPropertyTypeTitle(Object selectedObject) {
-		return "";
-	}
-	
-	@Override
-	protected void changePropertyPerspective(Object selectedObject) {
-		
-	}
-	
-	@PreDestroy
-	public void preDestroy() {
-		eventBroker.unsubscribe(propertyPerspectiveChangedEventHandler);
-		eventBroker.unsubscribe(propertySelectionChangedEventHandler);
+		return list;
 	}
 }
-

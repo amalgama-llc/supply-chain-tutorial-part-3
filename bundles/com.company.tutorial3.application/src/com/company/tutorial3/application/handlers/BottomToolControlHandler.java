@@ -2,7 +2,6 @@ package com.company.tutorial3.application.handlers;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolControl;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
@@ -28,17 +27,10 @@ public class BottomToolControlHandler {
 	private IEventBroker eventBroker;
 	
 	@Inject
-	private IEclipseContext context;
-	
-	@Inject
 	private EModelService modelService;
 	
 	@Inject
 	private AppInfo appInfo;
-	
-	@Inject
-	@Translation
-	private Messages messages;
 	
 	private MToolControl mToolControl;
 	
@@ -63,7 +55,7 @@ public class BottomToolControlHandler {
 		labelLicense.setText(getLicence());
 		
 		Label labelVersions = new Label(childComposite, SWT.NONE);
-		labelVersions.setText(messages.APP_VERSION + ": " + appInfo.getVersionAsString());
+		labelVersions.setText(Messages.messages().APP_VERSION + ": " + appInfo.getVersionAsString());
 		labelVersions.setAlignment(SWT.RIGHT);
 		setFormData(labelVersions, 65, 5, 75, -5);
 		
@@ -126,7 +118,7 @@ public class BottomToolControlHandler {
 	    long freeMemory = rt.freeMemory() / 1024 / 1024;
 	    long totalMemory = rt.totalMemory() / 1024 / 1024;
 	    if (label != null && !label.isDisposed()) {
-	    	label.setText(messages.label_memory_usage + ": " + (totalMemory - freeMemory) + " " + messages.label_of + " " + maxMemory + " " + messages.label_mb);
+	    	label.setText(Messages.messages().label_memory_usage + ": " + (totalMemory - freeMemory) + " " + Messages.messages().label_of + " " + maxMemory + " " + Messages.messages().label_mb);
 	    }
 	}
 	

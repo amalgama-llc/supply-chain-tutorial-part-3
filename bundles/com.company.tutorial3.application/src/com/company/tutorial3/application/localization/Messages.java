@@ -1,10 +1,15 @@
 package com.company.tutorial3.application.localization;
 
-import org.eclipse.e4.core.services.nls.Message;
-import org.eclipse.e4.core.services.nls.Message.ReferenceType;
+import com.amalgamasimulation.localization.PlatformMessages;
 
-@Message (contributionURI="platform:/plugin/com.company.tutorial3.application/OSGI-INF/l10n", referenceType=ReferenceType.NONE)
-public class Messages {
+public class Messages extends PlatformMessages {
+	
+	public static Messages messages() {
+		if (!(messages instanceof Messages)) {
+			messages = new Messages();
+		}
+		return (Messages) messages;
+	}
 	
 	public String APP_VERSION;
 	public String LICENSED_TO;
@@ -60,12 +65,9 @@ public class Messages {
 	public String obj_SCENARIO_col_NAME_excel;
 	
 	public String message_create_new_scenario;
-	public String title_resource_errors_view_dialog;
-	public String message_resource_errors_view_dialog;
 	public String title_exit;
 	public String message_save_old_scenario;
 	public String message_error_check_filepath;
-	public String title_error;
 	public String title_open_scenario;
 	public String title_save_scenario;
 	public String message_scenario_saving_error;
@@ -87,9 +89,7 @@ public class Messages {
 	public String label_of;
 	public String label_mb;
 	public String tree_element_scenario;
-	public String button_add;
 	public String button_remove;
-	public String button_copy;
 	public String toolbar_centering;
 	
 	public String tab_general;
@@ -99,8 +99,6 @@ public class Messages {
 	public String toolbar_update;
 	public String column_description;
 	public String column_object;
-	public String object_for_select_dialog_node_source;
-	public String object_for_select_dialog_node_dest;
 	public String toolbar_map;
 	
 	public String SIMULATION_STATUS_MODELLED_DURATION;

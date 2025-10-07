@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.commands.MParameter;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -44,10 +43,6 @@ public class SwitchPerspectiveHandler {
 	private AppState appState;
 	
 	@Inject
-	@Translation
-	private Messages messages;
-	
-	@Inject
 	private AppData appData;
 	
     @CanExecute
@@ -67,7 +62,7 @@ public class SwitchPerspectiveHandler {
 			selectExactlyOneModeMenuItem(appState.getCurrentPerspective(), modelService, mainWindow);
 			throw new RuntimeException("Unknown application mode: " + newApplicationMode);
 		}
-		trySwitchToPerspective(newPerspective, shell, app, partService, modelService, messageManager, messages, appData, appState
+		trySwitchToPerspective(newPerspective, shell, app, partService, modelService, messageManager, Messages.messages(), appData, appState
 				, engineService
 						);
 	}

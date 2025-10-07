@@ -4,60 +4,78 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.amalgamasimulation.desktop.binding.ValidationStrategies;
+import com.amalgamasimulation.desktop.ui.editor.Buttons;
+import com.amalgamasimulation.desktop.ui.editor.EmfPage;
+import com.amalgamasimulation.desktop.ui.editor.common.IPageConfiguration;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 
-public class ArcPage extends AbstractPage<Arc> {
+public class ArcPage extends EmfPage<Arc> {
 	
 	@SuppressWarnings("unchecked")
-	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES).observeDetail(scenarioObservable);
+	private IObservableList<Node> nodeListObservable = EMFProperties.list(
+				FeaturePath.fromList(DatamodelPackage.Literals.ARC__SCENARIO, DatamodelPackage.Literals.SCENARIO__NODES)
+			).observeDetail(observable);
 
 	
-	public ArcPage(Messages messages) {
-		super(messages, Arc::getScenario);
+	public ArcPage() {
+		super(Arc.class);
 	}
 	
 	@Override
-	public boolean isVisible(Object selectedObject) {
-		return selectedObject instanceof Arc;
+	protected String getTab() {
+		return Messages.messages().tab_general;
 	}
 	
 	@Override
-	protected String getNameClassObject() {
-		return messages.obj_ARC;
+	protected void createContentsInternal() {
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.ARC__ID)
+			.label(Messages.messages().obj_ARC_col_ID)
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.ARC__NAME)
+			.label(Messages.messages().obj_ARC_col_NAME)
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		
+		emfComboboxEditor(Node.class)
+			.feature(DatamodelPackage.Literals.ARC__SOURCE)
+			.label(Messages.messages().obj_ARC_col_SOURCE)
+			.elements(nodeListObservable)
+			.format(DatamodelPackage.Literals.NODE__NAME)
+			.selectFromTableButton(table -> {
+				table.column(node -> node.getName()).name(Messages.messages().obj_NODE_col_NAME).width(150);
+			})
+			.addButton(Buttons.showProperty())
+			.create();
+		emfComboboxEditor(Node.class)
+			.feature(DatamodelPackage.Literals.ARC__DEST)
+			.label(Messages.messages().obj_ARC_col_DEST)
+			.elements(nodeListObservable)
+			.format(DatamodelPackage.Literals.NODE__NAME)
+			.selectFromTableButton(table -> {
+				table.column(node -> node.getName()).name(Messages.messages().obj_NODE_col_NAME).width(150);
+			})
+			.addButton(Buttons.showProperty())
+			.create();
 	}
 	
 	@Override
-	protected String getObjectDisplayName() {
-		return observable.getValue().getId() + " - " + observable.getValue().getName();
-	}
-	
-	@Override
-	protected final FeaturePath[] getUpdateListeners() {
-		return new FeaturePath [] {
-				FeaturePath.fromList(DatamodelPackage.Literals.ARC__ID),
-				FeaturePath.fromList(DatamodelPackage.Literals.ARC__NAME)};
-	}
-	
-	@Override
-	protected void createControlsInternal() {
-		addStringSection(messages.obj_ARC_col_ID, DatamodelPackage.Literals.ARC__ID)
-			.addIdTextbox(scenarioObservable, DatamodelPackage.Literals.SCENARIO__ARCS);
-		addStringSection(messages.obj_ARC_col_NAME, DatamodelPackage.Literals.ARC__NAME)
-			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addReferenceSection(messages.obj_ARC_col_SOURCE, DatamodelPackage.Literals.ARC__SOURCE)
-			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
-			.addSelectionDialogButton(messages.object_for_select_dialog_node_source, nodeListObservable, tableView -> {
-				tableView.column(node -> node.getName()).name(messages.obj_NODE_col_NAME).width(150);
-			});
-		addReferenceSection(messages.obj_ARC_col_DEST, DatamodelPackage.Literals.ARC__DEST)
-			.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
-			.addSelectionDialogButton(messages.object_for_select_dialog_node_dest, nodeListObservable, tableView -> {
-				tableView.column(node -> node.getName()).name(messages.obj_NODE_col_NAME).width(150);
-			});
+	protected void configureInternal(IPageConfiguration<Arc> pageConfiguration) {
+		// dynamic label
+		pageConfiguration.objectDescription(obj -> obj.getName());
+		// dynamic label should update whenever these features are updated
+		pageConfiguration.features(DatamodelPackage.Literals.ARC__NAME);
+		pageConfiguration.objectTypeName(obj -> {
+			if (obj instanceof Arc) {
+				return Messages.messages().obj_ARC;
+			}
+			return null;
+		});
 	}
 }
-

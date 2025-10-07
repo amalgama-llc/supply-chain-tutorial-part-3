@@ -5,12 +5,14 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.emf.databinding.EMFProperties;
 
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.amalgamasimulation.desktop.binding.ValidationStrategies;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.AbstractObjectsPart;
 import com.company.tutorial3.application.utils.ObjectsPage;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.Asset;
 import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
@@ -38,30 +40,65 @@ public class ObjectsPart extends AbstractObjectsPart {
 			DatamodelPackage.Literals.NODE__Y
 											)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn(messages.obj_NODE_col_NAME, 120, Node::getName)
-						.setIdTextEditingSupport(nodeListObservable, DatamodelPackage.Literals.NODE__NAME);
-					tableView.addColumn(messages.obj_NODE_col_X, 100, Node::getX).setTextEditingSupport(
-							DatamodelPackage.Literals.NODE__X,
-							UpdateValueStrategyFactory.doubleAny());
-					tableView.addColumn(messages.obj_NODE_col_Y, 100, Node::getY).setTextEditingSupport(
-							DatamodelPackage.Literals.NODE__Y,
-							UpdateValueStrategyFactory.doubleAny());
+					tableView	.column(Node::getName)
+								.name(Messages.messages().obj_NODE_col_NAME)
+								.width(120)
+								.emfTextIdEditor()
+								.elements(nodeListObservable)
+								.idFeature(DatamodelPackage.Literals.NODE__NAME)								
+								.build();
+					tableView	.column(Node::getX)
+								.name(Messages.messages().obj_NODE_col_X)
+								.width(100)
+								.emfTextEditor()
+								.feature(DatamodelPackage.Literals.NODE__X)
+								.strategy(ValidationStrategies.doubleAny())
+								.build();
+					tableView	.column(Node::getY)
+								.name(Messages.messages().obj_NODE_col_Y)
+								.width(100)
+								.emfTextEditor()
+								.feature(DatamodelPackage.Literals.NODE__Y)
+								.strategy(ValidationStrategies.doubleAny())
+								.build();
 				});
 		
-		new ObjectsPage<Arc>(this, DatamodelPackage.Literals.SCENARIO__ARCS, TreeElementType.ARC, null, null,null)
-				.setTableRefreshBinding(DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.ARC__ID,DatamodelPackage.Literals.ARC__NAME,
+		new ObjectsPage<Arc>(this, DatamodelPackage.Literals.SCENARIO__ARCS, TreeElementType.ARC, null, null, null)
+				.setTableRefreshBinding(DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.ARC__ID, DatamodelPackage.Literals.ARC__NAME,
 					DatamodelPackage.Literals.ARC__DEST)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn(messages.obj_ARC_col_ID, 100, Arc::getId)
-						.setIdTextEditingSupport(arcListObservable, DatamodelPackage.Literals.ARC__ID);
-					tableView.addColumn(messages.obj_ARC_col_NAME, 100, p -> p == null ? "" : p.getName())
-						.setTextEditingSupport(DatamodelPackage.Literals.ARC__NAME, UpdateValueStrategyFactory.stringIsNotEmpty());
-					tableView.addColumn(messages.obj_ARC_col_SOURCE, 100, Arc::getSource, p -> p == null ? "" : p.getName())
-							.setAutoCompleteComboEditingSupport(nodeListObservable,
-									DatamodelPackage.Literals.ARC__SOURCE, DatamodelPackage.Literals.NODE__NAME);
-					tableView.addColumn(messages.obj_ARC_col_DEST, 100, Arc::getDest, p -> p == null ? "" : p.getName())
-							.setAutoCompleteComboEditingSupport(nodeListObservable,
-									DatamodelPackage.Literals.ARC__DEST, DatamodelPackage.Literals.NODE__NAME);
+					tableView	.column(Arc::getId)
+								.name(Messages.messages().obj_ARC_col_ID)
+								.width(120)
+								.emfTextIdEditor()
+								.elements(arcListObservable)
+								.idFeature(DatamodelPackage.Literals.ARC__ID)								
+								.build();
+					tableView	.column(Arc::getName)
+								.name(Messages.messages().obj_ARC_col_NAME)
+								.width(100)
+								.emfTextEditor()
+								.feature(DatamodelPackage.Literals.ARC__NAME)
+								.strategy(ValidationStrategies.stringIsNotEmpty())
+								.build();
+					tableView	.column(Arc::getSource)
+								.name(Messages.messages().obj_ARC_col_SOURCE)
+								.width(100)
+								.format(Node::getName)
+								.emfAutoCompleteComboEditor()
+								.elements(nodeListObservable)
+								.feature(DatamodelPackage.Literals.ARC__SOURCE)
+								.nameFeature(DatamodelPackage.Literals.NODE__NAME)
+								.build();
+					tableView	.column(Arc::getDest)
+								.name(Messages.messages().obj_ARC_col_DEST)
+								.width(100)
+								.format(Node::getName)
+								.emfAutoCompleteComboEditor()
+								.elements(nodeListObservable)
+								.feature(DatamodelPackage.Literals.ARC__DEST)
+								.nameFeature(DatamodelPackage.Literals.NODE__NAME)
+								.build();
 				});
 		
 		new ObjectsPage<Warehouse>(this, DatamodelPackage.Literals.SCENARIO__WAREHOUSES, TreeElementType.WAREHOUSE, 
@@ -72,9 +109,9 @@ public class ObjectsPart extends AbstractObjectsPart {
 				}, null, null)
 				.setTableRefreshBinding(DatamodelPackage.Literals.ASSET__ID, DatamodelPackage.Literals.ASSET__NAME, DatamodelPackage.Literals.ASSET__NODE)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn("ID", 100, Warehouse::getId);
-					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
-					tableView.addColumn("Node", 100, Warehouse::getNode, p -> p == null ? "" : p.getName());
+					tableView.column(Asset::getId).name("ID").width(100);
+					tableView.column(Asset::getName).name("Name").width(100);
+					tableView.column(Asset::getNode).name("Node").width(100).format(Node::getName);
 				});
 		
 		new ObjectsPage<Store>(this, DatamodelPackage.Literals.SCENARIO__STORES, TreeElementType.STORE, 
@@ -86,9 +123,9 @@ public class ObjectsPart extends AbstractObjectsPart {
 				null, null)
 				.setTableRefreshBinding(DatamodelPackage.Literals.ASSET__ID, DatamodelPackage.Literals.ASSET__NAME, DatamodelPackage.Literals.ASSET__NODE)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn("ID", 100, Store::getId);
-					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
-					tableView.addColumn("Node", 100, Store::getNode, p -> p == null ? "" : p.getName());
+					tableView.column(Asset::getId).name("ID").width(100);
+					tableView.column(Asset::getName).name("Name").width(100);
+					tableView.column(Asset::getNode).name("Node").width(100).format(Node::getName);
 				});
 		
 		new ObjectsPage<TruckType>(this, DatamodelPackage.Literals.SCENARIO__TRUCK_TYPES, TreeElementType.TRUCK_TYPE, 
@@ -102,9 +139,9 @@ public class ObjectsPart extends AbstractObjectsPart {
 						DatamodelPackage.Literals.TRUCK_TYPE__SPEED, 
 						DatamodelPackage.Literals.TRUCK_TYPE__QUANTITY)
 				.setAfterCreateTableElementAction(tableView -> {
-					tableView.addColumn("Name", 100, p -> p == null ? "" : p.getName());
-					tableView.addColumn("Speed", 100, TruckType::getSpeed);
-					tableView.addColumn("Quantity", 100, TruckType::getQuantity);
+					tableView.column(TruckType::getName).name("Name").width(100);
+					tableView.column(TruckType::getSpeed).name("Speed").width(100);
+					tableView.column(TruckType::getQuantity).name("Quantity").width(100);
 				});
 	}
 	

@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.amalgamasimulation.graphicaleditor.parts.AbstractArcPart;
-import com.company.tutorial3.application.states.AppState;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.Arc;
 import com.company.tutorial3.datamodel.DatamodelFactory;
 import com.company.tutorial3.datamodel.DatamodelPackage;
@@ -81,7 +81,7 @@ public class ArcPart extends AbstractArcPart<Arc, Scenario, Node, Point> {
 	
 	@Override
 	public String getNewObjectName(EObject container, EObject eObject) {
-		return AppState.messages.obj_ARC;
+		return Messages.messages().obj_ARC;
 	}
 	
 }

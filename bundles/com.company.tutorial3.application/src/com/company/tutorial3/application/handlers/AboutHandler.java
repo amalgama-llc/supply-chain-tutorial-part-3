@@ -2,20 +2,12 @@ package com.company.tutorial3.application.handlers;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.swt.widgets.Shell;
 
 import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.dialogs.AboutDialog;
-import com.company.tutorial3.application.localization.Messages;
-
-import jakarta.inject.Inject;
 
 public class AboutHandler {
-
-	@Inject
-	@Translation
-	private Messages messages;
 
 	@CanExecute
 	private boolean canExecute() {

@@ -4,54 +4,51 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.FeaturePath;
 
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.amalgamasimulation.desktop.binding.ValidationStrategies;
+import com.amalgamasimulation.desktop.ui.editor.Buttons;
+import com.amalgamasimulation.desktop.ui.editor.EmfPage;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Warehouse;
 
-public class WarehousePage extends AbstractPage<Warehouse> {
+public class WarehousePage extends EmfPage<Warehouse> {
 
-	@SuppressWarnings("all")
-	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES)
-			.observeDetail(scenarioObservable);
+	@SuppressWarnings("unchecked")
+	private IObservableList<Node> nodeListObservable = EMFProperties.list(
+				FeaturePath.fromList(DatamodelPackage.Literals.WAREHOUSE__SCENARIO, DatamodelPackage.Literals.SCENARIO__NODES)
+			).observeDetail(observable);
 
-	public WarehousePage(Messages messages) {
-		super(messages, Warehouse::getScenario);
+	public WarehousePage() {
+		super(Warehouse.class);
 	}
-
+	
 	@Override
-	public boolean isVisible(Object selectedObject) {
-		return selectedObject instanceof Warehouse;
+	protected String getTab() {
+		return Messages.messages().tab_general;
 	}
-
+	
 	@Override
-	protected String getNameClassObject() {
-		return "Warehouse";
-	}
-
-	@Override
-	protected String getObjectDisplayName() {
-		return observable.getValue().getId() + " - " + observable.getValue().getName();
-	}
-
-	@Override
-	protected final FeaturePath[] getUpdateListeners() {
-		return new FeaturePath[] { 
-				FeaturePath.fromList(DatamodelPackage.Literals.ASSET__ID),
-				FeaturePath.fromList(DatamodelPackage.Literals.ASSET__NAME) };
-	}
-
-	@Override
-	protected void createControlsInternal() {
-		addStringSection("ID", DatamodelPackage.Literals.ASSET__ID)
-				.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addStringSection("Name", DatamodelPackage.Literals.ASSET__NAME)
-				.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addReferenceSection("Node", DatamodelPackage.Literals.ASSET__NODE)
-				.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
-				.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
-					tableView.column(Node::getName).name("Name").width(150);
-				}).addClearButton().setTextFieldCanBeEmpty(false);
+	protected void createContentsInternal() {
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.ASSET__ID)
+			.label("ID")
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.ASSET__NAME)
+			.label("Name")
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		emfComboboxEditor(Node.class)
+			.feature(DatamodelPackage.Literals.ASSET__NODE)
+			.label("Node")
+			.elements(nodeListObservable)
+			.format(DatamodelPackage.Literals.NODE__NAME)
+			.selectFromTableButton(table -> {
+				table.column(node -> node.getName()).name(Messages.messages().obj_NODE_col_NAME).width(150);
+			})
+			.addButton(Buttons.showProperty())
+			.create();
 	}
 }

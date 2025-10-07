@@ -1,50 +1,49 @@
 package com.company.tutorial3.application.pages;
 
-import org.eclipse.emf.databinding.FeaturePath;
-
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.amalgamasimulation.desktop.binding.ValidationStrategies;
+import com.amalgamasimulation.desktop.ui.editor.EmfPage;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.TruckType;
 
-public class TruckPage extends AbstractPage<TruckType> {
+public class TruckPage extends EmfPage<TruckType> {
 
-	public TruckPage(Messages messages) {
-		super(messages, TruckType::getScenario);
+	public TruckPage() {
+		super(TruckType.class);
 	}
-
+	
 	@Override
-	public boolean isVisible(Object selectedObject) {
-		return selectedObject instanceof TruckType;
+	protected String getTab() {
+		return Messages.messages().tab_general;
+	}
+	
+	@Override
+	protected void createContentsInternal() {
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.TRUCK_TYPE__NAME)
+			.label("Name")
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		emfDoubleEditor()
+			.feature(DatamodelPackage.Literals.TRUCK_TYPE__SPEED)
+			.label("Speed")
+			.validationStrategy(ValidationStrategies.doublePositive())
+			.create();
+		emfIntegerEditor()
+			.feature(DatamodelPackage.Literals.TRUCK_TYPE__QUANTITY)
+			.label("Quantity")
+			.validationStrategy(ValidationStrategies.integerPositiveWithZero())
+			.create();
+		emfDoubleEditor()
+			.feature(DatamodelPackage.Literals.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR)
+			.label("Ownership cost per hour")
+			.validationStrategy(ValidationStrategies.doublePositiveWithZero())
+			.create();
+		emfDoubleEditor()
+			.feature(DatamodelPackage.Literals.TRUCK_TYPE__USAGE_COST_PER_HOUR)
+			.label("Usage cost per hour")
+			.validationStrategy(ValidationStrategies.doublePositiveWithZero())
+			.create();
 	}
 
-	@Override
-	protected String getNameClassObject() {
-		return "Truck";
-	}
-
-	@Override
-	protected String getObjectDisplayName() {
-		return observable.getValue().getName();
-	}
-
-	@Override
-	protected final FeaturePath[] getUpdateListeners() {
-		return new FeaturePath[] {
-				FeaturePath.fromList(DatamodelPackage.Literals.TRUCK_TYPE__NAME) };
-	}
-
-	@Override
-	protected void createControlsInternal() {
-		addStringSection("Name", DatamodelPackage.Literals.TRUCK_TYPE__NAME)
-				.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addNumericSection("Speed", DatamodelPackage.Literals.TRUCK_TYPE__SPEED)
-				.addTextbox(UpdateValueStrategyFactory.doublePositive());
-		addNumericSection("Quantity", DatamodelPackage.Literals.TRUCK_TYPE__QUANTITY)
-				.addTextbox(UpdateValueStrategyFactory.integerPositiveWithZero());
-		addNumericSection("Ownership cost per hour", DatamodelPackage.Literals.TRUCK_TYPE__OWNERSHIP_COST_PER_HOUR)
-				.addTextbox(UpdateValueStrategyFactory.doublePositiveWithZero());
-		addNumericSection("Usage cost per hour", DatamodelPackage.Literals.TRUCK_TYPE__USAGE_COST_PER_HOUR)
-				.addTextbox(UpdateValueStrategyFactory.doublePositiveWithZero());
-	}
 }

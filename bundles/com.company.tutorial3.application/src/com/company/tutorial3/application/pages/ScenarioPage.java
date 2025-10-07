@@ -2,67 +2,70 @@ package com.company.tutorial3.application.pages;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.FeaturePath;
 
-import com.amalgamasimulation.desktop.binding.UpdateValueStrategyFactory;
+import com.amalgamasimulation.desktop.binding.ValidationStrategies;
+import com.amalgamasimulation.desktop.ui.editor.Buttons;
+import com.amalgamasimulation.desktop.ui.editor.EmfPage;
 import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
 
-public class ScenarioPage extends AbstractPage<Scenario> {
+public class ScenarioPage extends EmfPage<Scenario> {
 	
 	@SuppressWarnings("all")
 	private IObservableList<Node> nodeListObservable = EMFProperties.list(DatamodelPackage.Literals.SCENARIO__NODES)
 			.observeDetail(observable);
 	
-	public ScenarioPage(Messages messages) {
-		super(messages, null);
-	}
-
-	@Override
-	public boolean isVisible(Object selectedObject) {
-		return selectedObject instanceof Scenario;
+	public ScenarioPage() {
+		super(Scenario.class);
 	}
 	
 	@Override
-	protected String getNameClassObject() {
-		return messages.object_scenario;
+	protected String getTab() {
+		return Messages.messages().tab_general;
 	}
 	
 	@Override
-	protected String getObjectDisplayName() {
-		return observable.getValue().getName();
-	}
-	
-	@Override
-	protected FeaturePath[] getUpdateListeners() {
-		return new FeaturePath [] {FeaturePath.fromList(DatamodelPackage.Literals.SCENARIO__NAME)};
-	}
-
-	@Override
-	protected void createControlsInternal() {
-		addStringSection(messages.obj_SCENARIO_col_NAME, DatamodelPackage.Literals.SCENARIO__NAME)
-			.addTextbox(UpdateValueStrategyFactory.stringIsNotEmpty());
-		addDateTimeSection(messages.obj_SCENARIO_col_BEGIN_DATE, DatamodelPackage.Literals.SCENARIO__BEGIN_DATE)
-			.addTextbox(UpdateValueStrategyFactory.localDateTime())
-			.addLocalDateTimeEditorButton()
-			.setEnabled(true);
-		addDateTimeSection(messages.obj_SCENARIO_col_END_DATE, DatamodelPackage.Literals.SCENARIO__END_DATE)
-			.addTextbox(UpdateValueStrategyFactory.localDateTime())
-			.addLocalDateTimeEditorButton()
-			.setEnabled(true);
-		addNumericSection("Max delivery time, hrs", DatamodelPackage.Literals.SCENARIO__MAX_DELIVERY_TIME_HRS)
-			.addTextbox(UpdateValueStrategyFactory.doublePositive());
-		addDistributionSection("Interval between requests, hrs", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
-			.addTextbox(UpdateValueStrategyFactory.distribution())
-			.addDialogButton("...", DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
-			.setEnabled(false);
+	protected void createContentsInternal() {
+		emfStringEditor()
+			.feature(DatamodelPackage.Literals.SCENARIO__NAME)
+			.label(Messages.messages().obj_SCENARIO_col_NAME)
+			.validationStrategy(ValidationStrategies.stringIsNotEmpty())
+			.create();
+		emfLocalDateTimeEditor()
+			.feature(DatamodelPackage.Literals.SCENARIO__BEGIN_DATE)
+			.label(Messages.messages().obj_SCENARIO_col_BEGIN_DATE)
+			.addButton(Buttons.localDateTime())
+			.create();
+		emfLocalDateTimeEditor()
+			.feature(DatamodelPackage.Literals.SCENARIO__END_DATE)
+			.label(Messages.messages().obj_SCENARIO_col_END_DATE)
+			.addButton(Buttons.localDateTime())
+			.create();
 		
-		addReferenceSection("Truck initial node", DatamodelPackage.Literals.SCENARIO__TRUCK_SITE)
-				.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
-				.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
-					tableView.column(Node::getName).name("Name").width(150);
-				}).addClearButton().setTextFieldCanBeEmpty(false);
+		emfDoubleEditor()
+			.feature(DatamodelPackage.Literals.SCENARIO__MAX_DELIVERY_TIME_HRS)
+			.label("Max delivery time, hrs")
+			.validationStrategy(ValidationStrategies.doublePositive())
+			.create();
+		
+		emfDistributionEditor()
+			.feature(DatamodelPackage.Literals.SCENARIO__INTERVAL_BETWEEN_REQUESTS_HRS)
+			.label("Interval between requests, hrs")
+			.addButton(Buttons.distribution())
+			.create();
+		
+		emfComboboxEditor(Node.class)
+			.feature(DatamodelPackage.Literals.SCENARIO__TRUCK_SITE)
+			.label("Truck initial node")
+			.elements(nodeListObservable)
+			.format(DatamodelPackage.Literals.NODE__NAME)
+			.selectFromTableButton(table -> {
+				table.column(node -> node.getName()).name(Messages.messages().obj_NODE_col_NAME).width(150);
+			})
+			.addButton(Buttons.showProperty())
+			.create();
 	}
+
 }

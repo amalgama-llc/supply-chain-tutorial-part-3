@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.amalgamasimulation.graphicaleditor.parts.AbstractNodePart;
-import com.company.tutorial3.application.states.AppState;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Node;
 import com.company.tutorial3.datamodel.Scenario;
@@ -38,7 +38,7 @@ public class NodePart extends AbstractNodePart<Node, Scenario> {
 	
 	@Override
 	public String getNewObjectName(EObject container, EObject eObject) {
-		return AppState.messages.obj_NODE;
+		return Messages.messages().obj_NODE;
 	}
 	
 }

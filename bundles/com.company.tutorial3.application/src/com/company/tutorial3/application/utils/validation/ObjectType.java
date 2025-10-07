@@ -10,38 +10,38 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import com.company.tutorial3.application.AppData;
+import com.company.tutorial3.application.localization.Messages;
 import com.company.tutorial3.application.utils.TreeElementType;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
 
 public enum ObjectType {
 	
-	SCENARIO	(TreeElementType.SCENARIO, AppData.messages.obj_SCENARIO,  DatamodelPackage.Literals.SCENARIO,
-			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__NAME,	AppData.messages.obj_SCENARIO_col_NAME,	AppData.messages.obj_SCENARIO_col_NAME_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__BEGIN_DATE,	AppData.messages.obj_SCENARIO_col_BEGIN_DATE,	AppData.messages.obj_SCENARIO_col_BEGIN_DATE_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__END_DATE,	AppData.messages.obj_SCENARIO_col_END_DATE,	AppData.messages.obj_SCENARIO_col_END_DATE_excel)
+	SCENARIO	(TreeElementType.SCENARIO, Messages.messages().obj_SCENARIO,  DatamodelPackage.Literals.SCENARIO,
+			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__NAME,	Messages.messages().obj_SCENARIO_col_NAME,	Messages.messages().obj_SCENARIO_col_NAME_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__BEGIN_DATE,	Messages.messages().obj_SCENARIO_col_BEGIN_DATE,	Messages.messages().obj_SCENARIO_col_BEGIN_DATE_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.SCENARIO__END_DATE,	Messages.messages().obj_SCENARIO_col_END_DATE,	Messages.messages().obj_SCENARIO_col_END_DATE_excel)
 				)
 	,
 	
-	NODE		(TreeElementType.NODE, AppData.messages.obj_NODE,			DatamodelPackage.Literals.NODE,
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__NAME,	AppData.messages.obj_NODE_col_NAME,	AppData.messages.obj_NODE_col_NAME_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__X, AppData.messages.obj_NODE_col_X, AppData.messages.obj_NODE_col_X_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.NODE__Y,	AppData.messages.obj_NODE_col_Y, AppData.messages.obj_NODE_col_Y_excel)
+	NODE		(TreeElementType.NODE, Messages.messages().obj_NODE,			DatamodelPackage.Literals.NODE,
+			FieldDescriptor.of(DatamodelPackage.Literals.NODE__NAME,	Messages.messages().obj_NODE_col_NAME,	Messages.messages().obj_NODE_col_NAME_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.NODE__X, Messages.messages().obj_NODE_col_X, Messages.messages().obj_NODE_col_X_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.NODE__Y,	Messages.messages().obj_NODE_col_Y, Messages.messages().obj_NODE_col_Y_excel)
 				),
 	
-	ARC			(TreeElementType.ARC, AppData.messages.obj_ARC,					DatamodelPackage.Literals.ARC,
-			FieldDescriptor.of(DatamodelPackage.Literals.ARC__ID, 	AppData.messages.obj_ARC_col_ID, 	AppData.messages.obj_ARC_col_ID_excel),
-			FieldDescriptor.of(DatamodelPackage.Literals.ARC__NAME,	AppData.messages.obj_ARC_col_NAME,	AppData.messages.obj_SCENARIO_col_NAME_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.ARC__SOURCE,	AppData.messages.obj_ARC_col_SOURCE, 	AppData.messages.obj_ARC_col_SOURCE_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.ARC__DEST,	AppData.messages.obj_ARC_col_DEST, 	AppData.messages.obj_ARC_col_DEST_excel)
+	ARC			(TreeElementType.ARC, Messages.messages().obj_ARC,					DatamodelPackage.Literals.ARC,
+			FieldDescriptor.of(DatamodelPackage.Literals.ARC__ID, 	Messages.messages().obj_ARC_col_ID, 	Messages.messages().obj_ARC_col_ID_excel),
+			FieldDescriptor.of(DatamodelPackage.Literals.ARC__NAME,	Messages.messages().obj_ARC_col_NAME,	Messages.messages().obj_SCENARIO_col_NAME_excel),
+			FieldDescriptor.of(	DatamodelPackage.Literals.ARC__SOURCE,	Messages.messages().obj_ARC_col_SOURCE, 	Messages.messages().obj_ARC_col_SOURCE_excel),
+			FieldDescriptor.of(	DatamodelPackage.Literals.ARC__DEST,	Messages.messages().obj_ARC_col_DEST, 	Messages.messages().obj_ARC_col_DEST_excel)
 				),
 	
 	
-	POINT		(TreeElementType.ARC, AppData.messages.obj_POINT,					DatamodelPackage.Literals.POINT,
-			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__ARC, AppData.messages.obj_POINT_col_ARC,	AppData.messages.obj_POINT_col_ARC_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__X, AppData.messages.obj_POINT_col_X,	AppData.messages.obj_POINT_col_X_excel),
-			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__Y, AppData.messages.obj_POINT_col_Y,	AppData.messages.obj_POINT_col_Y_excel)
+	POINT		(TreeElementType.ARC, Messages.messages().obj_POINT,					DatamodelPackage.Literals.POINT,
+			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__ARC, Messages.messages().obj_POINT_col_ARC,	Messages.messages().obj_POINT_col_ARC_excel),
+			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__X, Messages.messages().obj_POINT_col_X,	Messages.messages().obj_POINT_col_X_excel),
+			FieldDescriptor.of(	DatamodelPackage.Literals.POINT__Y, Messages.messages().obj_POINT_col_Y,	Messages.messages().obj_POINT_col_Y_excel)
 			);
 	
 	

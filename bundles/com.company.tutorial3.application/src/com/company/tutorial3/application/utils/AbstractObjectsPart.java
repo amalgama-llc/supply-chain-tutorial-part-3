@@ -8,7 +8,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.emf.databinding.EMFObservables;
@@ -25,7 +24,6 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.amalgamasimulation.desktop.ui.views.TableView;
 import com.company.tutorial3.application.AppData;
-import com.company.tutorial3.application.localization.Messages;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.inject.Inject;
@@ -35,10 +33,6 @@ public abstract class AbstractObjectsPart {
 	@Inject
 	protected AppData appData;
 	
-	@Inject
-	@Translation
-	protected Messages messages;
-
 	@Inject
 	protected IEventBroker eventBroker;
 	

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.swt.widgets.Composite;
 
 import com.amalgamasimulation.desktop.ui.views.TableView;
@@ -23,10 +22,6 @@ import jakarta.inject.Inject;
 public class SimulationStatisticsPart {
 
 	@Inject
-	@Translation
-	private Messages messages;
-	
-	@Inject
 	private AppData appData;
 	
 	@Inject
@@ -39,8 +34,8 @@ public class SimulationStatisticsPart {
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		tableView = new TableView<>(parent, Collections.emptyList(), false, true);
-		tableView.addColumn(messages.SIMULATION_STATS_obj_INDICATOR_col_NAME, 	200, indicator -> indicator.label);
-		tableView.addColumn(messages.SIMULATION_STATS_obj_INDICATOR_col_VALUE, 	70, indicator ->  indicator.formatter.apply(indicator.value.get()));
+		tableView.addColumn(Messages.messages().SIMULATION_STATS_obj_INDICATOR_col_NAME, 	200, indicator -> indicator.label);
+		tableView.addColumn(Messages.messages().SIMULATION_STATS_obj_INDICATOR_col_VALUE, 	70, indicator ->  indicator.formatter.apply(indicator.value.get()));
 		
 		viewUpdaterService.getStatsUpdater().addView(tableView);
 		messageManager.subscribe(Topics.SHOW_MODEL, this::onShowModel, true);

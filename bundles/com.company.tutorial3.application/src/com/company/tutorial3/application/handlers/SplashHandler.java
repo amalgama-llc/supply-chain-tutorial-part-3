@@ -2,7 +2,6 @@ package com.company.tutorial3.application.handlers;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.workbench.UIEvents;
@@ -14,7 +13,7 @@ import org.eclipse.e4.ui.workbench.modeling.IWindowCloseHandler;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 
-import com.amalgamasimulation.localization.Util;
+import com.amalgamasimulation.localization.PlatformMessages;
 import com.company.tutorial3.application.AppData;
 import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.localization.Messages;
@@ -27,10 +26,6 @@ import jakarta.inject.Inject;
 
 public class SplashHandler {
 	
-	@Inject
-	@Translation
-	private Messages messages;
-
 	@Inject
 	private AppData appData;
 	
@@ -58,8 +53,7 @@ public class SplashHandler {
 		PerspectiveUtils.setVisibleForModelingToolBar(perspective.engineToolBarIsVisible, modelService, mainWindow);
 		appState.setCurrentPerspective(perspective);		
 		mainWindow.setLabel(appInfo.getNameAndVersion());
-		Util.APPLICATION_NAME = "tutorial3";
-			
+		PlatformMessages.messages().APPLICATION_NAME = "tutorial3";
 
 		eventBroker.subscribe(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE, event -> {
 
@@ -70,7 +64,7 @@ public class SplashHandler {
 			mainWindow.getContext().set(IWindowCloseHandler.class, w -> {
 				// ask if user wants to close the app
 				if (SWT.OK != MessageBoxFactory.createMessageBox(new Shell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL | SWT.APPLICATION_MODAL, "",
-						messages.message_create_new_scenario)) {
+						Messages.messages().message_create_new_scenario)) {
 					return false;
 				}
 				// ask if user wants the (changed) scenario to be saved

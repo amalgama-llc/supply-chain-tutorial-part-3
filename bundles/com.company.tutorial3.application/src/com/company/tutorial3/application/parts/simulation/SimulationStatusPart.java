@@ -44,10 +44,6 @@ public class SimulationStatusPart {
 	private EPartService partService;
 	
 	@Inject
-	@Translation
-	public Messages messages;
-
-	@Inject
 	private AppData appData;
 	
 	@Inject
@@ -93,13 +89,13 @@ public class SimulationStatusPart {
 	private void initializeToolBar(Composite parent) {
 		ToolBar toolBar = new ToolBar(parent, SWT.HORIZONTAL);
 		
-		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, messages.button_reset, 
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.REFRESH, Messages.messages().button_reset, 
 				() -> engineService.getEngine().reset())
-			.setText(messages.button_reset);
+			.setText(Messages.messages().button_reset);
 		
-		ToolbarUtils.addCommandItem(toolBar, IconsMapping.getImage("/icons/editing.png"), messages.button_editor, 
-				() -> SwitchPerspectiveHandler.trySwitchToPerspective(Perspective.EDITOR, parent.getShell(), app, partService, modelService, messageManager, messages, appData, appState, engineService))	
-			.setText(messages.button_editor);
+		ToolbarUtils.addCommandItem(toolBar, IconsMapping.getImage("/icons/editing.png"), Messages.messages().button_editor, 
+				() -> SwitchPerspectiveHandler.trySwitchToPerspective(Perspective.EDITOR, parent.getShell(), app, partService, modelService, messageManager, Messages.messages(), appData, appState, engineService))	
+			.setText(Messages.messages().button_editor);
 	}
 	
 }
