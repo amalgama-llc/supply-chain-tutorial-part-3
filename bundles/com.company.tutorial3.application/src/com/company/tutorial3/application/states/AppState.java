@@ -1,9 +1,6 @@
 package com.company.tutorial3.application.states;
 
 import java.io.File;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.services.events.IEventBroker;
@@ -11,6 +8,7 @@ import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
+import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.emf.common.command.BasicCommandStack;
@@ -24,8 +22,8 @@ import com.amalgamasimulation.desktop.utils.RecentlyOpenedFilesManager;
 import com.amalgamasimulation.emf.commands.CommandsManager;
 import com.amalgamasimulation.emf.excel.EMFExcelLoader;
 import com.amalgamasimulation.emf.excel.EMFExcelTransform;
-
 import com.company.tutorial3.application.AppInfo;
+import com.company.tutorial3.application.command.CommandFactory;
 import com.company.tutorial3.application.scenario.ScenarioLoader;
 import com.company.tutorial3.application.scenario.ScenarioSaver;
 import com.company.tutorial3.application.scenario.ScenarioSaver.ScenarioSavingException;
@@ -34,12 +32,13 @@ import com.company.tutorial3.application.utils.FileUtils;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
 import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.application.command.CommandFactory;
-import org.eclipse.e4.ui.workbench.UIEvents;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.Scenario;
 import com.company.tutorial3.simulation.ExperimentRun;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 
 @Singleton
 @Creatable

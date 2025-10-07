@@ -7,9 +7,6 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -26,15 +23,18 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import com.company.tutorial3.application.utils.TreeElementType;
+import com.amalgamasimulation.desktop.ui.views.TableView;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
-import com.amalgamasimulation.desktop.ui.views.TableView;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public abstract class AbstractObjectsPart {
 
 	@Inject
 	protected AppData appData;
+	
 	@Inject
 	@Translation
 	protected Messages messages;

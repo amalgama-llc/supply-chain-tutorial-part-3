@@ -1,12 +1,11 @@
 package com.company.tutorial3.application.parts.editor;
 
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
-
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import com.amalgamasimulation.desktop.properties.PropertyPart;
 import com.company.tutorial3.application.pages.ArcPage;
 import com.company.tutorial3.application.pages.NodePage;
 import com.company.tutorial3.application.pages.PointPage;
@@ -15,7 +14,9 @@ import com.company.tutorial3.application.pages.StorePage;
 import com.company.tutorial3.application.pages.TruckPage;
 import com.company.tutorial3.application.pages.WarehousePage;
 import com.company.tutorial3.common.localization.Messages;
-import com.amalgamasimulation.desktop.properties.PropertyPart;
+
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
 
 public class PropertiesPart extends PropertyPart {
 

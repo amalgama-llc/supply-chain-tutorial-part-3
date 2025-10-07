@@ -2,7 +2,7 @@ package com.company.tutorial3.simulation.model;
 
 import java.util.function.Consumer;
 
-import com.amalgamasimulation.graphagent.GraphAgentPosition;
+import com.amalgamasimulation.graphagent.GeometricGraphPosition;
 
 public class TransportationTask {
 	
@@ -67,7 +67,7 @@ public class TransportationTask {
 		return movingWithCargo;
 	}
 	
-	private void onDestinationReached(Truck truck, GraphAgentPosition<Node, Arc> destPosition) {
+	private void onDestinationReached(Truck truck, GeometricGraphPosition<Node, Arc> destPosition) {
 		boolean truckIsAtSourceNode = destPosition.getNode().getValue().equals(request.getSourceAsset().getNode());
 		if (truckIsAtSourceNode) {
 			movingWithCargo = true;

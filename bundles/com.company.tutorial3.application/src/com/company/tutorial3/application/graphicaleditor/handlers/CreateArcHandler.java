@@ -10,9 +10,8 @@ import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.command.UniqNamesManager;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 
-public class CreateArcHandler extends CreateArcClickHandler{
+public class CreateArcHandler extends CreateArcClickHandler {
 
-	
 	@Override
 	public EObject executeCreateObject(ContentPartFactory contentPartFactory, EClass arcClass, EObject container,
 			EObject sourceNode, EObject destNode) {

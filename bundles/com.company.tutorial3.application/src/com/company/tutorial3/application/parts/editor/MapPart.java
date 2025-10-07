@@ -1,54 +1,51 @@
 package com.company.tutorial3.application.parts.editor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
-import com.company.tutorial3.application.utils.TreeElementType;
-import com.company.tutorial3.application.utils.IconsMapping;
-import com.company.tutorial3.application.graphicaleditor.GraphicalEditorModule;
-import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.datamodel.Arc;
-import com.company.tutorial3.datamodel.Node;
-import com.company.tutorial3.datamodel.Scenario;
-import com.company.tutorial3.application.command.CommandFactory;
-import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.amalgamasimulation.desktop.properties.PropertyPage;
 import com.amalgamasimulation.desktop.properties.PropertyPart;
-import com.amalgamasimulation.desktop.utils.ToolbarUtils;
-import com.amalgamasimulation.utils.Pair;
-
-import java.util.ArrayList;
-import java.util.List;
-import org.eclipse.e4.ui.model.application.MApplication;
-import org.eclipse.e4.ui.workbench.modeling.EModelService;
-import org.eclipse.e4.ui.workbench.modeling.EPartService;
-import org.eclipse.swt.layout.FillLayout;
-import com.google.inject.Guice;
-import com.google.inject.util.Modules;
 import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.ToolbarUtils;
 import com.amalgamasimulation.graphicaleditor.GraphicalEditorUiModule;
 import com.amalgamasimulation.graphicaleditor.palette.nodes.PaletteNode;
 import com.amalgamasimulation.graphicaleditor.palette.nodes.PaletteNodesFactory;
 import com.amalgamasimulation.graphicaleditor.views.GraphicalEditor;
+import com.amalgamasimulation.utils.Pair;
+import com.company.tutorial3.application.command.CommandFactory;
+import com.company.tutorial3.application.graphicaleditor.GraphicalEditorModule;
+import com.company.tutorial3.application.utils.IconsMapping;
+import com.company.tutorial3.application.utils.Topics;
+import com.company.tutorial3.application.utils.TreeElementType;
+import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.common.states.AppData;
+import com.company.tutorial3.datamodel.Arc;
+import com.company.tutorial3.datamodel.DatamodelPackage;
+import com.company.tutorial3.datamodel.Node;
+import com.company.tutorial3.datamodel.Scenario;
+import com.google.inject.Guice;
+import com.google.inject.util.Modules;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class MapPart {
 	
-
 	@Inject
 	private IEventBroker eventBroker;
-
 
 	private ToolBar toolBar;
 	

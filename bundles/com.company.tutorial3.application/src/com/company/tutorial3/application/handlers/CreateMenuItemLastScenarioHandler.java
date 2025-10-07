@@ -2,7 +2,7 @@ package com.company.tutorial3.application.handlers;
 
 import java.util.List;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.eclipse.e4.ui.di.AboutToShow;
 import org.eclipse.e4.ui.model.application.ui.menu.MDirectMenuItem;

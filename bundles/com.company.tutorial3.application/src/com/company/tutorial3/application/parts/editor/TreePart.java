@@ -2,8 +2,6 @@ package com.company.tutorial3.application.parts.editor;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
@@ -33,6 +31,11 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.TreeItem;
 
+import com.amalgamasimulation.desktop.properties.PropertyPart;
+import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.amalgamasimulation.desktop.utils.ToolbarUtils;
+import com.amalgamasimulation.engine.service.IEngineService;
 import com.company.tutorial3.application.AppInfo;
 import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
 import com.company.tutorial3.application.parts.editor.treeelements.TreeElement;
@@ -41,19 +44,17 @@ import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.EditorTreeLabelProvider;
 import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.MainWindowTitleUpdater;
-import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
+import com.company.tutorial3.application.utils.Topics;
+import com.company.tutorial3.application.utils.TreeElementType;
+import com.company.tutorial3.application.utils.validation.ValidationManager;
+import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
 import com.company.tutorial3.datamodel.DatamodelPackage;
 import com.company.tutorial3.datamodel.Scenario;
-import com.company.tutorial3.application.utils.TreeElementType;
-import com.company.tutorial3.application.utils.validation.ValidationManager;
-import com.amalgamasimulation.desktop.utils.MessageManager;
-import com.amalgamasimulation.desktop.properties.PropertyPart;
-import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
-import com.amalgamasimulation.desktop.utils.ToolbarUtils;
-import com.amalgamasimulation.engine.service.IEngineService;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class TreePart {
 

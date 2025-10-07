@@ -5,20 +5,20 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.swt.widgets.Composite;
 
-import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.simulation.model.Model;
-import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.common.localization.Messages;
 import com.amalgamasimulation.desktop.ui.views.TableView;
 import com.amalgamasimulation.desktop.utils.MessageManager;
-import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 import com.amalgamasimulation.utils.format.Formats;
+import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
+import com.company.tutorial3.application.utils.Topics;
+import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.common.states.AppData;
+import com.company.tutorial3.simulation.model.Model;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class SimulationStatisticsPart {
 

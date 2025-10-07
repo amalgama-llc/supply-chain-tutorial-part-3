@@ -1,8 +1,6 @@
 package com.company.tutorial3.common.states;
 
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import jakarta.inject.*;
 
 import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.e4.core.services.nls.Translation;

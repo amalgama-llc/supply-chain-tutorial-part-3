@@ -4,9 +4,6 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 
@@ -23,6 +20,9 @@ import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.simulation.model.Model;
 import com.company.tutorial3.simulation.model.TransportationTask;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class GanttChartPart {
 	

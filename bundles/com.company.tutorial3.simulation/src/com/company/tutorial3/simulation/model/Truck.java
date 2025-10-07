@@ -6,8 +6,8 @@ import java.util.Optional;
 import java.util.function.BiConsumer;
 
 import com.amalgamasimulation.engine.Engine;
+import com.amalgamasimulation.graphagent.GeometricGraphPosition;
 import com.amalgamasimulation.graphagent.GraphAgent;
-import com.amalgamasimulation.graphagent.GraphAgentPosition;
 
 public class Truck extends GraphAgent<Node, Arc> {
 	private final double OWNERSHIP_COST_PER_HOUR = 10;
@@ -23,7 +23,7 @@ public class Truck extends GraphAgent<Node, Arc> {
 	private Optional<Double> currentActivePeriodStartTime = Optional.empty();
 	private TransportationTask currentTask;
 	private List<TransportationTask> taskHistory = new ArrayList<>();
-	private BiConsumer<Truck, GraphAgentPosition<Node, Arc>> destinationReachedHandler;
+	private BiConsumer<Truck, GeometricGraphPosition<Node, Arc>> destinationReachedHandler;
 
 	public Truck(String id, String name, double speed, Engine engine) {
 		super(engine);
@@ -72,7 +72,7 @@ public class Truck extends GraphAgent<Node, Arc> {
 	}
 	
 	public void onTaskStarted(TransportationTask task,
-			BiConsumer<Truck, GraphAgentPosition<Node, Arc>> destinationReachedHandler) {
+			BiConsumer<Truck, GeometricGraphPosition<Node, Arc>> destinationReachedHandler) {
 		currentActivePeriodStartTime = Optional.of(engine.time());
 		currentTask = task;
 		taskHistory.add(currentTask);
@@ -87,7 +87,7 @@ public class Truck extends GraphAgent<Node, Arc> {
 	}
 
 	@Override
-	public void onDestinationReached(GraphAgentPosition<Node, Arc> destPosition) {
+	public void onDestinationReached(GeometricGraphPosition<Node, Arc> destPosition) {
 		super.onDestinationReached(destPosition);
 		destinationReachedHandler.accept(this, destPosition);
 	}

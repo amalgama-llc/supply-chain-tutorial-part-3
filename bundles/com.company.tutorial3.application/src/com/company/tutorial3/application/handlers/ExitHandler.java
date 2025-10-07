@@ -1,18 +1,17 @@
 package com.company.tutorial3.application.handlers;
 
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.workbench.IWorkbench;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Shell;
 
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
 
-import org.eclipse.swt.widgets.Shell;
+import jakarta.inject.Inject;
 
 public class ExitHandler {
 

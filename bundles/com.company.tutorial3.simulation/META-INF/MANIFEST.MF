@@ -5,7 +5,7 @@ Bundle-SymbolicName: com.company.tutorial3.simulation;singleton:=true
 Bundle-Name: Simulation
 Bundle-Version: 1.0.0
 Bundle-Vendor: Amalgama
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: com.company.tutorial3.simulation,

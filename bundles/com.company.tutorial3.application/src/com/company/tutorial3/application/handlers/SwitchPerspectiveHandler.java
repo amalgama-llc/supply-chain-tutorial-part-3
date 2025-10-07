@@ -2,13 +2,11 @@ package com.company.tutorial3.application.handlers;
 
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.model.application.commands.MParameter;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
@@ -17,20 +15,22 @@ import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.SWT;
-import org.eclipse.e4.ui.model.application.commands.MParameter;
 import org.eclipse.swt.widgets.Shell;
 
+import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.amalgamasimulation.engine.service.IEngineService;
 import com.company.tutorial3.application.states.AppState;
 import com.company.tutorial3.application.utils.MessageBoxFactory;
 import com.company.tutorial3.application.utils.PerspectiveUtils;
+import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.application.utils.validation.ValidationManager;
-import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.company.tutorial3.common.localization.Messages;
 import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.company.tutorial3.simulation.ExperimentRun;
-import com.amalgamasimulation.engine.service.IEngineService;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 
 public class SwitchPerspectiveHandler {

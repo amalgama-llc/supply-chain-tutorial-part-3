@@ -1,8 +1,5 @@
 package com.company.tutorial3.application.parts.simulation;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.core.services.nls.Translation;
 import org.eclipse.e4.ui.model.application.MApplication;
@@ -12,15 +9,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
-import com.company.tutorial3.application.animation.SimulationStatusShape;
-import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
-import com.company.tutorial3.application.states.AppState;
-import com.company.tutorial3.common.states.AppData;
-import com.company.tutorial3.simulation.model.Model;
-import com.company.tutorial3.application.utils.IconsMapping;
-import com.company.tutorial3.common.localization.Messages;
-import com.company.tutorial3.application.utils.Topics;
-import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
 import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
 import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.desktop.utils.ToolbarUtils;
@@ -29,6 +17,18 @@ import com.amalgamasimulation.geometry.Point;
 import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationView;
 import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationViewImpl;
 import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
+import com.company.tutorial3.application.animation.SimulationStatusShape;
+import com.company.tutorial3.application.handlers.SwitchPerspectiveHandler;
+import com.company.tutorial3.application.states.AppState;
+import com.company.tutorial3.application.utils.IconsMapping;
+import com.company.tutorial3.application.utils.PerspectiveUtils.Perspective;
+import com.company.tutorial3.application.utils.Topics;
+import com.company.tutorial3.common.localization.Messages;
+import com.company.tutorial3.common.states.AppData;
+import com.company.tutorial3.simulation.model.Model;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class SimulationStatusPart {
 

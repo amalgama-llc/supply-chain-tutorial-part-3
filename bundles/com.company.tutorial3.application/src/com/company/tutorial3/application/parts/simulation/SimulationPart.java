@@ -2,14 +2,17 @@ package com.company.tutorial3.application.parts.simulation;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
-import org.eclipse.nebula.widgets.geomap.TileServer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.ToolBar;
 
+import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
+import com.amalgamasimulation.desktop.utils.MessageManager;
+import com.amalgamasimulation.desktop.utils.ToolbarUtils;
+import com.amalgamasimulation.geometry.Point;
+import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationView;
+import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationViewImpl;
+import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 import com.company.tutorial3.application.animation.ArcShape;
 import com.company.tutorial3.application.animation.NodeShape;
 import com.company.tutorial3.application.animation.StoreShape;
@@ -19,14 +22,9 @@ import com.company.tutorial3.application.utils.IconsMapping;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.simulation.model.Model;
 import com.company.tutorial3.simulation.model.Node;
-import com.amalgamasimulation.desktop.ui.views.ToolBarComposite;
-import com.amalgamasimulation.desktop.utils.MessageManager;
-import com.amalgamasimulation.desktop.utils.ToolbarUtils;
-import com.amalgamasimulation.geometry.Point;
-import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationView;
-import com.amalgamasimulation.platform.animation.swt.SWT2DSimulationViewImpl;
-import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class SimulationPart {
 

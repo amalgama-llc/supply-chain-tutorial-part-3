@@ -2,18 +2,18 @@ package com.company.tutorial3.application.parts.simulation;
 
 import java.util.Collections;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.eclipse.swt.widgets.Composite;
 
-import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.desktop.ui.views.TableView;
+import com.amalgamasimulation.desktop.utils.MessageManager;
 import com.amalgamasimulation.utils.format.Formats;
 import com.amalgamasimulation.viewupdater.service.IViewUpdaterService;
 import com.company.tutorial3.application.utils.Topics;
 import com.company.tutorial3.simulation.model.Model;
 import com.company.tutorial3.simulation.model.Truck;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Inject;
 
 public class TablePart {
 
