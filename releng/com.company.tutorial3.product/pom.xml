@@ -12,6 +12,11 @@
 	<version>1.0.0</version>
 	<packaging>eclipse-repository</packaging>
 	<name>com.company.tutorial3.application</name>
+	<properties>
+		<product.name>tutorial3</product.name>
+		<productRootFolderName>tutorial3</productRootFolderName>
+		<productfile.name>com.company.tutorial3.product</productfile.name>
+	</properties>
 	
 	<build>
 		<plugins>
@@ -59,15 +64,11 @@
 							<replacements>
 								<replacement>
 									<token>-Defxclipse.java-modules.dir=&amp;quot;\$\{env_var:JAVAFX_HOME\}/lib&amp;quot;</token>
-									<value>-Defxclipse.java-modules.dir=plugins/name.abuchen.zulu.jre.win32.x86_64_17.0.5/jre/lib</value>
+									<value>-Defxclipse.java-modules.dir=plugins/name.abuchen.zulu.jre.win32.x86_64_${javafx.version}/jre/lib</value>
 								</replacement>
 								<replacement>
-									<token>-Defxclipse.java-modules.dir=&amp;quot;plugins/com.amalgamasimulation.zulu.jdk.win32.x86_64_17.0.5/jre/lib&amp;quot;</token>
-									<value>-Defxclipse.java-modules.dir=plugins/name.abuchen.zulu.jre.win32.x86_64_17.0.5/jre/lib</value>
-								</replacement>
-								<replacement>
-									<token>-Defxclipse.java-modules.dir=/Applications/javafx-sdk-17.0.2/lib</token>
-									<value>-Defxclipse.java-modules.dir=../Eclipse/plugins/name.abuchen.zulu.jre.macosx.x86_64_17.0.5/Contents/Home/lib</value>
+									<token>-Defxclipse.java-modules.dir=/Applications/javafx-sdk-${javafx.version}/lib</token>
+									<value>-Defxclipse.java-modules.dir=../Eclipse/plugins/name.abuchen.zulu.jre.macosx.x86_64_${javafx.version}/Contents/Home/lib</value>
 								</replacement>
 							</replacements>
 						</configuration>
@@ -88,6 +89,15 @@
 						<groupId>org.eclipse.tycho</groupId>
 						<artifactId>tycho-p2-director-plugin</artifactId>
 						<version>${tycho.version}</version>
+						<configuration>
+							<products>
+								<product>
+									<id>${product.name}</id>
+									<rootFolder>${product.name}</rootFolder>
+									<archiveFileName>${product.name}-${project.version}</archiveFileName>
+								</product>
+							</products>
+						</configuration>
 						<executions>
 							<execution>
 								<id>materialize-products</id>
