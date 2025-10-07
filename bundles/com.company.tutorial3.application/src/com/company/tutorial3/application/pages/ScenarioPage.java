@@ -62,7 +62,7 @@ public class ScenarioPage extends AbstractPage<Scenario> {
 		addReferenceSection("Truck initial node", DatamodelPackage.Literals.SCENARIO__TRUCK_SITE)
 				.addAutoCompleteTextbox(DatamodelPackage.Literals.NODE__NAME, nodeListObservable)
 				.addSelectionDialogButton("a node", nodeListObservable, tableView -> {
-					tableView.addColumn("Name", 150, Node::getName);
+					tableView.column(Node::getName).name("Name").width(150);
 				}).addClearButton().setTextFieldCanBeEmpty(false);
 	}
 }

@@ -16,8 +16,6 @@
 
    <plugin download-size="0" id="com.company.tutorial3.application" install-size="0" unpack="false" version="0.0.0"/>
 
-   <plugin download-size="0" id="com.company.tutorial3.common" install-size="0" unpack="false" version="0.0.0"/>
-
    <plugin download-size="0" id="com.company.tutorial3.simulation" install-size="0" unpack="false" version="0.0.0"/>
 
    </feature>
